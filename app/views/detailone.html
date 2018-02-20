@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  <a class="govuk-c-back-link" href="/introdetails">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          What is your name?
+        </h1>
+
+        <form class="form" action="/detailtwo" method="post">
+
+          <label class="govuk-c-label" for="full-name">
+            Full name
+          </label>
+          <input class="govuk-c-input" id="full-name" name="full-name" type="text">
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

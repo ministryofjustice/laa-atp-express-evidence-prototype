@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  <a class="govuk-c-back-link" href="/obwarn">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <div class="govuk-o-grid">
+
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Retrieve your benefit / salary evidence
+        </h1>
+
+        <form class="form" action="/dwpconf" method="post">
+
+          <label class="govuk-c-label" for="national-insurance-number">
+            National Insurance Number
+            <span class="govuk-c-label__hint govuk-!-width-two-thirds">
+              It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+            </span>
+          </label>
+          <input class="govuk-c-input govuk-!-width-one-third" id="national-insurance-number" name="national-insurance-number" type="text">
+
+          <fieldset class="govuk-c-fieldset">
+            <legend class="govuk-c-fieldset__legend">
+              <label class="govuk-c-label" for="full-name">
+                Date of Birth
+              </label>
+            </legend>
+            <div class="govuk-c-date-input" id="dob">
+              <div class="govuk-c-date-input__item govuk-c-date-input__item--day">
+                <label class="govuk-c-label govuk-c-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-day" name="dob-day" type="text">
+              </div>
+              <div class="govuk-c-date-input__item govuk-c-date-input__item--month">
+                <label class="govuk-c-label govuk-c-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-month" name="dob-month" type="text">
+              </div>
+              <div class="govuk-c-date-input__item govuk-c-date-input__item--year">
+                <label class="govuk-c-label govuk-c-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-year" name="dob-year" type="text">
+              </div>
+            </div>
+          </fieldset>
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
