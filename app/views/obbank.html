@@ -1,63 +1,353 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block page_title %} Question page {% endblock %} {% block content %}
 
-{% block page_title %}
-  Question page
-{% endblock %}
+<head>
 
-{% block content %}
+  <script src="public/javascripts/jquery-1.11.3.js"></script>
 
-<div class="govuk-o-width-container">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-  <a class="govuk-c-back-link" href="/detailtwo">Back</a>
+    input[type=uname],
+    input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
 
-  <main role="main" class="govuk-o-main-wrapper">
+    div[type=modalpage] {
+      margin: 30px;
+    }
 
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+    /* Set a style for all buttons */
 
-        <h1 class="govuk-heading-xl">
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+      padding-top: 30px;
+    }
+
+    /* Modal Content/Box */
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 40%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {
+        -webkit-transform: scale(0)
+      }
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes animatezoom {
+      from {
+        transform: scale(0)
+      }
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+
+    .hideMe {
+      display: none;
+    }
+  </style>
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">alpha </strong><span class="govuk-c-phase-banner__text">This is a new service – your <a class="govuk-link" href="#">feedback</a>will help us to improve it. </span></p>
+  </div><a class="govuk-c-back-link" href="/detailtwo">Back</a>
+
+</head>
+
+<body>
+
+  <div class="govuk-o-width-container">
+
+    <a class="govuk-c-back-link" href="/detailtwo">Back</a>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h1 class="govuk-heading-xl">
           Who do you actively bank with?
         </h1>
 
-        <form class="form" action="/obauth" method="get">
+          <form class="form" action="/obauth" method="get">
 
-          <div class="govuk-c-radios">
-            <fieldset class="govuk-c-fieldset">
-              <legend class="govuk-c-fieldset__legend">
-                <h1 class="govuk-heading-l">Do you bank with more than one active banking provider?</h1>
-                <span class="govuk-c-fieldset__hint">This includes partners and etc</span>
-              </legend>
-              <div class="govuk-c-radios__item">
-                <input class="govuk-c-radios__input" id="changed-name-1" name="changedName" type="radio" value="yes">
-                <label class="govuk-c-label govuk-c-radios__label" for="changed-name-1">
+            <div class="govuk-c-radios">
+              <fieldset class="govuk-c-fieldset">
+                <legend class="govuk-c-fieldset__legend">
+                  <h1 class="govuk-heading-l">Do you bank with more than one active banking provider?</h1>
+                  <span class="govuk-c-fieldset__hint">This includes partners and etc</span>
+                </legend>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="changed-name-1" name="changedName" type="radio" value="yes">
+                  <label class="govuk-c-label govuk-c-radios__label" for="changed-name-1">
                   Yes
                 </label>
-              </div>
-              <div class="govuk-c-radios__item">
-                <input class="govuk-c-radios__input" id="changed-name-2" name="changedName" type="radio" value="no" checked>
-                <label class="govuk-c-label govuk-c-radios__label" for="changed-name-2">
+                </div>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="changed-name-2" name="changedName" type="radio" value="no" checked>
+                  <label class="govuk-c-label govuk-c-radios__label" for="changed-name-2">
                   No
                 </label>
-              </div>
-            </fieldset>
-          </div>
+                </div>
+              </fieldset>
+            </div>
 
-          <label class="govuk-c-label" for="select-1">
+            <label class="govuk-c-label" for="select-1">
             Please select your banking provider(s) from this list
           </label>
-          <select class="govuk-c-select" id="select-1" name="select-1">
+            <select class="govuk-c-select" id="select-1" name="select-1">
             <option value="1">Moneybags.inc</option>
             <option value="2" selected>Happy bank</option>
             <option value="3">Davids</option>
           </select>
+            <input class="govuk-c-button" id="myBtn" value="Contact Bank" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+            <input class="govuk-c-button" type="submit" value="Continue">
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
 
-          <input class="govuk-c-button" type="submit" value="Continue">
 
+  <!-- modal banking window -->
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close window">&times;</span>
+        <img src="public/images/logo_mybank_positive2.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div id="step1" class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="uname" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="button">Login</button>
+
+        <div class="modal-footer" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+        </div>
+      </div>
+
+      <div type="modalpage" id="step2" class="hideMe" class="container">
+        <h4>Your memorable data</h4>
+        <br>
+        <text>Please enter the following characters from your memorable word:</text>
+        <br>
+        <br>
+        <div class="block">
+          <label for="char1"><b>2nd</b></label>
+          <input type="text" name="char1" maxlength="1" size="2" required>
+        </div>
+        <br>
+        <div class="block">
+          <label for="char2"><b>6th</b></label>
+          <input type="text" name="char2" maxlength="1" size="2" required>
+        </div>
+        <br>
+        <div class="block">
+          <label for="char3"><b>12th</b></label>
+          <input type="text" name="char3" maxlength="1" size="2" required>
+        </div>
+        <br>
+        <br>
+        <button id="memorable" type="button">Continue</button>
+        <div class="modal-footer" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+        </div>
+      </div>
+
+      <div type="modalpage" id="step4" class="hideMe" class="container">
+        <h3>Thank you</h3><br>
+        <button id="close" type="button" onclick="document.getElementById('id01').style.display='none'">Close</button>
+      </div>
+
+      <div type="modalpage" id="step3" class="hideMe" class="container">
+        <h3>Welcome back</h3><br>
+        <h4>The Ministry of Justice have requested access to your bank accounts</h4>
+        <p>Please select the accounts you want to grant access to. The Ministry of Justice will be able to access</p>
+        <ul>
+          <li>the account's balance</li>
+          <li>3 month's worth of transactions</li>
+          <li>a list of direct debits and standing orders</li>
+        </ul>
+        <p>for each account you select.</p>
+
+        <form action="">
+          <input type="checkbox" name="account" value="Current"><b>HappyBank Current Account</b>
+          <p>Account Number: 123456789</p>
+          <input type="checkbox" name="account" value="Savings"> <b>HappyBank Savings Account</b>
+          <p>Account Number: 987654321</p>
         </form>
 
-      </div>
-    </div>
-  </main>
-</div>
+        <button id="approve" type="button">Approve</button>
 
+        <div class="modal-footer" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+  </script>
+
+  <!--move from page 1 to page 2 -->
+  <script>
+    $("#login").click(function() {
+      $("#step1").addClass('hideMe');
+      $("#step2").removeClass('hideMe');
+    });
+  </script>
+
+  <!--move from page 2 to page 3 -->
+  <script>
+    $("#memorable").click(function() {
+      $("#step2").addClass('hideMe');
+      $("#step3").removeClass('hideMe');
+    });
+  </script>
+
+  <!--move from page 3 to page 4 -->
+  <script>
+    $("#approve").click(function() {
+      $("#step3").addClass('hideMe');
+      $("#step4").removeClass('hideMe');
+    });
+  </script>
+
+  <!-- reset the modal -->
+  <script>
+    $("#myBtn").click(function() {
+      $("#step1").removeClass('hideMe');
+      $("#step2").addClass('hideMe');
+      $("#step3").addClass('hideMe');
+      $("#step4").addClass('hideMe');
+    });
+  </script>
+
+</body>
 {% endblock %}
