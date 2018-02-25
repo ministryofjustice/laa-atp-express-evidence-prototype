@@ -153,6 +153,13 @@
       height: 1px;
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     }
+
+    .inline-field input,
+    .inline-field label {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: top;
+    }
   </style>
 
 </head>
@@ -169,6 +176,8 @@
     </span>
       </p>
     </div>
+
+    <a class="govuk-c-back-link" href="/obexpress">Back</a>
 
     <main role="main" class="govuk-o-main-wrapper">
 
@@ -265,6 +274,7 @@
 
       <div type="modalpage" id="step4" class="hideMe" class="container">
         <h3>Thank you</h3><br>
+        <p>Put some confirmation text here</p>
         <button id="close" type="button" onclick="document.getElementById( 'id01').style.display='none'">Close</button>
       </div>
 
@@ -280,16 +290,15 @@
         <p>for each account you select.</p>
 
         <form action="">
-          <hr class="style-two">
-          <input type="checkbox" name="account" value="Current"> <b>Togetherbank Current Account</b>
-          <p>Account Number: 123456789</p>
-          <hr class="style-two">
-          <input type="checkbox" name="account" value="Savings"> <b>Togetherbank Savings Account</b>
-          <p>Account Number: 987654321</p>
-          <hr class="style-two">
-          <input type="checkbox" name="account" value="Savings"> <b>Togetherbank Cash ISA</b>
-          <p>Account Number: 987654321</p>
-          <hr class="style-two">
+          <div class="inline-field">
+            <hr class="style-two">
+            <input type="checkbox" name="account1" value="Current"><label for="account1"><b>Togetherbank Current Account</b><br>Account Number: 123456789</label>
+            <hr class="style-two">
+            <input type="checkbox" name="account2" value="Savings"><label for="account2"><b>Togetherbank Savings Account</b><br>Account Number: 987654321</label>
+            <hr class="style-two">
+            <input type="checkbox" name="account3" value="Savings"><label for="account3"><b>Togetherbank Cash ISA</b><br>Account Number: 248163264</label>
+            <hr class="style-two">
+          </div>
         </form>
 
         <button id="approve" type="button">Approve</button>
