@@ -1,0 +1,124 @@
+{% extends "layout.html" %} {% block page_title %} Question page {% endblock %} {% block content %}
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item">
+
+        <h1 class="govuk-heading-xl">
+          Means assessment result
+        </h1>
+
+        <p class="govuk-body">
+          Some text here.
+        </p>
+
+        <h2 class="govuk-heading">
+          Provisional result: In scope
+        </h2></br>
+
+        <form class="form" action="/mandatory-evidence" method="post">
+
+          <div>
+            <table class="govuk-c-table--two-thirds">
+
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col">Breakdown of result</th>
+                  <th class="govuk-c-table__header" scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Main dwelling</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Additional property</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Land</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Timeshare</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Bank accounts</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Main dwelling</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Third-party bank accounts</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Investments</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Other savings</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Shares</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Policies</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Valuables</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Motor vehicles</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Money due</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Other capital</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Trusts</th>
+                  <td class="govuk-c-table__cell">£0.00</td>
+                </tr>
+            </table>
+          </div>
+          </br>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

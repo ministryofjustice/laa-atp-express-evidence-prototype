@@ -1,0 +1,59 @@
+{% extends "layout.html" %} {% block page_title %} Question page {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+
+        <h1 class="govuk-heading-xl">
+          Benefits in kind
+        </h1>
+
+        <p class="govuk-body">
+          Some text here.
+        </p>
+
+        <form class="form" action="/capital-assets" method="post">
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h4 class="govuk-heading">Do you get benefits from work that are not money?</h4>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="benefits-in-kind-1" name="benefits-in-kind" type="radio" value="yes">
+                <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-2">
+                Yes
+              </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="benefits-in-kind-2" name="benefits-in-kind" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-2">
+                No
+              </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %} {% block page_title %} Question page {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+
+        <h1 class="govuk-heading-xl">
+          Mandatory evidence
+        </h1>
+
+        <p class="govuk-body">The next screen will list the evidence that you will be required to submit based on the informtion you have already provided.</p>
+
+        <form class="form" action="/end" method="post">
+
+
+          <div class="govuk-c-checkboxes__item">
+            <input class="govuk-c-checkboxes__input" id="confirm" name="confirm" type="checkbox">
+            <label class="govuk-c-label govuk-c-checkboxes__label" for="confirm">I confirm that you have read and fully understood the above by ticking this box</label>
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
