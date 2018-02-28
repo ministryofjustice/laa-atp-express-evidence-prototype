@@ -21,13 +21,113 @@
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-        <h2 class="govuk-heading-xl">
-          This is the last page of the applicant details section of the CCMS PUI.
-        </h2>
+        <h1 class="govuk-heading-xl">
+          Client Details
+        </h1>
 
-        <p class="govuk-body">It needs to be customised to look like that page.</p>
+        <h3 class="govuk-heading-xl">
+          General Information
+        </h3>
 
-        <a class="govuk-c-button govuk-c-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="/obexpress" role="button">Continue</a>
+        <form class="form" action="/obexpress" method="post">
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h4 class="govuk-heading">Is the client a prisoner?</h4>
+                <span class="govuk-c-fieldset__hint">Please answer yes if the client is on remand or serving a current
+                sentence. Please answer no if the client is being held under immigration powers (including post conviction)
+                in a prison, or in relation to asylum matters</span>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="prisoner-1" name="prisoner" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="prisoner-1">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="prisoner-2" name="prisoner" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="prisoner-2">
+              No
+            </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h4 class="govuk-heading">Has the client recently separated or divorced?</h4>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="divorced-1" name="divorced" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="divorced-1">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="divorced-2" name="divorced" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="divorced-2">
+              No
+            </label>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <h3 class="govuk-heading-xl">
+          Partner Information
+        </h3>
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h4 class="govuk-heading">Having consideration for our definition of partner and the guidance provided, does
+                the client have a partner?</h4>
+                <span class="govuk-c-fieldset__hint">Please answer yes at this stage even if they hold a contrary interest to the
+                proceedings applied for.</span>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="partner-1" name="partner" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="partner-1">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="partner-2" name="partner" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="partner-2">
+              No
+            </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <h3 class="govuk-heading-xl">
+          Passporting Benefits
+          </h3>
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h4 class="govuk-heading">Is the client receiving a passported benefit?</h4>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="passported-1" name="passported" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="passported-1">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="passported-2" name="passported" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="passported-2">
+              No
+            </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+        </form>
 
       </div>
 
