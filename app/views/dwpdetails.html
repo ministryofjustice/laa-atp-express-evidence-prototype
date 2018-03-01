@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Question page {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype  {% endblock %} {% block content %}
 
 <div class="govuk-o-width-container">
 
@@ -32,7 +32,7 @@
               It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
             </span>
           </label>
-          <input class="govuk-c-input govuk-!-width-one-third" id="national-insurance-number" name="national-insurance-number" type="text">
+          <input class="govuk-c-input govuk-!-width-one-third" id="national-insurance-number" name="national-insurance-number" type="text" required>
 
           <fieldset class="govuk-c-fieldset">
             <legend class="govuk-c-fieldset__legend">
@@ -45,19 +45,19 @@
                 <label class="govuk-c-label govuk-c-date-input__label" for="dob-day">
                   Day
                 </label>
-                <input class="govuk-c-input govuk-c-date-input__input" id="dob-day" name="dob-day" type="text">
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-day" name="dob-day" type="text" required>
               </div>
               <div class="govuk-c-date-input__item govuk-c-date-input__item--month">
                 <label class="govuk-c-label govuk-c-date-input__label" for="dob-month">
                   Month
                 </label>
-                <input class="govuk-c-input govuk-c-date-input__input" id="dob-month" name="dob-month" type="text">
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-month" name="dob-month" type="text" required>
               </div>
               <div class="govuk-c-date-input__item govuk-c-date-input__item--year">
                 <label class="govuk-c-label govuk-c-date-input__label" for="dob-year">
                   Year
                 </label>
-                <input class="govuk-c-input govuk-c-date-input__input" id="dob-year" name="dob-year" type="text">
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-year" name="dob-year" type="text" required>
               </div>
             </div>
           </fieldset>
