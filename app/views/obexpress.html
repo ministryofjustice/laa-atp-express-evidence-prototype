@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Question page {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype  {% endblock %} {% block content %}
 
 <div class="govuk-o-width-container">
 
@@ -28,14 +28,14 @@
                 <span class="govuk-c-fieldset__hint">This will involve automated evidence collection from your bank, HMRC and the Department of Work and Pensions</span>
               </legend>
               <div class="govuk-c-radios__item">
-                <input class="govuk-c-radios__input" id="changed-name-1" name="changedName" type="radio" value="yes">
-                <label class="govuk-c-label govuk-c-radios__label" for="changed-name-1">
+                <input class="govuk-c-radios__input" id="evidence-information-1" name="evidenceInformation" type="radio" value="yes">
+                <label class="govuk-c-label govuk-c-radios__label" for="evidence-information-1">
                   Yes
                 </label>
               </div>
               <div class="govuk-c-radios__item">
-                <input class="govuk-c-radios__input" id="changed-name-2" name="changedName" type="radio" value="no" checked>
-                <label class="govuk-c-label govuk-c-radios__label" for="changed-name-2">
+                <input class="govuk-c-radios__input" id="evidence-information-2" name="evidenceInformation" type="radio" value="no" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="evidence-information-2">
                   No
                 </label>
               </div>
