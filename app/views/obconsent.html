@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Evidence submission prototype  {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
 
 <div class="govuk-o-width-container">
 
@@ -12,9 +12,9 @@
     </p>
   </div>
 
-  <a class="govuk-c-back-link" href="/obexpress">Back</a>
-
   <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 3 of 16</b></p>
 
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
@@ -29,7 +29,6 @@
               </legend>
 
               <p class="govuk-body">Blurb about safety, ease and the different sources to consent to:</p>
-
 
               <div class="govuk-heading-m"><img src="public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"> Open banking</div>
 
@@ -104,7 +103,8 @@
             </fieldset>
           </div>
 
-          <input class="govuk-c-button" type="submit" value="Continue">
+          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-c-back-link" href="/obexpress">Back</a>
 
         </form>
 

@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} QEvidence submission prototype  {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} QEvidence submission prototype {% endblock %} {% block content %}
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 
@@ -14,9 +14,9 @@
     </p>
   </div>
 
-  <a class="govuk-c-back-link" href="/empstatus">Back</a>
-
   <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 10 of 16</b></p>
 
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item">
@@ -675,7 +675,8 @@
             </table>
           </div>
 
-          <input class="govuk-c-button" type="submit" value="Continue">
+          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-c-back-link" href="/empstatus">Back</a>
 
         </form>
       </div>
