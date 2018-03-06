@@ -1,10 +1,4 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-  Evidence submission prototype
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
 
 <div class="govuk-o-width-container">
 
@@ -35,9 +29,10 @@
 
           <div class="govuk-o-form-group"><label class="govuk-c-label" for="national-insurance-number">
             Enter the value of your stocks or shares
-          </label>
-          <input class="govuk-c-input govuk-!-width-two-thirds" id="national-insurance-number" name="national-insurance-number" type="text">
-        </div>
+
+          </label> <br>£
+            <input class="govuk-c-input govuk-!-width-two-thirds" id="cap-shares" name="cap-shares" placeholder="0.00" type="number">
+          </div>
           <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
           <a class="govuk-c-back-link" href="/capitalselect">Back</a>
 
