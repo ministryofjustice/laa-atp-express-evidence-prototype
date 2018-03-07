@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 3 of 17</b></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <form class="form" action="/generic/obbank" method="post">
+
+          <div class="govuk-c-checkboxes">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h1 class="govuk-heading-xl">Can we collect this information for you?</h1>
+              </legend>
+
+              <p class="govuk-body">To be able to collect your financial information we need access to:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>your bank or building society account</li>
+                <li>your tax information</li>
+              </ul>
+
+              <p class="govuk-body">If you give us permission, we can collect this kind of information from your bank and other government departments. We may still need help with other types of information.</p>
+
+              <div class="panel panel-border-wide">
+                <p>We'll only connect to your bank or building society for this application.</p>
+              </div>
+
+              <div class="govuk-heading-m">Your bank account</div>
+
+              <div class="govuk-c-checkboxes__item">
+                <input class="govuk-c-checkboxes__input" id="open-banking" name="open-banking" type="checkbox">
+
+                <label class="govuk-c-label govuk-c-checkboxes__label" for="open-banking">
+                  We can access your bank or building society account
+                </label>
+              </div>
+              </br>
+              <div class="govuk-heading-m">Income, tax and benefits</div>
+
+              <div class="govuk-c-checkboxes__item">
+                <input class="govuk-c-checkboxes__input" id="other-departments" name="other-departments" type="checkbox">
+                <label class="govuk-c-label govuk-c-checkboxes__label" for="other-departments">
+                  We can access your tax information and benefit status
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-c-back-link" href="/generic/obexpress">Back</a>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

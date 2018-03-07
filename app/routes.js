@@ -11,8 +11,8 @@ router.get('/crime-start', function (req, res) {
   res.render('crime-start')
 });
 
-router.get('/civil-start', function (req, res) {
-  res.render('civil-start')
+router.get('civil/start', function (req, res) {
+  res.render('/civil/start.html')
 });
 
 router.get('/generic-start', function (req, res) {

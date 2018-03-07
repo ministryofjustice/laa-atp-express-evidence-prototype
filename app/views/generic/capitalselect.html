@@ -1,0 +1,75 @@
+{% extends "layout.html" %} {% block page_title %} Question page {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 13 of 17</b></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <form class="form" action="/generic/capitalshares" method="post">
+
+          <div class="govuk-c-checkboxes">
+            <div class="govuk-o-form-group">
+              <fieldset class="govuk-c-fieldset">
+                <legend class="govuk-c-fieldset__legend">
+                  <h1 class="govuk-heading-xl">Capital and other assets</h1>
+                  <span class="govuk-c-fieldset__hint">Do you or your partner have any of the following:</span>
+                </legend>
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="nationality-1" name="nationality" type="checkbox" value="british">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="nationality-1">
+                  National savings certificates
+                </label>
+                </div>
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="nationality-2">
+                  Premium bonds
+                </label>
+                </div>
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="nationality-1" name="nationality" type="checkbox" value="british">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="nationality-1">
+                  Capital bonds
+                </label>
+                </div>
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="nationality-1" name="nationality" type="checkbox" value="british">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="nationality-1">
+                  Stocks or shares
+                </label>
+                </div>
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="nationality-3">
+                  Any other savings
+                </label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-c-back-link" href="/generic/capital-assets">Back</a>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
