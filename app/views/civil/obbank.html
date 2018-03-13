@@ -173,39 +173,48 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <p class="govuk-body"><b>Step 7 of 17</b></p>
+      <p class="govuk-body"><b>Step 5 of 15</b></p>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h1 class="govuk-heading-xl">
-          Choose your bank
+<<<<<<< HEAD
+          Enter your online banking details
           </h1>
+=======
+                Log in to your online banking
+                </h1>
+>>>>>>> 37694e4fec9cdd1a373073781d6b2e5e6e3a502e
 
-          <form class="form" id="bankForm" action="/civil/bank-success" method="get">
+          <form class="form" id="bankForm" action="/generic/bank-success" method="get">
 
             <div class="govuk-c-radios">
               <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
                 <legend class="govuk-c-fieldset__legend">
-                  <h4 class="govuk-heading">Please select your bank or building society from this list. You will be asked to log in to your account.</h4>
+<<<<<<< HEAD
+                  <p class="govuk-heading">You must share details of all your bank accounts, even if they have no money. Make sure you keep your log in and password details private.</p>
+=======
+                  <p class="govuk-heading">Choose the bank where you have your main current account. Make sure you keep your log in and password details private.</p>
+>>>>>>> 37694e4fec9cdd1a373073781d6b2e5e6e3a502e
                 </legend>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" checked="checked" required>
+                  <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" required>
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-1">
-                  Togetherbank
-                </label>
+                        Togetherbank
+                      </label>
                 </div>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="bank-2" name="bank" type="radio" value="myBank">
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-2">
-                  myBank
-                </label>
+                        myBank
+                      </label>
                 </div>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="bank-3" name="bank" type="radio" value="HappyBank">
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-3">
-                  HappyBank
-                </label>
+                        HappyBank
+                      </label>
                 </div>
               </fieldset>
             </div>
@@ -213,25 +222,33 @@
             <div class="govuk-c-radios">
               <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
                 <legend class="govuk-c-fieldset__legend">
-                  <h4 class="govuk-heading">Do you have another bank account?</h4>
+<<<<<<< HEAD
+                  <h4 class="govuk-heading">Do you have an account or ISA with a different bank or building society?</h4>
+=======
+                  <p class="govuk-heading">Do you have an account or ISA with a different bank or building society?</p>
+>>>>>>> 37694e4fec9cdd1a373073781d6b2e5e6e3a502e
                 </legend>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="other-bank-1" name="other-bank" type="radio" value="yes" required>
                   <label class="govuk-c-label govuk-c-radios__label" for="other-bank-1">
-                  Yes
-                </label>
+                        Yes
+                      </label>
                 </div>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="other-bank-2" name="other-bank" type="radio" value="no" checked="checked">
+                  <input class="govuk-c-radios__input" id="other-bank-2" name="other-bank" type="radio" value="no">
                   <label class="govuk-c-label govuk-c-radios__label" for="other-bank-2">
-                  No
-                </label>
+                        No
+                      </label>
                 </div>
               </fieldset>
             </div>
 
             <input class="govuk-c-button" id="myBtn" value="Continue" onclick="setTimeout(modalOpen, 1000)" style="width:auto;" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="govuk-c-back-link" href="/civil/empstatus">Back</a>
+<<<<<<< HEAD
+            <a class="govuk-c-back-link" href="/civil/dwpconf">Back</a>
+=======
+            <a class="govuk-c-back-link" href="/generic/obconsent">Back</a>
+>>>>>>> 37694e4fec9cdd1a373073781d6b2e5e6e3a502e
 
           </form>
         </div>
@@ -250,30 +267,28 @@
 
       <div id="step1" class="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
-        <br>
-        <h4>Please log in to your Togetherbank online account</h4>
-        <br>
+
         <label for="uname"><b>Username</b></label>
         <input class="uname" type="text" placeholder="Enter Username" name="uname" style="width: 100%;
-              padding: 12px 20px;
-              margin: 8px 0;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-sizing: border-box;" required>
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    box-sizing: border-box;" required>
 
         <label for="psw"><b>Password</b></label>
         <input class="pword" type="password" placeholder="Enter Password" name="psw" style="width: 100%;
-              padding: 12px 20px;
-              margin: 8px 0;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-sizing: border-box;" required>
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    box-sizing: border-box;" required>
 
         <button id="login" type="button">Continue</button>
 
         <div class="modal-footer" style="background-color:#f1f1f1">
           <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
-          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+          <span class="psw">I've forgotten my <a href="#">log in details</a></span>
         </div>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
@@ -282,24 +297,26 @@
 
       <div type="modalpage" id="step2" class="hideMe" class="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
+<<<<<<< HEAD
         <br>
-        <h4>Your memorable data</h4>
-        <br>
-        <text>Enter the 2nd, 6th and 12th letters from your memorable word</text>
+        <text>Enter the 2nd, 6th and 12th letters from your memorable word.</text>
+=======
+        <text>Enter the 2nd, 6th and 12th characters from your memorable word.</text>
+>>>>>>> 37694e4fec9cdd1a373073781d6b2e5e6e3a502e
         <br>
         <br>
         <div class="block">
-          <label for="char1" style="float: left; width: 2em; margin-right: 1em;"><b>2nd</b></label>
+          <label for="char1" style="float: left; width: 2em; margin-right: 1em;"><b>2</b></label>
           <input type="password" name="char1" maxlength="1" size="2" required>
         </div>
         <br>
         <div class="block">
-          <label for="char2" style="float: left; width: 2em; margin-right: 1em;"><b>6th</b></label>
+          <label for="char2" style="float: left; width: 2em; margin-right: 1em;"><b>6</b></label>
           <input type="password" name="char2" maxlength="1" size="2" required>
         </div>
         <br>
         <div class="block">
-          <label for="char3" style="float: left; width: 2em; margin-right: 1em;"><b>12th</b></label>
+          <label for="char3" style="float: left; width: 2em; margin-right: 1em;"><b>12</b></label>
           <input type="password" name="char3" maxlength="1" size="2" required>
         </div>
         <br>
@@ -307,7 +324,7 @@
         <button id="memorable" type="button">Log in securely now</button>
         <div class="modal-footer" style="background-color:#f1f1f1">
           <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
-          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+          <span class="psw">I've forgotten my <a href="#">log in details</a></span>
         </div>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
@@ -317,34 +334,43 @@
       <div type="modalpage" id="step4" class="hideMe" class="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Authorisation</b></div>
         <br>
-        <h3>Please authorise us to access you accounts</h3>
-        <br>
-        <p>Before you authorise, be aware of the following information</p>
+        <h4>I agree to share details for:</h4>
         <ul>
-          <li>The Legal Aid Agency will only use this data to support your application for Legal Aid</li>
-          <li>Your data won't be used for any other purpose</li>
-          <li>The Legal Aid Agency can access your data for up to 15 days</li>
+          <li>my account balance</li>
+          <li>3 months' transactions</li>
+          <li>any direct debits or standing orders</li>
         </ul>
-        <button id="authorise" type="button" onclick="setTimeout(modalCloseAndSubmit, 1000)">Authorise</button>
+        <button id="authorise" type="button">Authorise</button>
         <button id="deny" type="button" onclick="setTimeout(modalClose, 1000)">Deny</button>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
         </div>
       </div>
 
+<<<<<<< HEAD
       <div type="modalpage" id="step3" class="hideMe" class="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b> Select account(s)</b></div>
-        <br>
-        <h3>Welcome back to Togetherbank</h3><br>
-        <h4>The Legal Aid Agency have requested access to your bank accounts</h4>
-        <p>Please select the accounts you want to grant access to. The Legal Aid Agency will be able to access</p>
-        <ul>
-          <li>the account's balance</li>
-          <li>3 month's worth of transactions</li>
-          <li>a list of direct debits and standing orders</li>
-        </ul>
-        <p>for each account you select.</p>
 
+          <p>Select the account(s) you want to share:</p>
+          <br>
+=======
+      <div type="modalpage" id="step5" class="hideMe" class="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log out</b></div>
+        <br>
+        <h4 align="center">Now log out of your online banking</h4>
+        <br>
+        <p class="govuk-body" align="center">This will allow you to continue your application.</p>
+        <button id="final" type="button" onclick="setTimeout(modalCloseAndSubmit, 1000)">Log out</button>
+        <div class="imgcontainer">
+          <img src="../public/images/secure-connection.png" alt="padlock">
+        </div>
+      </div>
+
+      <div type="modalpage" id="step3" class="hideMe" class="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Select account(s)</b></div>
+>>>>>>> 37694e4fec9cdd1a373073781d6b2e5e6e3a502e
+
+        <p>Select the account(s) you want to share:</p>
         <form action="">
           <div class="inline-field">
             <input type="checkbox" name="account1" value="Current"><label for="account1"><b>Togetherbank Current Account</b><br>Account Number: 123456789</label>
@@ -388,7 +414,7 @@
   </script>
 
   <!--Close the modal and submit form at end of bank process if no more banks
-    need to be checked-->
+          need to be checked-->
   <script>
     function modalCloseAndSubmit() {
 
@@ -427,6 +453,16 @@
       $("#step4").removeClass('hideMe');
     });
   </script>
+
+
+  <!--move from page 4 to page 5 -->
+  <script>
+    $("#authorise").click(function() {
+      $("#step4").addClass('hideMe');
+      $("#step5").removeClass('hideMe');
+    });
+  </script>
+
 
   <!-- reset the modal -->
   <script>
