@@ -18,16 +18,18 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <p class="govuk-body"><b>Step 1 of 17</b></p>
+    <p class="govuk-body"><b>Step 1 of 15</b></p>
 
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-xl">
-          Evidence 1: Questions to inform evidential requirements
+          What is your current financial situation?
         </h1>
 
-        <form class="form" action="/crime/obexpress" method="post">
+        <p class="govuk-body">This information helps us check your financial details for the last 3 months.</p>
+
+        <form class="form" action="/crime/obconsent" method="post">
 
           <div class="govuk-c-radios">
             <fieldset class="govuk-c-fieldset">
@@ -73,7 +75,7 @@
           <div class="govuk-c-radios">
             <fieldset class="govuk-c-fieldset">
               <legend class="govuk-c-fieldset__legend">
-                <h4 class="govuk-heading">Have you ceased employment within the last three months?</h4>
+                <h4 class="govuk-heading">Have you left your job within the last 3 months?</h4>
               </legend>
               <div class="govuk-c-radios__item">
                 <input class="govuk-c-radios__input" id="ceased-employment-1" name="ceased-employment" type="radio" value="yes" required>
@@ -84,6 +86,49 @@
               <div class="govuk-c-radios__item">
                 <input class="govuk-c-radios__input" id="ceased-employment-2" name="ceased-employment" type="radio" value="no">
                 <label class="govuk-c-label govuk-c-radios__label" for="ceased-employment-2">
+              No
+            </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h4 class="govuk-heading">Are you currently receiving benefits?</h4>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="benefits-1" name="benefits" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="benefits-1">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="benefits-2" name="benefits" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="benefits-2">
+              No
+            </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <h4 class="govuk-heading">Do you earn over £12,475 a year?</h4>
+                <span class="govuk-c-label__hint">
+              This is an average weekly salary of £239.90.
+            </span>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="earnings-1" name="earnings" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="earnings-1">
+              Yes
+            </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="earnings-2" name="earnings" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="earnings-2">
               No
             </label>
               </div>
