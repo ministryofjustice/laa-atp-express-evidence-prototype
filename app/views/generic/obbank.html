@@ -173,7 +173,7 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <p class="govuk-body"><b>Step 3 of 15</b></p>
+      <p class="govuk-body"><b>Step 5 of 13</b></p>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
@@ -190,7 +190,7 @@
                   <p class="govuk-heading">Choose the bank where you have your main current account. Make sure you keep your log in and password details private.</p>
                 </legend>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" checked="checked" required>
+                  <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" required>
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-1">
                   Togetherbank
                 </label>
@@ -222,7 +222,7 @@
                 </label>
                 </div>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="other-bank-2" name="other-bank" type="radio" value="no" checked="checked">
+                  <input class="govuk-c-radios__input" id="other-bank-2" name="other-bank" type="radio" value="no">
                   <label class="govuk-c-label govuk-c-radios__label" for="other-bank-2">
                   No
                 </label>
@@ -231,7 +231,7 @@
             </div>
 
             <input class="govuk-c-button" id="myBtn" value="Continue" onclick="setTimeout(modalOpen, 1000)" style="width:auto;" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="govuk-c-back-link" href="/generic/obconsent">Back</a>
+            <a class="govuk-c-back-link" href="/generic/dwpconf">Back</a>
 
           </form>
         </div>
@@ -318,8 +318,20 @@
           <li>3 months' transactions</li>
           <li>any direct debits or standing orders</li>
         </ul>
-        <button id="authorise" type="button" onclick="setTimeout(modalCloseAndSubmit, 1000)">Authorise</button>
+        <button id="authorise" type="button">Authorise</button>
         <button id="deny" type="button" onclick="setTimeout(modalClose, 1000)">Deny</button>
+        <div class="imgcontainer">
+          <img src="../public/images/secure-connection.png" alt="padlock">
+        </div>
+      </div>
+
+      <div type="modalpage" id="step5" class="hideMe" class="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log out</b></div>
+        <br>
+        <h4 align="center">Now log out of your online banking</h4>
+        <br>
+        <p class="govuk-body" align="center">This will allow you to continue your application.</p>
+        <button id="final" type="button" onclick="setTimeout(modalCloseAndSubmit, 1000)">Log out</button>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
         </div>
@@ -412,6 +424,16 @@
     });
   </script>
 
+
+  <!--move from page 4 to page 5 -->
+  <script>
+    $("#authorise").click(function() {
+      $("#step4").addClass('hideMe');
+      $("#step5").removeClass('hideMe');
+    });
+  </script>
+
+
   <!-- reset the modal -->
   <script>
     $("#myBtn").click(function() {
@@ -419,6 +441,7 @@
       $("#step2").addClass('hideMe');
       $("#step3").addClass('hideMe');
       $("#step4").addClass('hideMe');
+      $("#step5").addClass('hideMe');
     });
   </script>
 
