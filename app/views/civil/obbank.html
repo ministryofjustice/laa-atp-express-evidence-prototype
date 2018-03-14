@@ -173,13 +173,13 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <p class="govuk-body"><b>Step 5 of 14</b></p>
+      <p class="govuk-body"><b>Step 5 of 15</b></p>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h1 class="govuk-heading-xl">
-                Log in to your online banking
+          Log in to your online banking
           </h1>
 
           <form class="form" id="bankForm" action="/civil/bank-success" method="get">
@@ -187,57 +187,30 @@
             <div class="govuk-c-radios">
               <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
                 <legend class="govuk-c-fieldset__legend">
-
-                  <p class="govuk-heading">You must share details of all your bank accounts, even if they have no money. Make sure you keep your log in and password details private.</p>
-
                   <p class="govuk-heading">Choose the bank where you have your main current account. Make sure you keep your log in and password details private.</p>
-
                 </legend>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" required>
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-1">
-                        Togetherbank
-                      </label>
+                  Togetherbank
+                </label>
                 </div>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="bank-2" name="bank" type="radio" value="myBank">
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-2">
-                        myBank
-                      </label>
+                  myBank
+                </label>
                 </div>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="bank-3" name="bank" type="radio" value="HappyBank">
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-3">
-                        HappyBank
-                      </label>
-                </div>
-              </fieldset>
-            </div>
-
-            <div class="govuk-c-radios">
-              <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
-                <legend class="govuk-c-fieldset__legend">
-
-                  <h4 class="govuk-heading">Do you have an account or ISA with a different bank or building society?</h4>
-
-                </legend>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="other-bank-1" name="other-bank" type="radio" value="yes" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="other-bank-1">
-                        Yes
-                      </label>
-                </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="other-bank-2" name="other-bank" type="radio" value="no">
-                  <label class="govuk-c-label govuk-c-radios__label" for="other-bank-2">
-                        No
-                      </label>
+                  HappyBank
+                </label>
                 </div>
               </fieldset>
             </div>
 
             <input class="govuk-c-button" id="myBtn" value="Continue" onclick="setTimeout(modalOpen, 1000)" style="width:auto;" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
-
             <a class="govuk-c-back-link" href="/civil/dwpconf">Back</a>
 
           </form>
@@ -260,25 +233,25 @@
 
         <label for="uname"><b>Username</b></label>
         <input class="uname" type="text" placeholder="Enter Username" name="uname" style="width: 100%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    box-sizing: border-box;" required>
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              box-sizing: border-box;" required>
 
         <label for="psw"><b>Password</b></label>
         <input class="pword" type="password" placeholder="Enter Password" name="psw" style="width: 100%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    box-sizing: border-box;" required>
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              box-sizing: border-box;" required>
 
         <button id="login" type="button">Continue</button>
 
         <div class="modal-footer" style="background-color:#f1f1f1">
           <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
-          <span class="psw">I've forgotten my <a href="#">log in details</a></span>
+          <span class="psw">I've forgotten my <a href="#">login details</a></span>
         </div>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
@@ -287,9 +260,7 @@
 
       <div type="modalpage" id="step2" class="hideMe" class="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
-
         <text>Enter the 2nd, 6th and 12th characters from your memorable word.</text>
-
         <br>
         <br>
         <div class="block">
@@ -311,7 +282,7 @@
         <button id="memorable" type="button">Log in securely now</button>
         <div class="modal-footer" style="background-color:#f1f1f1">
           <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
-          <span class="psw">I've forgotten my <a href="#">log in details</a></span>
+          <span class="psw">I've forgotten my <a href="#">login details</a></span>
         </div>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
@@ -348,6 +319,7 @@
 
       <div type="modalpage" id="step3" class="hideMe" class="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Select account(s)</b></div>
+
         <p>Select the account(s) you want to share:</p>
         <form action="">
           <div class="inline-field">
@@ -392,7 +364,7 @@
   </script>
 
   <!--Close the modal and submit form at end of bank process if no more banks
-          need to be checked-->
+    need to be checked-->
   <script>
     function modalCloseAndSubmit() {
 
