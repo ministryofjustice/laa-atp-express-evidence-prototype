@@ -223,12 +223,18 @@
   <div id="id01" class="modal">
 
     <form id="modal" class="modal-content animate">
-      <div>
+      <div id="header" style="hideMe">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close window">&times;</span>
         <img src="../public/images/bank.png" alt="Togetherbank logo">
       </div>
 
-      <div id="step1" class="container">
+      <div type="modalpage" id="step0" class="container">
+        <p style="govuk-body" align="center"><b>You are being redirected to your online banking</b></p>
+        <div align="center"><img src="../public/images/loading.gif"></div>
+        <p style="govuk-body" align="center"><b>This is a secure connection</b></p>
+      </div>
+
+      <div type="modalpage" id="step1" class="hideMe" lass="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
 
         <label for="uname"><b>Username</b></label>
@@ -353,6 +359,13 @@
   <script>
     function modalOpen() {
       document.getElementById('id01').style.display = 'block';
+
+      setTimeout(function() {
+        $("#step0").addClass('hideMe');
+        $("#header").removeClass('hideMe');
+        $("#step1").removeClass('hideMe');
+      }, 4000);
+
     }
   </script>
 
@@ -417,7 +430,9 @@
   <!-- reset the modal -->
   <script>
     $("#myBtn").click(function() {
-      $("#step1").removeClass('hideMe');
+      $("#step0").removeClass('hideMe');
+      $("#header").addClass('hideMe');
+      $("#step1").addClass('hideMe');
       $("#step2").addClass('hideMe');
       $("#step3").addClass('hideMe');
       $("#step4").addClass('hideMe');
