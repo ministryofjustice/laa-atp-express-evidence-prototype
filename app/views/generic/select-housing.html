@@ -1,0 +1,106 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<link href="/public/stylesheets/application-task.css" media="screen" rel="stylesheet" type="text/css" />
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step n of n</b></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">
+              Select your outgoings
+        </h2>
+
+        <p style="govuk-body">We've ordered your expenditure from largest to smallest</p>
+
+        <details>
+          <summary><span class="summary">Help with types of outgoings</span></summary>
+
+          <div class="panel panel-border-narrow">
+
+            <p style="govuk-body">
+              holding text
+            </p>
+
+          </div>
+        </details>
+
+        <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+          <thead class="govuk-c-table__head">
+            <tr class="govuk-c-table__row">
+              <th class="govuk-c-table__header" scope="col" width="300" style="border-width:thick;">Description</th>
+              <th class="govuk-c-table__header" scope="col" width="150" style="border-width:thick;">Date</th>
+              <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-c-table__body">
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="salary">&nbsp;&nbsp;&nbsp;MyLandlord Letting agents</label>
+                </div>
+              </td>
+              <td class="govuk-c-table__cell">18 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1200.00</td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="salary">&nbsp;&nbsp;&nbsp;Wiggly-tots Nursery</label>
+                </div>
+              </td>
+              <td class="govuk-c-table__cell">06 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="salary">&nbsp;&nbsp;&nbsp;KFC</label>
+                </div>
+              </td>
+              <td class="govuk-c-table__cell">24 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£27.00</td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="salary">&nbsp;&nbsp;&nbsp;Netflix</label>
+                </div>
+              </td>
+              <td class="govuk-c-table__cell">18 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£15.00</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+
+
+        <a class="govuk-c-button govuk-c-button" href="/generic/identify-outgoings-with-housing" role="button">Continue</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
