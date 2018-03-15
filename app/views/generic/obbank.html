@@ -210,26 +210,6 @@
               </fieldset>
             </div>
 
-            <div class="govuk-c-radios">
-              <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
-                <legend class="govuk-c-fieldset__legend">
-                  <p class="govuk-heading">Do you have an account or ISA with a different bank or building society?</p>
-                </legend>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="other-bank-1" name="other-bank" type="radio" value="yes" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="other-bank-1">
-                  Yes
-                </label>
-                </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="other-bank-2" name="other-bank" type="radio" value="no">
-                  <label class="govuk-c-label govuk-c-radios__label" for="other-bank-2">
-                  No
-                </label>
-                </div>
-              </fieldset>
-            </div>
-
             <input class="govuk-c-button" id="myBtn" value="Continue" onclick="setTimeout(modalOpen, 1000)" style="width:auto;" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
             <a class="govuk-c-back-link" href="/generic/dwpconf">Back</a>
 
@@ -243,29 +223,35 @@
   <div id="id01" class="modal">
 
     <form id="modal" class="modal-content animate">
-      <div>
+      <div id="header" style="hideMe">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close window">&times;</span>
         <img src="../public/images/bank.png" alt="Togetherbank logo">
       </div>
 
-      <div id="step1" class="container">
+      <div type="modalpage" id="step0" class="container">
+        <p style="govuk-body" align="center"><b>You are being redirected to your online banking</b></p>
+        <div align="center"><img src="../public/images/loading.gif"></div>
+        <p style="govuk-body" align="center"><b>This is a secure connection</b></p>
+      </div>
+
+      <div type="modalpage" id="step1" class="hideMe" lass="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
 
         <label for="uname"><b>Username</b></label>
         <input class="uname" type="text" placeholder="Enter Username" name="uname" style="width: 100%;
-              padding: 12px 20px;
-              margin: 8px 0;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-sizing: border-box;" required>
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;" required>
 
         <label for="psw"><b>Password</b></label>
         <input class="pword" type="password" placeholder="Enter Password" name="psw" style="width: 100%;
-              padding: 12px 20px;
-              margin: 8px 0;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-sizing: border-box;" required>
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;" required>
 
         <button id="login" type="button">Continue</button>
 
@@ -373,6 +359,13 @@
   <script>
     function modalOpen() {
       document.getElementById('id01').style.display = 'block';
+
+      setTimeout(function() {
+        $("#step0").addClass('hideMe');
+        $("#header").removeClass('hideMe');
+        $("#step1").removeClass('hideMe');
+      }, 4000);
+
     }
   </script>
 
@@ -384,7 +377,7 @@
   </script>
 
   <!--Close the modal and submit form at end of bank process if no more banks
-    need to be checked-->
+      need to be checked-->
   <script>
     function modalCloseAndSubmit() {
 
@@ -437,7 +430,9 @@
   <!-- reset the modal -->
   <script>
     $("#myBtn").click(function() {
-      $("#step1").removeClass('hideMe');
+      $("#step0").removeClass('hideMe');
+      $("#header").addClass('hideMe');
+      $("#step1").addClass('hideMe');
       $("#step2").addClass('hideMe');
       $("#step3").addClass('hideMe');
       $("#step4").addClass('hideMe');
