@@ -31,6 +31,60 @@
   input[type='radio']:checked:before {
     background: black;
   }
+
+
+  details summary {
+    display: inline-block;
+    color: #005ea5;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0.26316em;
+  }
+
+  details summary:hover {
+    color: #2b8cc4;
+  }
+
+  details summary:focus {
+    outline: 3px solid #ffbf47;
+  }
+
+  details .summary {
+    text-decoration: underline;
+  }
+
+  details .arrow {
+    margin-right: .35em;
+    font-style: normal;
+  }
+
+  .panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #bfc1c3;
+    padding: 0.78947em;
+    margin-bottom: 0.78947em;
+  }
+
+  .panel :first-child {
+    margin-top: 0;
+  }
+
+  .panel :only-child,
+  .panel :last-child {
+    margin-bottom: 0;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  .panel-border-narrow {
+    border-left-width: 5px;
+  }
 </style>
 
 <div class="govuk-o-width-container">

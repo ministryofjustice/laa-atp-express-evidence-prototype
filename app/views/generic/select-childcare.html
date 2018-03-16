@@ -31,6 +31,60 @@
   input[type='radio']:checked:before {
     background: black;
   }
+
+
+  details summary {
+    display: inline-block;
+    color: #005ea5;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0.26316em;
+  }
+
+  details summary:hover {
+    color: #2b8cc4;
+  }
+
+  details summary:focus {
+    outline: 3px solid #ffbf47;
+  }
+
+  details .summary {
+    text-decoration: underline;
+  }
+
+  details .arrow {
+    margin-right: .35em;
+    font-style: normal;
+  }
+
+  .panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #bfc1c3;
+    padding: 0.78947em;
+    margin-bottom: 0.78947em;
+  }
+
+  .panel :first-child {
+    margin-top: 0;
+  }
+
+  .panel :only-child,
+  .panel :last-child {
+    margin-bottom: 0;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  .panel-border-narrow {
+    border-left-width: 5px;
+  }
 </style>
 
 <div class="govuk-o-width-container">
@@ -78,38 +132,43 @@
               <th class="govuk-c-table__header" scope="col" width="300" style="border-width:thick;">Description</th>
               <th class="govuk-c-table__header" scope="col" width="150" style="border-width:thick;">Date</th>
               <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">&nbsp;</th>
             </tr>
           </thead>
           <tbody class="govuk-c-table__body">
             <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary">&nbsp;&nbsp;&nbsp;Wiggly-tots Nursery</label>
-                </div>
-              </td>
-              <td class="govuk-c-table__cell">06 Jan 2018</td>
-              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
-            </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary">&nbsp;&nbsp;&nbsp;KFC</label>
-                </div>
-              </td>
+              <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
               <td class="govuk-c-table__cell">24 Jan 2018</td>
-              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£27.00</td>
-            </tr>
-            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
               <td class="govuk-c-table__cell">
                 <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary">&nbsp;&nbsp;&nbsp;Netflix</label>
+                  <label><input type="radio" id='regular' name="outgoings"></label>
                 </div>
               </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">KFC</td>
+              <td class="govuk-c-table__cell">18 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£27.00</td>
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="outgoings"></label>
+                </div>
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">Netflix</td>
               <td class="govuk-c-table__cell">18 Jan 2018</td>
               <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£15.00</td>
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="outgoings"></label>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
+
         <br>
 
         <a class="govuk-c-button govuk-c-button" href="/generic/identify-outgoings-housing-childcare" role="button">Continue</a>&nbsp;&nbsp;&nbsp;&nbsp;
