@@ -1,0 +1,60 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 12 of 24</b></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">
+              Do you have other income and outgoings that are not paid into your bank?
+        </h2>
+
+        <div class="govuk-c-radios">
+          <fieldset class="govuk-c-fieldset">
+            <legend class="govuk-c-fieldset__legend">
+              <h4 class="govuk-heading">You will need to provide evidence to support these transactions.</h4>
+            </legend>
+            <div class="govuk-c-radios__item">
+              <input class="govuk-c-radios__input" id="non-bank-money-1" name="non-bank-money" type="radio" value="yes" required>
+              <label class="govuk-c-label govuk-c-radios__label" for="non-bank-money-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-c-radios__item">
+              <input class="govuk-c-radios__input" id="non-bank-money-2" name="non-bank-money" type="radio" value="no">
+              <label class="govuk-c-label govuk-c-radios__label" for="non-bank-money-2">
+                 No
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <a class="govuk-c-button govuk-c-button" href="/generic/identify-outgoings" role="button">Continue</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="govuk-c-back-link" href="/generic/identify-income-salary-other">Back</a>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
