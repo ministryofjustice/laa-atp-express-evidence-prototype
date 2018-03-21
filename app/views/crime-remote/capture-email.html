@@ -1,0 +1,45 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 3 of 15</b></p>
+
+    <div class="govuk-o-grid">
+
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Enter you e-mail address
+        </h1>
+
+        <form class="form" action="/crime-remote/remote-notification" method="post">
+
+          <label class="govuk-c-label" for="national-insurance-number">
+            Enter your E-mail address
+          </label>
+          <input class="govuk-c-input govuk-!-width-one-third" id="national-insurance-number" name="national-insurance-number" type="text" required>
+          <br>
+          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <a class="govuk-c-back-link" href="/crime/obconsent">Back</a>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

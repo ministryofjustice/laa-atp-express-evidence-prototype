@@ -1,0 +1,82 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 6 of 15</b></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">
+          You have succesfully shared your account information
+        </h2>
+
+        <p class="govuk-body">You have been logged out of your online banking.</p>
+
+        <p class="govuk-body">We have downloaded your transaction history for the last 3 months. You can use this to tell us more about your incoming and outgoing payments.</p>
+
+        <h2 class="govuk-heading-m">
+          Your account(s)
+        </h2>
+
+        <div>
+          <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+            <thead class="govuk-c-table__head">
+              <tr class="govuk-c-table__row">
+                <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Account number</th>
+                <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Sort code</th>
+                <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Balance</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-c-table__body">
+              <tr class="govuk-c-table__row">
+                <td class="govuk-c-table__cell">Togetherbank Current account</td>
+                <td class="govuk-c-table__cell govuk-c-table__cell--numeric">123456789</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">£470.00</td>
+              </tr>
+              <tr class="govuk-c-table__row">
+                <td class="govuk-c-table__cell">Togetherbank Savings account</td>
+                <td class="govuk-c-table__cell govuk-c-table__cell--numeric">987654321</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1400.00</td>
+              </tr>
+              <tr class="govuk-c-table__row">
+                <td class="govuk-c-table__cell">Togetherbank Cash ISA</td>
+                <td class="govuk-c-table__cell govuk-c-table__cell--numeric">248163264</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+
+          <a class="govuk-c-button govuk-c-button" href="/crime-remote/citizen-final-branch" role="button">Continue</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-c-back-link" href="/crime/obbank">Back</a>
+
+        </div>
+
+      </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

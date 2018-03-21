@@ -1,0 +1,444 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<head>
+
+  <script src="../public/javascripts/jquery-1.11.3.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    div[type=modalpage] {
+      margin: 30px;
+    }
+
+    /* Set a style for all buttons */
+
+    button {
+      background-color: #000000;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #000000;
+    }
+
+    /* Center the image and position the close button */
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+      padding-top: 30px;
+    }
+
+    /* Modal Content/Box */
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 500px;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {
+        -webkit-transform: scale(0)
+      }
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes animatezoom {
+      from {
+        transform: scale(0)
+      }
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+
+    .hideMe {
+      display: none;
+    }
+
+    .inline-field input,
+    .inline-field label {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: top;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+        <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <p class="govuk-body"><b>Step 5 of 15</b></p>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h1 class="govuk-heading-xl">
+          Log in to your online banking
+          </h1>
+
+          <form class="form" id="bankForm" action="/crime-remote/citizen-bank-success" method="get">
+
+            <div class="govuk-c-radios">
+              <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
+                <legend class="govuk-c-fieldset__legend">
+                  <p class="govuk-heading">Choose the bank where you have your main current account. Make sure you keep your log in and password details private.</p>
+                </legend>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="bank-1">
+                  Togetherbank
+                </label>
+                </div>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="bank-2" name="bank" type="radio" value="myBank">
+                  <label class="govuk-c-label govuk-c-radios__label" for="bank-2">
+                  myBank
+                </label>
+                </div>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="bank-3" name="bank" type="radio" value="HappyBank">
+                  <label class="govuk-c-label govuk-c-radios__label" for="bank-3">
+                  HappyBank
+                </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <input class="govuk-c-button" id="myBtn" value="Continue" onclick="setTimeout(modalOpen, 1000)" style="width:auto;" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="govuk-c-back-link" href="/crime/dwpconf">Back</a>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- modal banking window -->
+  <div id="id01" class="modal">
+
+    <form id="modal" class="modal-content animate">
+      <div id="header" style="hideMe">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close window">&times;</span>
+        <img src="../public/images/bank.png" alt="Togetherbank logo">
+      </div>
+
+      <div type="modalpage" id="step0" class="container">
+        <p style="govuk-body" align="center"><b>You are being redirected to your online banking</b></p>
+        <div align="center"><img src="../public/images/loading.gif"></div>
+        <p style="govuk-body" align="center"><b>This is a secure connection</b></p>
+      </div>
+
+      <div type="modalpage" id="step1" class="hideMe" lass="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
+
+        <label for="uname"><b>Username</b></label>
+        <input class="uname" type="text" placeholder="Enter Username" name="uname" style="width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input class="pword" type="password" placeholder="Enter Password" name="psw" style="width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;" required>
+
+        <button id="login" type="button">Continue</button>
+
+        <div class="modal-footer" style="background-color:#f1f1f1">
+          <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
+          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+        </div>
+        <div class="imgcontainer">
+          <img src="../public/images/secure-connection.png" alt="padlock">
+        </div>
+      </div>
+
+      <div type="modalpage" id="step2" class="hideMe" class="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
+        <text>Enter the 2nd, 6th and 12th characters from your memorable word.</text>
+        <br>
+        <br>
+        <div class="block">
+          <label for="char1" style="float: left; width: 2em; margin-right: 1em;"><b>2</b></label>
+          <input type="password" name="char1" maxlength="1" size="2" required>
+        </div>
+        <br>
+        <div class="block">
+          <label for="char2" style="float: left; width: 2em; margin-right: 1em;"><b>6</b></label>
+          <input type="password" name="char2" maxlength="1" size="2" required>
+        </div>
+        <br>
+        <div class="block">
+          <label for="char3" style="float: left; width: 2em; margin-right: 1em;"><b>12</b></label>
+          <input type="password" name="char3" maxlength="1" size="2" required>
+        </div>
+        <br>
+        <br>
+        <button id="memorable" type="button">Log in securely now</button>
+        <div class="modal-footer" style="background-color:#f1f1f1">
+          <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
+          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+        </div>
+        <div class="imgcontainer">
+          <img src="../public/images/secure-connection.png" alt="padlock">
+        </div>
+      </div>
+
+      <div type="modalpage" id="step4" class="hideMe" class="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Authorisation</b></div>
+        <br>
+        <h4>I agree to share details for:</h4>
+        <ul>
+          <li>my account balance</li>
+          <li>3 months' transactions</li>
+          <li>any direct debits or standing orders</li>
+        </ul>
+        <button id="authorise" type="button">Authorise</button>
+        <button id="deny" type="button" onclick="setTimeout(modalClose, 1000)">Deny</button>
+        <div class="imgcontainer">
+          <img src="../public/images/secure-connection.png" alt="padlock">
+        </div>
+      </div>
+
+      <div type="modalpage" id="step5" class="hideMe" class="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log out</b></div>
+        <br>
+        <h4 align="center">Now log out of your online banking</h4>
+        <br>
+        <p class="govuk-body" align="center">This will allow you to continue your application.</p>
+        <button id="final" type="button" onclick="setTimeout(modalCloseAndSubmit, 1000)">Log out</button>
+        <div class="imgcontainer">
+          <img src="../public/images/secure-connection.png" alt="padlock">
+        </div>
+      </div>
+
+      <div type="modalpage" id="step3" class="hideMe" class="container">
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Select account(s)</b></div>
+
+        <p>Select the account(s) you want to share:</p>
+        <form action="">
+          <div class="inline-field">
+            <input type="checkbox" name="account1" value="Current"><label for="account1"><b>Togetherbank Current Account</b><br>Account Number: 123456789</label>
+            <hr>
+            <input type="checkbox" name="account2" value="Savings"><label for="account2"><b>Togetherbank Savings Account</b><br>Account Number: 987654321</label>
+            <hr>
+            <input type="checkbox" name="account3" value="Savings"><label for="account3"><b>Togetherbank Cash ISA</b><br>Account Number: 248163264</label>
+          </div>
+        </form>
+        <br>
+
+        <button id="approve" type="button">Next</button>
+
+        <div class="modal-footer" style="background-color:#f1f1f1">
+          <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
+        </div>
+        <div class="imgcontainer">
+          <img src="../public/images/secure-connection.png" alt="padlock">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!--Get the modal-->
+  <script>
+    var modal = document.getElementById('id01');
+  </script>
+
+  <!--Open the modal-->
+  <script>
+    function modalOpen() {
+      document.getElementById('id01').style.display = 'block';
+
+      setTimeout(function() {
+        $("#step0").addClass('hideMe');
+        $("#header").removeClass('hideMe');
+        $("#step1").removeClass('hideMe');
+      }, 4000);
+
+    }
+  </script>
+
+  <!--Close the modal-->
+  <script>
+    function modalClose() {
+      document.getElementById('id01').style.display = 'none';
+    }
+  </script>
+
+  <!--Close the modal and submit form at end of bank process if no more banks
+      need to be checked-->
+  <script>
+    function modalCloseAndSubmit() {
+
+      var radios = $("input[name=other-bank]:checked").val()
+
+      if (radios === 'yes') {
+
+        document.getElementById('id01').style.display = 'none';
+      } else {
+        document.getElementById('id01').style.display = 'none';
+        document.getElementById('bankForm').submit();
+      }
+    }
+  </script>
+
+  <!--move from page 1 to page 2 -->
+  <script>
+    $("#login").click(function() {
+      $("#step1").addClass('hideMe');
+      $("#step2").removeClass('hideMe');
+    });
+  </script>
+
+  <!--move from page 2 to page 3 -->
+  <script>
+    $("#memorable").click(function() {
+      $("#step2").addClass('hideMe');
+      $("#step3").removeClass('hideMe');
+    });
+  </script>
+
+  <!--move from page 3 to page 4 -->
+  <script>
+    $("#approve").click(function() {
+      $("#step3").addClass('hideMe');
+      $("#step4").removeClass('hideMe');
+    });
+  </script>
+
+
+  <!--move from page 4 to page 5 -->
+  <script>
+    $("#authorise").click(function() {
+      $("#step4").addClass('hideMe');
+      $("#step5").removeClass('hideMe');
+    });
+  </script>
+
+
+  <!-- reset the modal -->
+  <script>
+    $("#myBtn").click(function() {
+      $("#step0").removeClass('hideMe');
+      $("#header").addClass('hideMe');
+      $("#step1").addClass('hideMe');
+      $("#step2").addClass('hideMe');
+      $("#step3").addClass('hideMe');
+      $("#step4").addClass('hideMe');
+      $("#step5").addClass('hideMe');
+    });
+  </script>
+
+</body>
+{% endblock %}
