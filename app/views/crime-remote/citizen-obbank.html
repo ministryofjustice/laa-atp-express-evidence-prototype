@@ -211,7 +211,7 @@
             </div>
 
             <input class="govuk-c-button" id="myBtn" value="Continue" onclick="setTimeout(modalOpen, 1000)" style="width:auto;" readonly>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="govuk-c-back-link" href="/crime/dwpconf">Back</a>
+            <a class="govuk-c-back-link" href="/crime-remote/citizen-dwpconf">Back</a>
 
           </form>
         </div>
@@ -359,13 +359,11 @@
   <script>
     function modalOpen() {
       document.getElementById('id01').style.display = 'block';
-
       setTimeout(function() {
         $("#step0").addClass('hideMe');
         $("#header").removeClass('hideMe');
         $("#step1").removeClass('hideMe');
       }, 4000);
-
     }
   </script>
 
@@ -380,11 +378,8 @@
       need to be checked-->
   <script>
     function modalCloseAndSubmit() {
-
       var radios = $("input[name=other-bank]:checked").val()
-
       if (radios === 'yes') {
-
         document.getElementById('id01').style.display = 'none';
       } else {
         document.getElementById('id01').style.display = 'none';
