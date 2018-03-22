@@ -1,0 +1,109 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 21 of 28</b></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Check your answers
+        </h1>
+
+        <p class="govuk-body">Please check the transactions you want to support your application.</p>
+
+        <form class="form" action="/crime-remote/benefits-kind" method="post">
+
+          <div>
+            <table class="govuk-c-table">
+              <caption class="govuk-c-table__caption">Your income</caption>
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" width="500">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Salary or wage</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1800.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Private pension</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Employer pension</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Board or rent received</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Child maintenance received</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£250.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <table class="govuk-c-table">
+              <caption class="govuk-c-table__caption">Your outgoings</caption>
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" scope="col" width="500">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Housing costs</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1200.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Childcare costs</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Child maintenance paid</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <h2>Declaration and statement of truth</h2>
+          <br>
+          <div class="govuk-c-checkboxes__item">
+            <input class="govuk-c-checkboxes__input" id="confirm" name="confirm" type="checkbox" required>
+            <label class="govuk-c-label govuk-c-checkboxes__label" for="confirm">I believe I have provided all the evidence of my income and outgoings to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me.</label>
+          </div>
+
+          </br>
+
+          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-c-back-link" href="/crime-remote/citizen-other-income">Back</a>
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
