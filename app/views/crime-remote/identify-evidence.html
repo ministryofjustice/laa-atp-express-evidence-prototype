@@ -2,72 +2,6 @@
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 
-<style>
-  /* Can't get the gov.uk checkbox to appear in the table so create
-  a replica here */
-
-  .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  /* Hide the browser's default checkbox */
-
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  /* Create a custom checkbox */
-
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #0000;
-    border: solid black;
-  }
-
-  /* Create the checkmark/indicator (hidden when not checked) */
-
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-
-  /* Show the checkmark when checked */
-
-  .container input:checked~.checkmark:after {
-    display: block;
-  }
-
-  /* Style the checkmark/indicator */
-
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-</style>
-
 <div class="govuk-o-width-container">
 
   <div class="govuk-c-phase-banner">
@@ -82,747 +16,172 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <p class="govuk-body"><b>Step 7 of 15</b></p>
-
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item">
 
         <h1 class="govuk-heading-xl">
-          Select transactions on your bank statement
+          Your transaction history
         </h1>
-        <p class="govuk-body">We need to know about regular incoming payments (such as wages, benefits or pension) and major outgoings (such as childcare, mortgage, rent or housing costs).</p>
 
-        <p class="govuk-body">We do not need to know about smaller, everday purchases.</p>
+        <p class="govuk-body">We use your full transaction history to work out if you qualify for legal aid.</p>
 
-        <p class="govuk-body"><b>How to choose your transactions</b></p>
+        <p class="govuk-body">To help us understand your statement, tell us about about your regular incoming payments (such as wages, benefits or pension) and major outgoings (such as childcare, mortgage, rent or housing costs).
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Check the box next to the item on your bank statement</li>
-          <li>Select the type of transaction (e.g. salary or childcare)</li>
-          <li>Select how often you receive or pay out money (e.g. weekly or monthly)</li>
-          <li>Choose all relevant items and click 'Continue'</li>
-        </ul>
+          <p class="govuk-body">You do not need to tell us about smaller, everday purchases.</p>
 
-        <form class="form" action="/crime-remote/check-evidence" method="post">
 
-          <div>
-            <table class="govuk-c-table" style="table-layout:fixed;">
-              <h2 class="govuk-heading-m">Your account</h2>
-              <caption class="govuk-c-table__caption">Account Number: 123456789</caption>
-              <thead class="govuk-c-table__head">
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="col" width="150">Date</th>
-                  <th class="govuk-c-table__header" scope="col" width="200">Description</th>
-                  <th class="govuk-c-table__header" scope="col">Incoming</th>
-                  <th class="govuk-c-table__header" scope="col">Outgoing</th>
-                  <th class="govuk-c-table__header" scope="col" width="90">Select as evidence</th>
+          <p class="govuk-body"><b>How to choose your transactions</b></p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Check the box next to the item on your bank statement</li>
+            <li>Select the type of transaction (e.g. salary or childcare)</li>
+            <li>Select how often you receive or pay out money (e.g. weekly or monthly)</li>
+            <li>Choose all relevant items and click 'Continue'</li>
+          </ul>
+
+          <form class="form" action="/civil/check-evidence" method="post">
+
+            <div>
+              <table class="govuk-c-table" style="table-layout:fixed;">
+                <h2 class="govuk-heading-m">Your account</h2>
+                <caption class="govuk-c-table__caption">Account Number: 123456789</caption>
+                <thead class="govuk-c-table__head">
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="col" width="150">Date</th>
+                    <th class="govuk-c-table__header" scope="col" width="200">Description</th>
+                    <th class="govuk-c-table__header" scope="col">Incoming</th>
+                    <th class="govuk-c-table__header" scope="col">Outgoing</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-c-table__body">
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Nando’s Chicken</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£12.40</td>
                 </tr>
-              </thead>
-              <tbody class="govuk-c-table__body">
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Nando’s Chicken</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£12.40</td>
-                  <td style="text-align: middle; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
+                    <td class="govuk-c-table__cell">YourLandlord Letting Agents</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£1200.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">02 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Cash machine withdrawal</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£50.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
-                  <td class="govuk-c-table__cell">YourLandlord Letting Agents</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£1200.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">03 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£600.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">04 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Tesco Express</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£12.40</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">02 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Cash machine withdrawal</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£50.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">06 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Child Maintenance</td>
+                    <td class="govuk-c-table__cell">£250.00</td>
+                    <td class="govuk-c-table__cell"></td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">06 Jan 2018</th>
+                    <td class="govuk-c-table__cell">McDonalds</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£5.50</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">03 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£600.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">07 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Odeon Cinema</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£20.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">09 Jan 2018</th>
+                    <td class="govuk-c-table__cell">KFC Chicken</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£34.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">04 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Tesco Express</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£12.40</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">12 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Payment to Dave</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£200.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">12 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Cash machine Withdrawal</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£120.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">06 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Child Maintenance</td>
-                  <td class="govuk-c-table__cell">£250.00</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">14 Jan 2018</th>
+                    <td class="govuk-c-table__cell">British Gas</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£1200.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Virgin Media</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£50.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">06 Jan 2018</th>
-                  <td class="govuk-c-table__cell">McDonalds</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£5.50</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">16 Jan 2018</th>
+                    <td class="govuk-c-table__cell">BACS transfer Tyreworld</td>
+                    <td class="govuk-c-table__cell">£1800.00</td>
+                    <td class="govuk-c-table__cell"></td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">18 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Tesco Express</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£8.76</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">07 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Odeon Cinema</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£20.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">19 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Thames Water</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£50.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">09 Jan 2018</th>
-                  <td class="govuk-c-table__cell">KFC Chicken</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£34.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">12 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Payment to Dave</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£200.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">12 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Cash machine Withdrawal</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£120.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">14 Jan 2018</th>
-                  <td class="govuk-c-table__cell">British Gas</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£1200.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Virgin Media</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£50.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">16 Jan 2018</th>
-                  <td class="govuk-c-table__cell">BACS transfer Tyreworld</td>
-                  <td class="govuk-c-table__cell">£1800.00</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">18 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Tesco Express</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£8.76</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">19 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Thames Water</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£50.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">21 Jan 2018</th>
-                  <td class="govuk-c-table__cell">MBNA Credit payment</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£123.54</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">21 Jan 2018</th>
+                    <td class="govuk-c-table__cell">MBNA Credit payment</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£123.54</td>
                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">23 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Netflix</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£15.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">23 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Netflix</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£15.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">25 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Spotify</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£10.40</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="row">30 Jan 2018</th>
+                    <td class="govuk-c-table__cell">Amazon purchase</td>
+                    <td class="govuk-c-table__cell"></td>
+                    <td class="govuk-c-table__cell">£56.00</td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">25 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Spotify</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£10.40</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">30 Jan 2018</th>
-                  <td class="govuk-c-table__cell">Amazon purchase</td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell">£56.00</td>
-                  <td style="text-align: center; vertical-align: middle;" class="govuk-c-table__cell"><label class="container">&nbsp;<input type="checkbox"><span class="checkmark"></span></td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell" id="item">
-                    <label for="type"><b>Type:</b></label>
-                    <select class="govuk-c-select" name="evidence">
-                    <option value="income">Salary or wage</option>
-                    <option value="private-pension">Private pension</option>
-                    <option value="employer-pension">Employer pension</option>
-                    <option value="board-rent">Board or rent received</option>
-                    <option value="maintenance-in">Child maintenance received</option>
-                    <option value="housing">Housing costs</option>
-                    <option value="childcare">Childcare costs</option>
-                    <option value="maintenance-out">Child maintenance paid</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell" id="frequency">
-                    <label for="frequency"><b>Frequency:</b></label>
-                    <select class="govuk-c-select" name="frequency">
-                    <option value="Weekly">Weekly</option>
-                    <option value="Fortnightly">Fortnightly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Annually">Annually</option>
-                  </select>
-                  </td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                  <td class="govuk-c-table__cell"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                </tbody>
+              </table>
+            </div>
+            <a class="govuk-c-back-link" href="/crime-remote/explain-other">Back</a>
 
-          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="govuk-c-back-link" href="/crime/bank-success">Back</a>
-
-        </form>
+          </form>
       </div>
     </div>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("input[type=checkbox]").change(function() {
-
-          var row = $(this).closest('tr').next();
-
-          if (this.checked)
-            row.fadeIn('fast');
-          else
-            row.fadeOut('fast');
-        }).change();
-      });
-    </script>
 
   </main>
 </div>
