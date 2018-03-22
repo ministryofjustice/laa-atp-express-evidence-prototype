@@ -173,13 +173,13 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <p class="govuk-body"><b>Step 5 of 24</b></p>
+      <p class="govuk-body"><b>Step 5 of 23</b></p>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h1 class="govuk-heading-xl">
-          Log in to your online banking
+          Sign in to your online banking
           </h1>
 
           <form class="form" id="bankForm" action="/generic/bank-success" method="get">
@@ -187,7 +187,10 @@
             <div class="govuk-c-radios">
               <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
                 <legend class="govuk-c-fieldset__legend">
-                  <p class="govuk-heading">Choose the bank where you have your main current account. Make sure you keep your log in and password details private.</p>
+                  <p class="govuk-heading">You will need to share all of your accounts, including any in joint names or with no money.</p>
+
+                  <p class="govuk-heading">Sign in to your main bank first, and then any others you use.
+                  Always keep your password details private.</p>
                 </legend>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" required>
@@ -235,7 +238,7 @@
       </div>
 
       <div type="modalpage" id="step1" class="hideMe" lass="container">
-        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Sign in securely</b></div>
 
         <label for="uname"><b>Username</b></label>
         <input class="uname" type="text" placeholder="Enter Username" name="uname" style="width: 100%;
@@ -257,7 +260,7 @@
 
         <div class="modal-footer" style="background-color:#f1f1f1">
           <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
-          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+          <span class="psw">I've forgotten my <a href="#">Sign in details</a></span>
         </div>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
@@ -265,7 +268,7 @@
       </div>
 
       <div type="modalpage" id="step2" class="hideMe" class="container">
-        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log in securely</b></div>
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Sign in securely</b></div>
         <text>Enter the 2nd, 6th and 12th characters from your memorable word.</text>
         <br>
         <br>
@@ -285,10 +288,10 @@
         </div>
         <br>
         <br>
-        <button id="memorable" type="button">Log in securely now</button>
+        <button id="memorable" type="button">Sign in securely now</button>
         <div class="modal-footer" style="background-color:#f1f1f1">
           <button type="button" onclick="setTimeout(modalClose, 1000)" class="cancelbtn">Cancel</button>
-          <span class="psw">I've forgotten my <a href="#">login details</a></span>
+          <span class="psw">I've forgotten my <a href="#">sign in details</a></span>
         </div>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
@@ -300,7 +303,7 @@
         <br>
         <h4>I agree to share details for:</h4>
         <ul>
-          <li>my account balance</li>
+          <li>my account balance(s)</li>
           <li>3 months' transactions</li>
           <li>any direct debits or standing orders</li>
         </ul>
@@ -312,12 +315,12 @@
       </div>
 
       <div type="modalpage" id="step5" class="hideMe" class="container">
-        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Log out</b></div>
+        <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Sign out</b></div>
         <br>
-        <h4 align="center">Now log out of your online banking</h4>
+        <h4 align="center">Close online banking</h4>
         <br>
-        <p class="govuk-body" align="center">This will allow you to continue your application.</p>
-        <button id="final" type="button" onclick="setTimeout(modalCloseAndSubmit, 1000)">Log out</button>
+        <p class="govuk-body" align="center">Stop anyone accessing online banking on this computer.</p>
+        <button id="final" type="button" onclick="setTimeout(modalCloseAndSubmit, 1000)">Sign out</button>
         <div class="imgcontainer">
           <img src="../public/images/secure-connection.png" alt="padlock">
         </div>
@@ -326,7 +329,8 @@
       <div type="modalpage" id="step3" class="hideMe" class="container">
         <div align="center"><img src="../public/images/padlock.png" alt="padlock" height="42" width="42" style="vertical-align: middle"><b>Select account(s)</b></div>
 
-        <p>Select the account(s) you want to share:</p>
+        <p>
+           Select all accounts, including those in joint names.</p>
         <form action="">
           <div class="inline-field">
             <input type="checkbox" name="account1" value="Current"><label for="account1"><b>Togetherbank Current Account</b><br>Account Number: 123456789</label>
