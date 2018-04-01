@@ -116,11 +116,21 @@ router.get('/crime-remote/citizen-evi', function (req, res) {
 
 router.get('/generic-truelayer/bank-success', function (req, res, next) {
 
+  var domain = req.hostname;
+
+  if (domain=='localhost'){
+    var redirect_uri = 'http://' + domain + ':3000/generic-truelayer/bank-success'
+  }
+  else{
+    var redirect_uri = 'https://laa-atp-express-evidence-proto.herokuapp.com/generic-truelayer/bank-success'
+  }
+
+  console.log('>>>>>>>>>>>'+redirect_uri);
+
   var authRequestUrl = 'https://auth.truelayer.com/connect/token';
   var grant_type = "authorization_code";
   var client_id = process.env.CLIENT_ID;
   var client_secret = process.env.CLIENT_SECRET;
-  var redirect_uri = 'http://localhost:3000/generic-truelayer/bank-success';
   var code = req.query.code;
 
   var authJsonOut = {grant_type: grant_type,
