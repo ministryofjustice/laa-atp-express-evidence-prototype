@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<head>
+
+  <script>
+    function goToTrueLayer() {
+
+      var domain = window.location.hostname;
+
+      if (domain == 'localhost') {
+        var redirect_uri = 'http://localhost:3000/'
+      } else {
+        var redirect_uri = 'https://laa-atp-express-evidence-proto.herokuapp.com/'
+      }
+
+      var url = 'https://auth.truelayer.com/?response_type=code&client_id=atptest-gaju&nonce=3473757588&scope=info%20accounts%20balance%20transactions&redirect_uri=' + redirect_uri + 'generic-truelayer/bank-success&enable_mock=true';
+
+      document.getElementById('truelayerRedirect').href = url;
+
+    }
+
+    window.onload = goToTrueLayer;
+  </script>
+
+</head>
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+        <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <p class="govuk-body"><b>Step 5 of 24</b></p>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h1 class="govuk-heading-xl">
+          Log in to your online banking
+          </h1>
+
+          <form class="form" id="bankForm" action="/generic-truelayer/bank-success" method="get">
+
+            <p class="govuk-body">
+              You will now be redirected to a third party who will securely connect you to your bank.
+            </p>
+
+            <a role="button" class="govuk-c-button" href="#" id="truelayerRedirect">Continue</a> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="govuk-c-back-link " href="/generic-truelayer/dwpconf ">Back</a>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+{% endblock %}

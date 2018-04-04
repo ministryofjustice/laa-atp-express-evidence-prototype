@@ -1,0 +1,75 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"><b>Step 3 of 24</b></p>
+
+    <div class="govuk-o-grid">
+
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Check your tax and benefits status
+        </h1>
+
+        <form class="form" action="/generic-truelayer/dwpconf" method="post">
+
+          <label class="govuk-c-label" for="national-insurance-number">
+            Enter your National Insurance number
+            <span class="govuk-c-label__hint govuk-!-width-two-thirds">
+              It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+            </span>
+          </label>
+          <input class="govuk-c-input govuk-!-width-one-third" id="national-insurance-number" name="national-insurance-number" type="text" required>
+
+          <fieldset class="govuk-c-fieldset">
+            <legend class="govuk-c-fieldset__legend">
+              <label class="govuk-c-label" for="full-name">
+                Enter your date of birth
+              </label>
+            </legend>
+            <div class="govuk-c-date-input" id="dob">
+              <div class="govuk-c-date-input__item govuk-c-date-input__item--day">
+                <label class="govuk-c-label govuk-c-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-day" name="dob-day" type="text" required>
+              </div>
+              <div class="govuk-c-date-input__item govuk-c-date-input__item--month">
+                <label class="govuk-c-label govuk-c-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-month" name="dob-month" type="text" required>
+              </div>
+              <div class="govuk-c-date-input__item govuk-c-date-input__item--year">
+                <label class="govuk-c-label govuk-c-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="govuk-c-input govuk-c-date-input__input" id="dob-year" name="dob-year" type="text" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-c-back-link" href="/generic-truelayer/obconsent">Back</a>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

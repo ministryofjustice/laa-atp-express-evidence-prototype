@@ -1,0 +1,127 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <p class="govuk-body"><b>Step 6 of 24</b></p>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+          You have succesfully shared your account information
+        </h2>
+
+          <p class="govuk-body">You have been logged out of your online banking.</p>
+
+          <p class="govuk-body">We have downloaded your transaction history for the last 3 months. You can use this to tell us more about your incoming and outgoing payments.</p>
+
+          <h2 class="govuk-heading-m">
+          Your account(s)
+        </h2>
+
+          <div>
+
+            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Account number</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Sort code</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Balance</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">{{ accounts.results[0].display_name }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">{{ accounts.results[0].account_number.number }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">{{ accounts.results[0].account_number.sort_code }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£{{ balance.results[0].current }}</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">{{ accounts.results[1].display_name }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">{{ accounts.results[1].account_number.number }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">{{ accounts.results[1].account_number.sort_code }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£{{ balance.results[0].current }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <h2 class="govuk-heading-m">
+            Your transactions
+          </h2>
+
+            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                {% for result in transactions.results %}
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">{{ result.timestamp }} </td>
+                  <td class="govuk-c-table__cell">{{ result.description }}</td>
+                  <td class="govuk-c-table__cell">{{ result.transaction_category }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£{{ result.amount }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <br>
+
+            <a class="govuk-c-button govuk-c-button" href="/generic-truelayer/identify-income" role="button">Continue</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="govuk-c-back-link" href="/generic-truelayer/obbank">Back</a>
+
+          </div>
+
+          <!--
+          <h2 class="govuk-heading-m">
+            API Results
+          </h2>
+
+          <p class="govuk-body">
+
+            {% for result in accounts.results %}
+            <strong>Account Name: </strong>{{ result.display_name }} </br>
+            <strong>Account Type: </strong>{{ result.account_type }} </br>
+            <strong>Account Number: </strong>{{ result.account_number.number }} </br>
+            <strong>Account Sort Code: </strong>{{ result.account_number.sort_code }} </br>
+            </br>{% endfor %}
+
+            <strong>Transaction Account Current Balance: </strong>£{{ balance.results[0].current }} </br>
+            <strong>Transaction Account Available Balance: </strong>£{{ balance.results[0].available }} </br>
+            </br>
+            <strong>Transaction Account Transaction History: </strong></br>
+            {% for result in transactions.results %}{{ result.timestamp }} - {{ result.description }} - {{ result.transaction_category }} - £{{ result.amount }}</br>{% endfor %}
+
+          </p>
+
+        </div>
+-->
+    </main>
+    </div>
+</body>
+{% endblock %}
