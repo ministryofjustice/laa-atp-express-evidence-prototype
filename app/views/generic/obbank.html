@@ -173,7 +173,7 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <p class="govuk-body"><b>Step 5 of 23</b></p>
+      <p class="govuk-body"></p>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
@@ -187,11 +187,20 @@
             <div class="govuk-c-radios">
               <fieldset class="govuk-c-fieldset" data-required data-error="Cannot be blank">
                 <legend class="govuk-c-fieldset__legend">
-                  <p class="govuk-heading">You will need to share all of your accounts, including any in joint names or with no money.</p>
-
-                  <p class="govuk-heading">Sign in to your main bank first, and then any others you use.
-                  Always keep your password details private.</p>
+                  <p class="govuk-heading">You will need to share all of your bank accounts, including any in joint names or with no money. Always keep your password details private.</p>
                 </legend>
+
+              <div class="govuk-c-panel govuk-c-panel--confirmation govuk-!-mb-r6" style="background-color:#ffbf00">
+              <h3>Give one-time access to your accounts</h3>
+              <br>
+              <ul class="govuk-list govuk-list--bullet">
+              <li>Sign in and give temporary access to your accounts</li>
+              <li>We download 3 months' transactions</li>
+              <li>The bank connection automatically ends after 1 hour</li>
+              <li>Your online banking details are not saved</li>
+              </ul>
+              </div>
+
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="bank-1" name="bank" type="radio" value="togetherbank" required>
                   <label class="govuk-c-label govuk-c-radios__label" for="bank-1">
@@ -303,8 +312,8 @@
         <br>
         <h4>I agree to share details for:</h4>
         <ul>
-          <li>my account balance(s)</li>
           <li>3 months' transactions</li>
+          <li>my account balance(s)</li>
           <li>any direct debits or standing orders</li>
         </ul>
         <button id="authorise" type="button">Authorise</button>
