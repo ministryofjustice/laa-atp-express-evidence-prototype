@@ -45,15 +45,26 @@
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h1 class="govuk-heading-xl">
-          Log in to your online banking
+          Give one-time access to your bank accounts
           </h1>
 
           <form class="form" id="bankForm" action="/generic-truelayer/bank-success" method="get">
 
             <p class="govuk-body">
-              You will now be redirected to a third party who will securely connect you to your bank.
+              You will now be redirected to a secure service to sign in to your online banking.
             </p>
 
+               <p class="govuk-body">You will need to share all of your bank accounts, including any in joint names or with no money. Always keep your password details private.</p>
+              <div class="govuk-c-panel govuk-c-panel--confirmation govuk-!-mb-r6" style="background-color:#ffbf00">
+              <h3>How we connect to your online banking</h3>
+              <br>
+              <ul class="govuk-list govuk-list--bullet">
+              <li>You sign in and give temporary access to your accounts</li>
+              <li>We download 3 months' transactions</li>
+              <li>The bank connection automatically ends after 1 hour</li>
+              <li>Your online banking details are not saved</li>
+              </ul>
+              </div>
             <a role="button" class="govuk-c-button" href="#" id="truelayerRedirect">Continue</a> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
             <a class="govuk-c-back-link " href="/generic-truelayer/dwpconf ">Back</a>
 
