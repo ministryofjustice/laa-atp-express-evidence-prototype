@@ -34,6 +34,19 @@ router.get('/generic/multibank', function (req, res) {
   }
 })
 
+router.get('/generic-truelayer/multibank', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/generic-truelayer/obbank')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.render('generic-truelayer/benefits-kind')
+  }
+})
+
 router.get('/civil/multibank', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var multiBank = req.query.multibank
