@@ -19,25 +19,70 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <p class="govuk-body"><b>Step 6 of 24</b></p>
+      <a class="govuk-c-back-link" href="/generic-truelayer/obbank">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h2 class="govuk-heading-xl">
-          You have succesfully shared your account information
-        </h2>
+            You have succesfully shared your account information
+          </h2>
 
-          <p class="govuk-body">You have been logged out of your online banking.</p>
+          <p class="govuk-body">We have downloaded 3 months of your transaction history. You can use this to tell us more about your financial situation.</p>
 
-          <p class="govuk-body">We have downloaded your transaction history for the last 3 months. You can use this to tell us more about your incoming and outgoing payments.</p>
+          <div class="govuk-c-warning-text">
+            <span class="govuk-c-warning-text__icon govuk-o-circle" aria-hidden="true">!</span>
+            <strong class="govuk-c-warning-text__text">
+              How we use your details
+            </strong>
+          </div>
 
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>We check your transaction history for incomings and outgoings</li>
+              <li>We only use details for this application, nothing else</li>
+              <li>Your data is stored securely for 5 years and then destroyed</li>
+            </ul>
+          </p>
+
+          </br>
           <h2 class="govuk-heading-m">
-          Your account(s)
-        </h2>
+            Your account(s)
+          </h2>
 
           <div>
-
+            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Account number</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Sort code</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Balance</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Mock Bank Current account</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">123456789</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£470.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Mock Bank Savings account</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">987654321</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1400.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Mock Bank Cash ISA</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">248163264</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <!--
             <table class="govuk-c-table--two-thirds" style="border-spacing:0">
 
               <thead class="govuk-c-table__head">
@@ -69,9 +114,7 @@
             Your transactions
           </h2>
 
-            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
-
-              <thead class="govuk-c-table__head">
+            <thead class="govuk-c-table__head">
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
@@ -91,36 +134,11 @@
               </tbody>
             </table>
             <br>
-
-            <a class="govuk-c-button govuk-c-button" href="/generic-truelayer/identify-income" role="button">Continue</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="govuk-c-back-link" href="/generic-truelayer/obbank">Back</a>
+-->
+            <a class="govuk-c-button govuk-c-button" href="/generic-truelayer/identify-income" role="button">Continue</a>
 
           </div>
 
-          <!--
-          <h2 class="govuk-heading-m">
-            API Results
-          </h2>
-
-          <p class="govuk-body">
-
-            {% for result in accounts.results %}
-            <strong>Account Name: </strong>{{ result.display_name }} </br>
-            <strong>Account Type: </strong>{{ result.account_type }} </br>
-            <strong>Account Number: </strong>{{ result.account_number.number }} </br>
-            <strong>Account Sort Code: </strong>{{ result.account_number.sort_code }} </br>
-            </br>{% endfor %}
-
-            <strong>Transaction Account Current Balance: </strong>£{{ balance.results[0].current }} </br>
-            <strong>Transaction Account Available Balance: </strong>£{{ balance.results[0].available }} </br>
-            </br>
-            <strong>Transaction Account Transaction History: </strong></br>
-            {% for result in transactions.results %}{{ result.timestamp }} - {{ result.description }} - {{ result.transaction_category }} - £{{ result.amount }}</br>{% endfor %}
-
-          </p>
-
-        </div>
--->
     </main>
     </div>
 </body>

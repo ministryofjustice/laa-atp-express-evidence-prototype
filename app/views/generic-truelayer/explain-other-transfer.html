@@ -187,6 +187,7 @@
   sup,
   tt,
   var,
+  b,
   u,
   i,
   center,
@@ -383,7 +384,7 @@
     letter-spacing: 1px;
     text-decoration: none;
     color: #fff;
-    background-color: #005ea5;
+    background-color: #ffcc00;
     float: right;
     margin-right: 0;
     padding-top: 3px;
@@ -411,29 +412,37 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="/generic/select-childcare">Back</a>
-
-    <p class="govuk-body"></p>
+    <a class="govuk-c-back-link" href="/generic-truelayer/explain-transfer">Back</a>
 
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h2 class="govuk-heading-xl">
-              Tell us about your outgoings
+          Can you explain the following transactions?
         </h2>
         <p class="govuk-body">
-          Add relevant transactions from the last month of your bank statement.
-        </p>
-        <p class="govuk-body">
-          We use your 3 month transaction history to work out your average monthly outgoings.
+          We need to look at all of your incoming and outgoing payments.
         </p>
 
         <details>
-          <summary><span class="summary">What outgoings should you tell us about?</span></summary>
+          <summary><span class="summary">What should you tell us about?</span></summary>
 
           <div class="panel panel-border-narrow">
 
-            <p style="govuk-body">
+            <p style="govuk-body"><b>Incoming payments</b>
+              <ul>
+                <li>salary or wages from any jobs you have</li>
+                <li>private and state pension contributions</li>
+                <li>benefits such as Child Benefit, Working Tax Credits, Child Tax Credits, Universal Credit, Incapacity Benefit, Industrial Injuries Disablement Benefit, Contribution-based Job Seekers' Allowance</li>
+                <li>benefits in kind from your employer such as relocation payments</li>
+                <li>board from a family member, lodger or tenant</li>
+                <li>rent from another property</li>
+                <li>maintenance payments</li>
+                <li>student grant or loan</li>
+                <li>financial support from a friend or family member</li>
+              </ul>
+            </p>
+            <p style="govuk-body"><b>Outgoing payments</b>
               <ul>
                 <li>mortgage</li>
                 <li>rent, board or lodging</li>
@@ -449,60 +458,36 @@
         <ol class="task-list">
           <li>
             <h2 class="task-list-section">
-                    <span class="task-list-section-number">1. </span>Mortgage, rent and council tax
+                    <span class="task-list-section-number">Transfers between accounts</span>
             </h2>
             <ul class="task-list-items">
               <li class="task-list-item">
-                <a class="task-name" aria-describedby="housing-1-completed">
-                  MyLandlord Letting Agents - £1200.00
+                <a class="task-name" aria-describedby="other-1-completed">
+                      10 Jan 2018 - 34029802 - £300.00
                 </a>
-                <a style="color:red">
-                  <href='#'><u>Remove</u>
-                </a>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#">
-                  Add item
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h2 class="task-list-section">
-              <span class="task-list-section-number">2. </span>Childcare
-            </h2>
-            <ul class="task-list-items">
-              <li class="task-list-item">
-                <a class="task-name" aria-describedby="childcare-1-completed">
-                  Wiggly-tots Nursery - £600.00
-                </a>
-                <a style="color:red">
-                  <href='#'><u>Remove</u>
-                </a>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#">
-                  Add item
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <h2 class="task-list-section">
-                    <span class="task-list-section-number">3. </span>Other
-            </h2>
-            <ul class="task-list-items">
-              <li class="task-list-item">
-                <a class="task-name" href="#">
-                        Add item
+                <a class="govuk-link">
+                  <strong class="task-completed" id="other-1-completed" style="background-color:#005ea5"> Explained</strong>
                 </a>
               </li>
             </ul>
           </li>
         </ol>
 
-        <a class="govuk-c-button govuk-c-button" href="/generic/explain-other" role="button">Continue</a>
+        <h3 class="govuk-heading-m">
+          View full transaction history
+        </h3>
+
+        <p class="govuk-body">
+          You can also review the full 3 months of transactions so that you can check it line by line. Your solicitor may wish to examine things in more detail.
+        </p>
+
+        <a class="govuk-link" href="/generic-truelayer/identify-evidence">
+          View your full transaction history
+        </a>
+
+        <br></br>
+
+        <a class="govuk-c-button govuk-c-button" href="/generic-truelayer/obmultiple" role="button">Continue</a>
 
       </div>
 
