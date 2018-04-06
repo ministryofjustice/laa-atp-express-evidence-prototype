@@ -43,7 +43,7 @@ router.get('/generic-truelayer/multibank', function (req, res) {
     res.redirect('/generic-truelayer/obbank')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('generic-truelayer/benefits-kind')
+    res.render('generic-truelayer/check-evidence')
   }
 })
 
