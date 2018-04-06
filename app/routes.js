@@ -30,7 +30,7 @@ router.get('/generic/multibank', function (req, res) {
     res.redirect('/generic/obbank')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('generic/benefits-kind')
+    res.render('generic/check-evidence')
   }
 })
 

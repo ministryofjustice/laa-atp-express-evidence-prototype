@@ -14,6 +14,8 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
+    <a class="govuk-c-back-link" href="/generic/identify-outgoings-housing-childcare">Back</a>
+
     <p class="govuk-body"></p>
 
     <div class="govuk-o-grid">
@@ -25,21 +27,28 @@
 
         <p class="govuk-body">Check the items you have selected for your income and outgoings. We use this information and 3 months of transactions to see if you can get help.</p>
         <br>
-        <form class="form" action="/generic/benefits-kind" method="post">
+        <form class="form" action="/generic/other-income" method="post">
 
           <div>
             <table class="govuk-c-table">
               <caption class="govuk-c-table__caption">Your income</caption>
               <thead class="govuk-c-table__head">
                 <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="col" width="500">Type</th>
-                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col">Amount</th>
+                  <th class="govuk-c-table__header" scope="col" width="500" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
                 </tr>
               </thead>
               <tbody class="govuk-c-table__body">
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" scope="row">Salary or wage</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1800.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- BACS transfer Tyreworld - £1800.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'><u>Remove<u></a>
+                  </td>
                 </tr>
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" scope="row">Private pension</th>
@@ -57,27 +66,56 @@
                   <th class="govuk-c-table__header" scope="row">Child maintenance received</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£250.00</td>
                 </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- Child maintenance - £250.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                     <a style="color:red">
+                      <href='#'>
+                        <u>Remove<u>
+                      </a>
+                  </td>
+                </tr>
               </tbody>
             </table>
+            <a href='identify-income-salary-other.html'>Add more income</a>
           </div>
-
+          </br>
+          </br>
           <div>
             <table class="govuk-c-table">
               <caption class="govuk-c-table__caption">Your outgoings</caption>
               <thead class="govuk-c-table__head">
                 <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="col" scope="col" width="500">Type</th>
-                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col">Amount</th>
+                  <th class="govuk-c-table__header" scope="col" scope="col" width="500" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
                 </tr>
               </thead>
               <tbody class="govuk-c-table__body">
                 <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Mortgage, rent or council tax</th>
+                  <th class="govuk-c-table__header" scope="row">Housing costs</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1200.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- YourLandlord Letting Agents - £1200.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'>
+                      <u>Remove<u>
+                    </a>
+                  </td>
                 </tr>
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" scope="row">Childcare costs</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- Wiggly-tots Nursery - £600.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'>
+                      <u>Remove<u>
+                    </a>
+                  </td>
                 </tr>
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" scope="row">Child maintenance paid</th>
@@ -85,8 +123,10 @@
                 </tr>
               </tbody>
             </table>
+            <a href='identify-outgoings-housing-childcare.html'>Add more outgoings</a>
           </div>
-
+          </br>
+          </br>
           <h2>Declaration and statement of truth</h2>
           <br>
           <div class="govuk-c-checkboxes__item">
@@ -96,8 +136,7 @@
 
           </br>
 
-          <input class="govuk-c-button" type="submit" value="Continue">&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="govuk-c-back-link" href="/generic/other-income">Back</a>
+          <input class="govuk-c-button" type="submit" value="Continue">
 
         </form>
       </div>

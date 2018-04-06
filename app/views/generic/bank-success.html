@@ -18,6 +18,8 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
+    <a class="govuk-c-back-link" href="/generic/obbank">Back</a>
+
     <p class="govuk-body"></p>
 
     <div class="govuk-o-grid">
@@ -29,16 +31,22 @@
 
         <p class="govuk-body">We have downloaded 3 months of your transaction history. You can use this to tell us more about your financial situation.</p>
 
-              <div class="govuk-c-panel govuk-c-panel--confirmation govuk-!-mb-r6" style="background-color:#ffbf00">
-              <h3>How we use your details</h3>
-              <br>
-              <ul class="govuk-list govuk-list--bullet">
-              <li>We check your transaction history for incomings and outgoings</li>
-              <li>We only use details for this application, nothing else</li>
-              <li>Your data is stored securely for 5 years and then destroyed</li>
-              </ul>
-              </div>
+        <div class="govuk-c-warning-text">
+          <span class="govuk-c-warning-text__icon govuk-o-circle" aria-hidden="true">!</span>
+          <strong class="govuk-c-warning-text__text">
+            How we use your details
+          </strong>
+        </div>
 
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>We check your transaction history for incomings and outgoings</li>
+            <li>We only use details for this application, nothing else</li>
+            <li>Your data is stored securely for 5 years and then destroyed</li>
+          </ul>
+        </p>
+
+        </br>
         <h2 class="govuk-heading-m">
           Your account(s)
         </h2>
@@ -77,8 +85,7 @@
           </table>
           <br>
 
-          <a class="govuk-c-button govuk-c-button" href="/generic/identify-income" role="button">Continue</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="govuk-c-back-link" href="/generic/obbank">Back</a>
+          <a class="govuk-c-button govuk-c-button" href="/generic/identify-income" role="button">Continue</a>
 
         </div>
 
