@@ -1,0 +1,91 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="basic-details">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">Are your client's details correct?</h2>
+
+          <form class="form" action="confirm-contact" method="post">
+
+            <dl class="govuk-check-your-answers cya-questions-short">
+              <div>
+                <dt class="cya-question">Name</dt>
+                <dd class="cya-answer">John Doe</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div>
+                <dt class="cya-question">Date of birth</dt>
+                <dd class="cya-answer">5 January 1978</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">date of birth</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div>
+                <dt class="cya-question">Email address</dt>
+                <dd class="cya-answer">john.doe@email.com</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">email-address</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div>
+                <dt class="cya-question">Mobile phone number</dt>
+                <dd class="cya-answer">07123456789</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">email-address</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div>
+                <dt class="cya-question">Type of aid</dt>
+                <dd class="cya-answer">Civil</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">type</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+            <input class="govuk-c-button" type="submit" value="Continue">
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="confirm-contact">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">Apply for legal aid</h2>
+
+          <a class="govuk-c-button govuk-c-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="basic-details" role="button">New Application</a>
+
+          <p class="govuk-body">You currently have:</p>
+          <a href='#' class="govuk-body">No outstanding actions (none overdue)</a></p>
+          <a href='#' class="govuk-body">View notifications (none outstanding)</a>
+
+          <h3 class="govuk-heading-l">Support</h3>
+          <p class="govuk-body"><strong>Case enquiries:</strong> 0300 200 2020 (Monday to Friday, 09:00 - 17:00)</p>
+          <p class="govuk-body"><strong>Technical support:</strong> 0300 200 2020 (Monday to Friday, 09:00 - 17:00) or email
+            <a href="mailto:online-support@justice.gov.uk">online-support@justice.gov.uk</a> </p>
+
+        </div>
+      </div>
+
+      <a class="govuk-c-button govuk-c-button" href="page06" role="button">Continue</a>
+
+    </main>
+  </div>
+</body>
+{% endblock %}

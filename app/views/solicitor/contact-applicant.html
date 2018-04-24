@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="basic-details-playback">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">Contact your client</h2>
+
+          <p class="govuk-heading-m">Send your client a link to the means assessment evidence service</p>
+
+          <form class="form" action="confirm-contact" method="post">
+
+            <div class="govuk-c-radios">
+              <label class="govuk-c-label" for="type" type="type">
+                How does your client prefer to be contacted?
+              </label>
+              </br>
+              <fieldset class="govuk-c-fieldset">
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="method-1" name="method" type="radio" value="email" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="method-1">Email - john.doe@email.com</label>
+                </div>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="method-2" name="method" type="radio" value="mobile">
+                  <label class="govuk-c-label govuk-c-radios__label" for="method-2">Mobile phone - 07123456789</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <input class="govuk-c-button" type="submit" value="Continue">
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}
