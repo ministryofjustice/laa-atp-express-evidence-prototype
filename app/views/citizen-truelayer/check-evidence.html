@@ -14,7 +14,7 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="benefits-kind">Back</a>
+    <a class="govuk-c-back-link" href="identify-outgoings-housing-childcare">Back</a>
 
     <p class="govuk-body"></p>
 
@@ -22,12 +22,10 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-xl">
-          Check your answers
+          Check your income and outgoings
         </h1>
 
-        <p class="govuk-body">Check the items you have selected for your income and outgoings. We use this information and 3 months of transactions to see if you can get help.</p>
-        <br>
-        <form class="form" action="capital-assets" method="post">
+        <form class="form" action="property" method="post">
 
           <div>
             <table class="govuk-c-table">
@@ -40,7 +38,7 @@
               </thead>
               <tbody class="govuk-c-table__body">
                 <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Salary or wage</th>
+                  <th class="govuk-c-table__header" scope="row">Salary and pensions</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1800.00</td>
                 </tr>
                 <tr class="govuk-c-table__row">
@@ -51,19 +49,7 @@
                   </td>
                 </tr>
                 <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Private pension</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Employer pension</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Board or rent received</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Child maintenance received</th>
+                  <th class="govuk-c-table__header" scope="row">Benefits, rent and financial support</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£250.00</td>
                 </tr>
                 <tr class="govuk-c-table__row">
@@ -72,6 +58,14 @@
                     <a style="color:red">
                       <href='#'><u>Remove</u></a>
                   </td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Income not paid into the bank</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">None</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Benefits in kind</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">None</td>
                 </tr>
               </tbody>
             </table>
@@ -90,7 +84,7 @@
               </thead>
               <tbody class="govuk-c-table__body">
                 <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Housing costs</th>
+                  <th class="govuk-c-table__header" scope="row">Mortgage, rent and council tax</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1200.00</td>
                 </tr>
                 <tr class="govuk-c-table__row">
@@ -101,8 +95,9 @@
                     </a>
                   </td>
                 </tr>
+
                 <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Childcare costs</th>
+                  <th class="govuk-c-table__header" scope="row">Childcare, maintenance and legal aid</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
                 </tr>
                 <tr class="govuk-c-table__row">
@@ -113,24 +108,12 @@
                     </a>
                   </td>
                 </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="row">Child maintenance paid</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£0.00</td>
-                </tr>
               </tbody>
             </table>
             <a href='identify-outgoings-housing-childcare.html'>Add more outgoings</a>
           </div>
-          </br>
-          </br>
-          <h2>Declaration and statement of truth</h2>
           <br>
-          <div class="govuk-c-checkboxes__item">
-            <input class="govuk-c-checkboxes__input" id="confirm" name="confirm" type="checkbox" required>
-            <label class="govuk-c-label govuk-c-checkboxes__label" for="confirm">I believe I have provided all the evidence of my income and outgoings to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me.</label>
-          </div>
-
-          </br>
+          <br>
 
           <input class="govuk-c-button" type="submit" value="Continue">
 
