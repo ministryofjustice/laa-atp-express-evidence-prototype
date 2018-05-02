@@ -1,8 +1,9 @@
-{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block header_class %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block content %}
+
 
 <style>
   .grid-row:after,
@@ -187,6 +188,7 @@
   sup,
   tt,
   var,
+  b,
   u,
   i,
   center,
@@ -383,7 +385,7 @@
     letter-spacing: 1px;
     text-decoration: none;
     color: #fff;
-    background-color: #005ea5;
+    background-color: #ffcc00;
     float: right;
     margin-right: 0;
     padding-top: 3px;
@@ -397,92 +399,66 @@
   }
 </style>
 
+<body>
+  <div class="govuk-o-width-container">
 
-
-<div class="govuk-o-width-container">
-
-  <div class="govuk-c-phase-banner">
-    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
         alpha
       </strong>
-      <span class="govuk-c-phase-banner__text">
+        <span class="govuk-c-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
       </span>
-    </p>
-  </div>
-
-  <main role="main" class="govuk-o-main-wrapper">
-
-    <a class="govuk-c-back-link" href="select-salary">Back</a>
-
-    <p class="govuk-body"></p>
-
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-
-        <h2 class="govuk-heading-xl">
-        Tell us about your income over the last 30 days
-        </h2>
-        <p class="govuk-body">Add relevant transactions from your bank statement(s).</p>
-
-        <ol class="task-list">
-          <li>
-            <h2 class="task-list-section"><span class="task-list-section-number">1. </span>Salary and pensions</h2>
-            <p class="govuk-body"><span class="govuk-c-label__hint">
-              Add any salary or wages, and income from state and private pensions
-            </span></p>
-            <ul class="task-list-items">
-              <li class="task-list-item">
-                <a class="task-name" aria-describedby="salary-1-completed">BACS Transfer Tyreworld - £1800.00</a>
-                <a style="color:red">
-                  <href='#'><u>Remove</u>
-                </a>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#">Add item
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h2 class="task-list-section"><span class="task-list-section-number">2. </span>Benefits, rent and financial support</h2>
-            <p class="govuk-body"><span class="govuk-c-label__hint">
-              Add any state benefits, rent from a property or lodger, student loans and maintenance payments
-            </span></p>
-            <details>
-              <summary><span class="summary">What should you tell us about?</span></summary>
-
-              <div class="panel panel-border-narrow">
-
-                <p style="govuk-body">
-                  <ul style="govuk">
-                    <li>- benefits such as Child Benefit Working Tax Credits, Child Tax Credits, Universal Credit, Incapacity Benefit, Industrial Injuries Disablement Benefit, Contribution-based Job Seekers' Allowance</li>
-                    <li>- extra payments from your employer such as relocation costs</li>
-                    <li>- board from a family member, lodger or tenant</li>
-                    <li>- rent from another property</li>
-                    <li>- maintenance payments</li>
-                    <li>- student grant or loan</li>
-                    <li>- financial support from a friend or family member</li>
-                  </ul>
-                </p>
-              </div>
-            </details>
-            <br>
-            <ul class="task-list-items">
-              <li class="task-list-item">
-                <a class="task-name" href="select-other">Add item</a>
-              </li>
-            </ul>
-          </li>
-        </ol>
-
-        <a class="govuk-c-button govuk-c-button" href="" role="button">Continue</a>
-
-      </div>
-
+      </p>
     </div>
 
-  </main>
-</div>
+    <main role="main" class="govuk-o-main-wrapper">
 
+      <a class="govuk-c-back-link" href="start">Back</a>
+
+      <div>
+
+        <h2 class="govuk-heading-xl">Resume an application</h2>
+
+        <p class="govuk-body">
+          Choose an applicant for the following list of open applications. Once an applicant has completed their part of the assessment, this will appear as ready to progress.
+        </p>
+
+        </br>
+        <h2 class="task-list-section">
+            <span class="task-list-section-number">Open applications</span>
+        </h2>
+        <table class="govuk-c-table--two-thirds" style="border-collapse: collapse;">
+
+          <thead class="govuk-c-table__head">
+            <tr class="govuk-c-table__row">
+              <th class="govuk-c-table__header" scope="col" style="border-width:thick">Applicant name</th>
+              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date of application</th>
+              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Reference</th>
+              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-c-table__body">
+            <tr class="task-list-item">
+              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">John Doe</a></td>
+              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">02/04/2018</a></td>
+              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">2018/LAA/4ewrqfdd</a></td>
+              <td class="govuk-c-table__cell"><a class="govuk-link"><strong class="task-completed" id="other-1-completed" style="background-color:#00823b">Ready to progress</strong></a></td>
+            </tr>
+            <tr class="task-list-item">
+              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">Bob Dylan</a></td>
+              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">08/04/2018</a></td>
+              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">2018/LAA/5kspihsl</a></td>
+              <td class="govuk-c-table__cell">&nbsp</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+      </br>
+      <a class="govuk-c-button govuk-c-button" href="page08" role="button">Continue</a>
+
+    </main>
+  </div>
+</body>
 {% endblock %}

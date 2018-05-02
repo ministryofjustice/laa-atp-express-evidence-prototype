@@ -8,137 +8,44 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
-// Add your routes here - above the module.exports line
-router.get('/crime-start', function (req, res) {
-  res.render('crime-start')
-});
-
-router.get('civil/start', function (req, res) {
-  res.render('civil/start.html')
-});
-
-router.get('/generic-start', function (req, res) {
-  res.render('generic-start')
-});
-
-router.get('/generic/multibank', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var multiBank = req.query.multibank
-
-  if (multiBank === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/generic/obbank')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('generic/other-income')
-  }
-})
-
-router.get('/generic-truelayer/multibank', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var multiBank = req.query.multibank
-
-  if (multiBank === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/generic-truelayer/obbank')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('generic-truelayer/other-income')
-  }
-})
-
-router.get('/citizen-truelayer/multibank', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var multiBank = req.query.multibank
-
-  if (multiBank === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/citizen-truelayer/obbank')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('citizen-truelayer/other-income')
-  }
-})
-
-router.get('/civil/multibank', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var multiBank = req.query.multibank
-
-  if (multiBank === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/civil/obbank')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('civil/benefits-kind')
-  }
-})
+/******************************  Crime  ******************************/
 
 router.get('/crime/multibank', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
+
   var multiBank = req.query.multibank
 
   if (multiBank === 'yes') {
-    // Redirect to the relevant page
     res.redirect('/crime/obbank')
   } else {
-    // If over18 is any other value (or is missing) render the page requested
     res.render('crime/benefits-kind')
   }
 })
 
-router.get('/crime-remote/multibank', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
+/******************************  Civil  ******************************/
+
+router.get('/civil/multibank', function (req, res) {
+
   var multiBank = req.query.multibank
 
   if (multiBank === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/crime-remote/obbank')
+    res.redirect('/civil/obbank')
   } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('crime-remote/benefits-kind')
+    res.render('civil/benefits-kind')
   }
 })
 
-router.get('/crime-remote/remote', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var remoteAccess = req.query.remote
+/*****************************  Generic  *****************************/
 
-  if (remoteAccess === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/crime-remote/remote-notification')
+router.get('/generic/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/generic/obbank')
   } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('crime/obbank')
+    res.render('generic/other-income')
   }
 })
-
-router.get('/crime-remote/citizen-multi', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var citmultiBank = req.query.citmultibank
-
-  if (citmultiBank === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/crime-remote/citizen-obbank')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('crime-remote/citizen-final')
-  }
-})
-
-router.get('/crime-remote/citizen-evi', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var citEvidence = req.query.citevidence
-
-  if (citEvidence === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/crime-remote/citizen-identify-income')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('crime-remote/citizen-final-branch')
-  }
-})
-
-
 
 router.get('/generic-truelayer/bank-success', function (req, res, next) {
 
@@ -236,10 +143,79 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
               console.log(body);
           }
       });
-
 })
 
+/***************************  Crime Remote  **************************/
 
+router.get('/crime-remote/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/crime-remote/obbank')
+  } else {
+    res.render('crime-remote/benefits-kind')
+  }
+})
+
+router.get('/crime-remote/remote', function (req, res) {
+
+  var remoteAccess = req.query.remote
+
+  if (remoteAccess === 'yes') {
+    res.redirect('/crime-remote/remote-notification')
+  } else {
+    res.render('crime/obbank')
+  }
+})
+
+router.get('/crime-remote/citizen-multi', function (req, res) {
+
+  var citmultiBank = req.query.citmultibank
+
+  if (citmultiBank === 'yes') {
+    res.redirect('/crime-remote/citizen-obbank')
+  } else {
+    res.render('crime-remote/citizen-final')
+  }
+})
+
+router.get('/crime-remote/citizen-evi', function (req, res) {
+
+  var citEvidence = req.query.citevidence
+
+  if (citEvidence === 'yes') {
+    res.redirect('/crime-remote/citizen-identify-income')
+  } else {
+    res.render('crime-remote/citizen-final-branch')
+  }
+})
+
+/************************  Generic TrueLayer  ************************/
+
+router.get('/generic-truelayer/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/generic-truelayer/obbank')
+  } else {
+    res.render('generic-truelayer/other-income')
+  }
+})
+
+/************************  Citizen Truelayer  ************************/
+
+router.get('/citizen-truelayer/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/citizen-truelayer/obbank')
+  } else {
+    res.render('citizen-truelayer/identify-income')
+  }
+})
 
 router.get('/citizen-truelayer/bank-success', function (req, res, next) {
 
@@ -337,7 +313,24 @@ router.get('/citizen-truelayer/bank-success', function (req, res, next) {
               console.log(body);
           }
       });
-
 })
+
+/****************************  Solicitor  ****************************/
+
+
+router.get('/solicitor/newOrResume', function (req, res) {
+
+  var newOrResume = req.query.newOrResume
+
+  if (newOrResume === 'new') {
+    res.redirect('basic-details')
+  } else {
+    res.redirect('case-dashboard')
+  }
+})
+
+
+
+/*********************************************************************/
 
 module.exports = router

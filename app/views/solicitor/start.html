@@ -22,18 +22,30 @@
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <h2 class="govuk-heading-xl">Apply for legal aid</h2>
+          <h2 class="govuk-heading-xl">Legal Aid Application</h2>
 
-          <a class="govuk-c-button govuk-c-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="basic-details" role="button">New Application</a>
+          <form action="/solicitor/newOrResume" method="get">
 
-          <p class="govuk-body">You currently have:</p>
-          <a href='#' class="govuk-body">No outstanding actions (none overdue)</a></p>
-          <a href='#' class="govuk-body">View notifications (none outstanding)</a>
+            <div class="govuk-c-radios">
+              <label class="govuk-c-label" for="newOrResume" type="radio">
+                Do you want to start a new application, or return to a previous one?
+              </label>
+              </br>
+              <fieldset class="govuk-c-fieldset">
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="new" name="newOrResume" type="radio" value="new" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="new">Start a new application</label>
+                </div>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="resume" name="newOrResume" type="radio" value="resume">
+                  <label class="govuk-c-label govuk-c-radios__label" for="resume">Resume an application</label>
+                </div>
+              </fieldset>
+            </div>
 
-          <h3 class="govuk-heading-l">Support</h3>
-          <p class="govuk-body"><strong>Case enquiries:</strong> 0300 200 2020 (Monday to Friday, 09:00 - 17:00)</p>
-          <p class="govuk-body"><strong>Technical support:</strong> 0300 200 2020 (Monday to Friday, 09:00 - 17:00) or email
-            <a href="mailto:online-support@justice.gov.uk">online-support@justice.gov.uk</a> </p>
+            <input class="govuk-c-button" type="submit" value="Continue">
+
+          </form>
 
         </div>
       </div>
