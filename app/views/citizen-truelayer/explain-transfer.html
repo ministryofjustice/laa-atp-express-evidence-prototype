@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="explain-other">Back</a>
+
+    <div class="govuk-o-grid">
+
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+           What was this £300 transfer to account no. 34029482?
+        </h1>
+
+        <p class="govuk-body">We need to understand transfers between accounts for your application.</p>
+
+        <form class="form" action="explain-other-transfer" method="post">
+
+          <label class="govuk-c-label" for="national-insurance-number">
+
+            <span class="govuk-c-label__hint govuk-!-width-two-thirds">
+              Enter your explanation
+            </span>
+          </label>
+          <input class="govuk-c-input govuk-!-width-two-thirds" id="transfer" name="transfer" type="text" required>
+          <br></br>
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

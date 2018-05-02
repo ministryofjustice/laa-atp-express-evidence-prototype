@@ -1,0 +1,85 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<head>
+
+  <script>
+    function goToTrueLayer() {
+
+      var domain = window.location.hostname;
+
+      if (domain == 'localhost') {
+        var redirect_uri = 'http://localhost:3000/'
+      } else {
+        var redirect_uri = 'https://laa-atp-express-evidence-proto.herokuapp.com/'
+      }
+
+      var url = 'https://auth.truelayer.com/?response_type=code&client_id=atptest-gaju&nonce=3473757588&scope=info%20accounts%20balance%20transactions&redirect_uri=' + redirect_uri + 'citizen-truelayer/bank-success&enable_mock=true';
+
+      document.getElementById('truelayerRedirect').href = url;
+
+    }
+
+    window.onload = goToTrueLayer;
+  </script>
+
+</head>
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+        <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link " href="dwpdetails">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h1 class="govuk-heading-xl">
+          Give one-time access to your bank accounts
+          </h1>
+
+          <form class="form" id="bankForm" action="bank-success" method="get">
+
+            <p class="govuk-body">
+              You will be redirected to a secure service to sign in to your online banking.
+            </p>
+
+            <p class="govuk-body">You will need to share all of your bank accounts, including any in joint names or with no money. Always keep your password details private.</p>
+
+
+            <div class="govuk-c-warning-text">
+              <span class="govuk-c-warning-text__icon govuk-o-circle" aria-hidden="true">!</span>
+              <strong class="govuk-c-warning-text__text">
+                How we connect to your online banking
+              </strong>
+            </div>
+
+            <p class="govuk-body">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Sign in and authorise access to your accounts</li>
+                <li>We download 3 months of transactions</li>
+                <li>The bank connection automatically ends after 1 hour</li>
+                <li>Your online banking details are not saved</li>
+              </ul>
+            </p>
+
+            <a role="button" class="govuk-c-button" href="#" id="truelayerRedirect">Continue</a>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+{% endblock %}

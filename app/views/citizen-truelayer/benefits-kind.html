@@ -1,0 +1,58 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="other-income">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Do you get any benefits from work that are not money?
+        </h1>
+
+        <p class="govuk-body">
+          Benefits in kind include a company car, travel card or health insurance.
+        </p>
+
+        <form class="form" action="identify-outgoings" method="post">
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="benefits-in-kind-1" name="benefits-in-kind" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-1">
+                Yes
+              </label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="benefits-in-kind-2" name="benefits-in-kind" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-2">
+                No
+              </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

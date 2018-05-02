@@ -1,0 +1,172 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<style>
+  input[type='radio'] {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 50%;
+    outline: none;
+    background: white;
+  }
+
+  input[type='radio']:hover {
+    box-shadow: 0 0 5px 0px orange inset;
+  }
+
+  input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%;
+  }
+
+  input[type='radio']:checked:before {
+    background: black;
+  }
+
+
+  details summary {
+    display: inline-block;
+    color: #005ea5;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0.26316em;
+  }
+
+  details summary:hover {
+    color: #2b8cc4;
+  }
+
+  details summary:focus {
+    outline: 3px solid #ffbf47;
+  }
+
+  details .summary {
+    text-decoration: underline;
+  }
+
+  details .arrow {
+    margin-right: .35em;
+    font-style: normal;
+  }
+
+  .panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #bfc1c3;
+    padding: 0.78947em;
+    margin-bottom: 0.78947em;
+  }
+
+  .panel :first-child {
+    margin-top: 0;
+  }
+
+  .panel :only-child,
+  .panel :last-child {
+    margin-bottom: 0;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  .panel-border-narrow {
+    border-left-width: 5px;
+  }
+</style>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="identify-outgoings-with-housing">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">
+              Select childcare, maintenance and legal aid payments
+        </h2>
+
+        <p class="govuk-body">We have listed items from your statement by the highest outgoing payment to help you.</p>
+
+        <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+          <thead class="govuk-c-table__head">
+            <tr class="govuk-c-table__row">
+              <th class="govuk-c-table__header" scope="col" width="300" style="border-width:thick;">Description</th>
+              <th class="govuk-c-table__header" scope="col" width="150" style="border-width:thick;">Date</th>
+              <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-c-table__body">
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
+              <td class="govuk-c-table__cell">24 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="outgoings"></label>
+                </div>
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">KFC</td>
+              <td class="govuk-c-table__cell">18 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£27.00</td>
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="outgoings"></label>
+                </div>
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell">Netflix</td>
+              <td class="govuk-c-table__cell">18 Jan 2018</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£15.00</td>
+              <td class="govuk-c-table__cell">
+                <div class="govuk-c-radios__item">
+                  <label><input type="radio" id='regular' name="outgoings"></label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+
+        <a class="govuk-c-button govuk-c-button" href="identify-outgoings-housing-childcare" role="button">Continue</a>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
