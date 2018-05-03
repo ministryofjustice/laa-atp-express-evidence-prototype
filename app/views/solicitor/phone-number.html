@@ -19,29 +19,25 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
+      <a class="govuk-c-back-link" href="email-address">Back</a>
+
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <p></p>
-          <h2 class="govuk-heading-xl">What do you want to do?</h2>
+          <h2 class="govuk-heading-xl">
+            What is your client's mobile phone number?
+          </h2>
 
-          <form action="/solicitor/newOrResume" method="get">
+          <form class="form" action="basic-details-playback" method="post">
 
-            <div class="govuk-c-radios">
-              </br>
-              <fieldset class="govuk-c-fieldset">
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="new" name="newOrResume" type="radio" value="new" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="new">Start a new application</label>
-                </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="resume" name="newOrResume" type="radio" value="resume">
-                  <label class="govuk-c-label govuk-c-radios__label" for="resume">Continue an application</label>
-                </div>
-              </fieldset>
-            </div>
+            <label class="govuk-c-label" for="mobile">
+              Enter mobile phone number
+            </label>
+            <input class="govuk-c-input govuk-!-width-one-third" id="mobile" name="mobile" type="text" required>
+            </br>
 
-            <input class="govuk-c-button" type="submit" value="Next">
+            <input class="govuk-c-button" type="submit" value="Continue">
 
           </form>
 
