@@ -24,18 +24,28 @@
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <p></p>
           <h2 class="govuk-heading-xl">
-            Select your client's home address?
+            Select your client's home address
           </h2>
 
-          <form class="form" action="national-insurance" method="post">
 
-            <label class="govuk-c-label" for="name">
-              Select address
-            </label>
-            <input class="govuk-c-input govuk-!-width-two-third" id="name" name="name" type="text" required>
+          <form action="national-insurance" method="post">
 
+            <select class="govuk-c-select" id="select-1" name="select-1">
+                <option value="1">1 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="2">2 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="3">3 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="4">4 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="5">5 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="6">6 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="7">7 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="8">8 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="9">8 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="10">8 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="11">8 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="12">8 Main Road, London, {{ data['postcode'] }}</option>
+              </select>
+            <br><br>
             <p class="govuk-body"><a href="#">Enter address manually</a></p>
 
             <input class="govuk-c-button" type="submit" value="Continue">

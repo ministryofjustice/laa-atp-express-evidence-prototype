@@ -4,6 +4,19 @@
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block content %}
 
+<head>
+
+  <script type="text/javascript">
+    function load() {
+      window.location.href = "benefits-result";
+    }
+
+    window.onload = setTimeout(load, 3000);;
+  </script>
+
+</head>
+
+
 <body>
   <div class="govuk-o-width-container">
 
@@ -19,28 +32,21 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="basic-details">Back</a>
+      <a class="govuk-c-back-link" href="benefits-result">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <p></p>
           <h2 class="govuk-heading-xl">
-            What is your client's postcode?
+            Enter your client's National Insurance number and date of birth
           </h2>
 
-          <form class="form" action="select-address" method="post">
+          <div align="center"><img src="../public/images/loading.gif"></div>
 
-            <label class="govuk-c-label" for="name">
-              Enter postcode
-            </label>
-            <input class="govuk-c-input govuk-!-width-one-third" id="postcode" name="postcode" type="text" required>
 
-            <p class="govuk-body"><a href="#">Enter address manually</a></p>
+          <input class="govuk-c-button" type="submit" value="Continue">
 
-            <input class="govuk-c-button" type="submit" value="Find address">
-
-          </form>
 
         </div>
       </div>
