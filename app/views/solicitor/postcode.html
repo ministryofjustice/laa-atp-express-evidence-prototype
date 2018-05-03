@@ -19,29 +19,26 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
+      <a class="govuk-c-back-link" href="basic-details">Back</a>
+
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <p></p>
-          <h2 class="govuk-heading-xl">What do you want to do?</h2>
+          <h2 class="govuk-heading-xl">
+            What is your client's postcode?
+          </h2>
 
-          <form action="/solicitor/newOrResume" method="get">
+          <form class="form" action="select-address" method="post">
 
-            <div class="govuk-c-radios">
-              </br>
-              <fieldset class="govuk-c-fieldset">
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="new" name="newOrResume" type="radio" value="new" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="new">Start a new application</label>
-                </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="resume" name="newOrResume" type="radio" value="resume">
-                  <label class="govuk-c-label govuk-c-radios__label" for="resume">Continue an application</label>
-                </div>
-              </fieldset>
-            </div>
+            <label class="govuk-c-label" for="name">
+              Enter postcode
+            </label>
+            <input class="govuk-c-input govuk-!-width-two-third" id="name" name="name" type="text" required>
 
-            <input class="govuk-c-button" type="submit" value="Next">
+            <p class="govuk-body"><a href="#">Enter address manually</a></p>
+
+            <input class="govuk-c-button" type="submit" value="Find address">
 
           </form>
 

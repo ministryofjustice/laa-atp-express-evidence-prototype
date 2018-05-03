@@ -23,12 +23,24 @@
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+          <p></p>
+          <h2 class="govuk-heading-xl">Check your client's details</h2>
 
-          <h2 class="govuk-heading-xl">Are your client's details correct?</h2>
-
-          <form class="form" action="contact-applicant" method="post">
+          <form class="form" action="confirm-contact" method="post">
 
             <dl class="govuk-check-your-answers cya-questions-short">
+              <h2>Client details</h2>
+              <br>
+              <div>
+                <dt class="cya-question">Application type</dt>
+                <dd class="cya-answer">Civil</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">type</span>
+                  </a>
+                </dd>
+              </div>
+
               <div>
                 <dt class="cya-question">Name</dt>
                 <dd class="cya-answer">John Doe</dd>
@@ -50,6 +62,29 @@
               </div>
 
               <div>
+                <dt class="cya-question">National Insurance number</dt>
+                <dd class="cya-answer">AA1234567</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">national insurance number</span>
+                  </a>
+                </dd>
+              </div>
+              <br>
+
+              <h2>Contact information</h2>
+
+              <br>
+                <div>
+                <dt class="cya-question">Preferred contact</dt>
+                <dd class="cya-answer">Email<br>Mobile phone</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">contact preferences</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
                 <dt class="cya-question">Email address</dt>
                 <dd class="cya-answer">john.doe@email.com</dd>
                 <dd class="cya-change">
@@ -60,24 +95,77 @@
               </div>
 
               <div>
-                <dt class="cya-question">Mobile phone number</dt>
+                <dt class="cya-question">Mobile phone</dt>
                 <dd class="cya-answer">07123456789</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
-                    Change<span class="visually-hidden">email-address</span>
+                    Change<span class="visually-hidden">mobile phone number</span>
                   </a>
                 </dd>
               </div>
 
+              <br>
+
+              <h2>Address</h2>
+
+              <br>
+
               <div>
-                <dt class="cya-question">Type of aid</dt>
-                <dd class="cya-answer">Civil</dd>
+                <dt class="cya-question">Number</dt>
+                <dd class="cya-answer">4</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
-                    Change<span class="visually-hidden">type</span>
+                    Change<span class="visually-hidden">number</span>
                   </a>
                 </dd>
               </div>
+              <div>
+                <dt class="cya-question">Address line 1</dt>
+                <dd class="cya-answer">Test Road</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">address line 1</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">Address line 2</dt>
+                <dd class="cya-answer"></dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">address line 2</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">Town or city</dt>
+                <dd class="cya-answer">Nowhwere Town</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">city</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">County</dt>
+                <dd class="cya-answer"></dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">county</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">Postcode</dt>
+                <dd class="cya-answer">NO1 XXX</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="basic-details">
+                    Change<span class="visually-hidden">postcode</span>
+                  </a>
+                </dd>
+              </div>          
+
+
 
             </dl>
 
