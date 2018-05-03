@@ -1,0 +1,51 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="identify-outgoings-housing-childcare">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          How much is your property worth?
+        </h1>
+        <form class="form" action="capital-assets" method="post">
+
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="property-amount">
+            <h3>Enter the estimated value of your property</h3>
+
+          </label> <br>£
+            <input class="govuk-c-input govuk-!-width-two-thirds" id="property-amount" name="property-amount" placeholder="0.00" type="number">
+          </div>
+
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="mortgage-amount">
+            <h3>If you have one, enter the amount currently outstanding on your mortgage</h3>
+
+          </label> <br>£
+            <input class="govuk-c-input govuk-!-width-two-thirds" id="mortgage-amount" name="mortgage-amount" placeholder="0.00" type="number">
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
