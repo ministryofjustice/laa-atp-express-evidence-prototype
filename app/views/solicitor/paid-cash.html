@@ -19,23 +19,25 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
+      <a class="govuk-c-back-link" href="review-outgoings">Back</a>
+
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <h2 class="govuk-heading-xl">Choose how to review the bank statement evidence</h2>
+          <h2 class="govuk-heading-xl">The citizen told us that they do not get paid in cash at all, is that right?</h2>
 
-          <form action="/solicitor/page11" method="post">
+          <form action="/solicitor/benefits-kind" method="post">
 
             <div class="govuk-c-radios">
               </br>
               <fieldset class="govuk-c-fieldset">
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="new" name="newOrResume" type="radio" value="new" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="new">As a list of transactions</label>
+                  <input class="govuk-c-radios__input" id="cashyes" name="cashPay" type="radio" value="cashyes" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="new">Yes</label>
                 </div>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="resume" name="newOrResume" type="radio" value="resume">
-                  <label class="govuk-c-label govuk-c-radios__label" for="resume">Summerised and by exception</label>
+                  <input class="govuk-c-radios__input" id="cashno" name="cashPay" type="radio" value="cashno">
+                  <label class="govuk-c-label govuk-c-radios__label" for="resume">No</label>
                 </div>
               </fieldset>
             </div>
