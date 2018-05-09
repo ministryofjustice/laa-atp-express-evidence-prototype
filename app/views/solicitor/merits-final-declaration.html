@@ -1,0 +1,72 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="merits-declarations">Back</a>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">Merits declaration</h2>
+
+
+        <p class="govuk-body">Please ask your client or their representative to review the following declaration. Should they have any queries regarding the declaration they should discuss this with you. The declaration, upon submission of the application, must be printed
+          and signed by the relevant person. They must be retained on the client's file.</p>
+
+        <h3 class="govuk-heading">1. a) Client's Merits Declaration</h3>
+        </br>
+        <p class="govuk-body">My solicitors have given me to keep:</p>
+
+        <p class="govuk-body">The Legal Aid Agency's leaflet about Legal Aid ('Paying for your Legal Aid' leaflet available at https://www.gov.uk/guidance/funding-and-costs-assessment-for-civil-and-crime-matters')
+        </p>
+
+        <p class="govuk-body">My solicitors have explained the LAA Statutory Charge to me. In particular, my solicitors have advised me that if I recover or preserve any property or asset, the Statutory Charge may arise, which could be payable immediately or postponed and
+          registered as an interest-bearing charge on my home at the Legal Aid Agency's discretion.</p>
+
+        <p class="govuk-body">I understand:</p>
+
+        <ul class="govuk-body">
+          <li>Legal aid is not always free</li>
+          <li>The Legal Aid Agency may register an interest-bearing charge against my property</li>
+          <li>I may have to pay back all or part of my legal costs at the end of case case.</li>
+          <li>The more work my solicitor does, the more I may have to pay back</li>
+        </ul>
+
+        <p class="govuk-body">As far as I know, all the information I have given is true and I have not withheld any relevant information. I understand that if I knowingly give false information or withhold relevant informationor fail to disclose any change in circumstances
+          for the duration of my funding that my legal aid may be stopped and criminal proceedings may be taken against me.</p>
+
+        <p class="govuk-body">I give my permission for the Legal Aid Agency to make any enquiries of third parties and I authorise those third parties to give any information necessary to deal with this.</p>
+
+        <p class="govuk-body">I understand that if false or inaccurate information is provided and fraud is identified, details will be passed to fraud prevention agencies to prevent fraud and money laundering. For further details explaining how the information held by fraud
+          prevention agencies may be used contact the Counter Fraud and Investigations team on 0203 334 5588.
+
+          <div class="govuk-c-checkboxes">
+            <fieldset class="govuk-c-fieldset">
+
+              <div class="govuk-c-checkboxes__item">
+                <input class="govuk-c-checkboxes__input" id="merits-consent" name="merits-consent" value="merits-consent" type="checkbox">
+                <label class="govuk-c-label govuk-c-checkboxes__label" for="merits-consent">
+                  <b>Please confirm that you are confident that your client, or their representative, have both read and understood the above by ticking this box.</b>
+                </label>
+              </div>
+
+          </div>
+      </div>
+  </main>
+  </div>
+
+  {% endblock %}

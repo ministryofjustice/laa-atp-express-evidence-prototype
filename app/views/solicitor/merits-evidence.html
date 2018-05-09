@@ -1,0 +1,94 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="statement-of-case">Back</a>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">Evidence</h2>
+
+        <form class="form" action="merits-declaration-to-be-signed" method="post">
+
+          <div class="govuk-c-radios">
+            <p class="govuk-body">Is there an existing counsel opinion in this matter which has not previously been submitted?</p>
+
+            <fieldset class="govuk-c-fieldset">
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="counsel-opinion1" name="counsel-opinion" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="counsel-opinion1">Yes</label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="counsel-opinion2" name="counsel-opinion" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="counsel-opinion2">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-c-radios">
+            <p class="govuk-body">Are there existing experts' reports in relation to this matter which have not previously been submitted?</p>
+            <fieldset class="govuk-c-fieldset">
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="experts-reports1" name="experts-reports" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="experts-reports1">Yes</label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="experts-reports2" name="experts-reports" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="experts-reports2">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-c-radios">
+            <p class="govuk-body">Are you intending to upload a separate statement?</p>
+            <fieldset class="govuk-c-fieldset">
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="separate-statement1" name="separate-statement" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="separate-statement1">Yes</label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="separate-statement2" name="separate-statement" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="separate-statement2">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-c-radios">
+            <p class="govuk-body">Are you intending to upload any evidence in support of an Applicant Declaration against Instructions?</p>
+            <fieldset class="govuk-c-fieldset">
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="upload-evidence1" name="upload-evidence" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="upload-evidence1">Yes</label>
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="upload-evidence2" name="upload-evidence" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="upload-evidence2">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
