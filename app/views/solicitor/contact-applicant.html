@@ -23,7 +23,7 @@
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-          
+
           <p></p>
 
           <h2 class="govuk-heading-xl">How does your client want to be contacted?</h2>
@@ -32,20 +32,30 @@
 
           <form class="form" action="email-address" method="post">
 
-            <div class="govuk-c-radios">
+            <div class="govuk-c-checkboxes">
               <fieldset class="govuk-c-fieldset">
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="method-1" name="method" type="radio" value="email" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="method-1">Email</label>
+
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="method-1" name="contact-method" value=" Email" type="checkbox">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="dwp">
+                    Email
+                  </label>
                 </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="method-2" name="method" type="radio" value="mobile">
-                  <label class="govuk-c-label govuk-c-radios__label" for="method-2">Mobile phone</label>
+                </br>
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="method-2" name="contact-method" value=" Text message" type="checkbox">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="ob">
+                    Text message
+                  </label>
                 </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="method-2" name="method" type="radio" value="mobile">
-                  <label class="govuk-c-label govuk-c-radios__label" for="method-2">Letter</label>
+                </br>
+                <div class="govuk-c-checkboxes__item">
+                  <input class="govuk-c-checkboxes__input" id="method-3" name="contact-method" value=" Letter" type="checkbox">
+                  <label class="govuk-c-label govuk-c-checkboxes__label" for="ob">
+                  Letter
+                </label>
                 </div>
+
               </fieldset>
             </div>
 

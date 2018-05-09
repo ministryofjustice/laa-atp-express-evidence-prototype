@@ -19,7 +19,7 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="basic-details">Back</a>
+      <a class="govuk-c-back-link" href="phone-number">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
@@ -28,12 +28,11 @@
 
           <form class="form" action="confirm-contact" method="post">
 
-            <dl class="govuk-check-your-answers cya-questions-short">
-              <h2>Client details</h2>
-              <br>
+            <h2 class="govuk-heading-l">Client details</h2>
+            <dl class="govuk-check-your-answers cya-questions" style="width:600px">
               <div>
-                <dt class="cya-question">Application type</dt>
-                <dd class="cya-answer">Civil</dd>
+                <dt class="cya-question" style="width:275px">Application type</dt>
+                <dd class="cya-answer">{{ data['application-type'] }}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">type</span>
@@ -43,7 +42,7 @@
 
               <div>
                 <dt class="cya-question">Name</dt>
-                <dd class="cya-answer">John Doe</dd>
+                <dd class="cya-answer">{{ data['name'] }}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">name</span>
@@ -53,7 +52,7 @@
 
               <div>
                 <dt class="cya-question">Date of birth</dt>
-                <dd class="cya-answer">5 January 1978</dd>
+                <dd class="cya-answer">{{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">date of birth</span>
@@ -63,21 +62,23 @@
 
               <div>
                 <dt class="cya-question">National Insurance number</dt>
-                <dd class="cya-answer">AA1234567</dd>
+                <dd class="cya-answer">{{ data['nino'] }}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">national insurance number</span>
                   </a>
                 </dd>
               </div>
-              <br>
+            </dl>
 
-              <h2>Contact information</h2>
+            </br>
 
-              <br>
-                <div>
-                <dt class="cya-question">Preferred contact</dt>
-                <dd class="cya-answer">Email<br>Mobile phone</dd>
+            <h2 class="govuk-heading-l">Contact information</h2>
+            <dl class="govuk-check-your-answers cya-questions" style="width:600px">
+
+              <div>
+                <dt class="cya-question" style="width:275px">Preferred contact</dt>
+                <dd class="cya-answer">{{ data['contact-method']}}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">contact preferences</span>
@@ -86,7 +87,7 @@
               </div>
               <div>
                 <dt class="cya-question">Email address</dt>
-                <dd class="cya-answer">john.doe@email.com</dd>
+                <dd class="cya-answer">{{ data['email']}}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">email-address</span>
@@ -96,23 +97,24 @@
 
               <div>
                 <dt class="cya-question">Mobile phone</dt>
-                <dd class="cya-answer">07123456789</dd>
+                <dd class="cya-answer">{{ data['mobile']}}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">mobile phone number</span>
                   </a>
                 </dd>
               </div>
+            </dl>
 
-              <br>
+            </br>
 
-              <h2>Address</h2>
+            <h2 class="govuk-heading-l">Address</h2>
 
-              <br>
+            <dl class="govuk-check-your-answers cya-questions" style="width:600px">
 
               <div>
-                <dt class="cya-question">Number</dt>
-                <dd class="cya-answer">4</dd>
+                <dt class="cya-question" style="width:275px">Number</dt>
+                <dd class="cya-answer">{{ data['address']}}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">number</span>
@@ -121,7 +123,7 @@
               </div>
               <div>
                 <dt class="cya-question">Address line 1</dt>
-                <dd class="cya-answer">Test Road</dd>
+                <dd class="cya-answer">Main Road</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">address line 1</span>
@@ -139,7 +141,7 @@
               </div>
               <div>
                 <dt class="cya-question">Town or city</dt>
-                <dd class="cya-answer">Nowhwere Town</dd>
+                <dd class="cya-answer">London</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">city</span>
@@ -157,16 +159,13 @@
               </div>
               <div>
                 <dt class="cya-question">Postcode</dt>
-                <dd class="cya-answer">NO1 XXX</dd>
+                <dd class="cya-answer">{{ data['postcode']}}</dd>
                 <dd class="cya-change">
                   <a class="govuk-link" href="basic-details">
                     Change<span class="visually-hidden">postcode</span>
                   </a>
                 </dd>
-              </div>          
-
-
-
+              </div>
             </dl>
 
             <input class="govuk-c-button" type="submit" value="Continue">

@@ -483,12 +483,51 @@ router.get('/solicitor/newOrResume', function (req, res) {
   var newOrResume = req.query.newOrResume
 
   if (newOrResume === 'new') {
-    res.redirect('basic-details')
+    res.redirect('/solicitor/basic-details')
   } else {
-    res.redirect('case-dashboard')
+    res.render('solicitor/case-dashboard')
   }
 })
 
+router.get('/solicitor/find-address', function (req, res, next) {
+
+  console.warn('start')
+
+  var postcodeLookupUrl = 'https://api.getAddress.io/find/'
+  var postcode = req.query['postcode']
+  var postcodeNoSpaces = postcode.replace(/\s/g, '')
+  var postcodeApiKey = '48wlp1Lx7EC_fIcqSIeL2w13450'
+
+  var postcodeApiUrl = postcodeLookupUrl+postcode+'?api-key='+postcodeApiKey
+
+  var jsonIn
+
+  console.log(postcodeLookupUrl)
+  console.log(postcode)
+  console.log(postcodeApiUrl)
+
+  request.get({
+          url: postcodeApiUrl
+        },
+        function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+              console.log('success')
+              jsonIn = JSON.parse(body);
+              console.log(jsonIn);
+
+              res.render('solicitor/select-address', {addresses: jsonIn});
+          }
+          else {
+              console.log("There was an error: ") + response.statusCode;
+              console.log(body);
+              res.redirect('/solicitor/select-address');
+          }
+        }
+)
+
+//res.redirect('/solicitor/select-address');
+
+});
 
 
 /*********************************************************************/

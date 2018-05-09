@@ -24,30 +24,29 @@
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <p></p>
           <h2 class="govuk-heading-xl">Is it a civil or criminal case?</h2>
-        
-        <form class="form" action="basic-details" method="post">
 
-          <div class="govuk-c-radios">
-            <fieldset class="govuk-c-fieldset">
-              <div class="govuk-c-radios__item">
-                <input class="govuk-c-radios__input" id="benefits-in-kind-1" name="benefits-in-kind" type="radio" value="yes" required>
-                <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-1">
+          <form class="form" action="basic-details" method="post">
+
+            <div class="govuk-c-radios">
+              <fieldset class="govuk-c-fieldset">
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="application-type-1" name="application-type" type="radio" value="Civil" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-1">
                 Civil
               </label>
-              </div>
-              <div class="govuk-c-radios__item">
-                <input class="govuk-c-radios__input" id="benefits-in-kind-2" name="benefits-in-kind" type="radio" value="no">
-                <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-2">
+                </div>
+                <div class="govuk-c-radios__item">
+                  <input class="govuk-c-radios__input" id="application-type-2" name="application-type" type="radio" value="Crime">
+                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-2">
                 Criminal
               </label>
-              </div>
-            </fieldset>
-          </div>
+                </div>
+              </fieldset>
+            </div>
 
-          <input class="govuk-c-button" type="submit" value="Continue">
-        </form>
+            <input class="govuk-c-button" type="submit" value="Continue">
+          </form>
 
         </div>
       </div>

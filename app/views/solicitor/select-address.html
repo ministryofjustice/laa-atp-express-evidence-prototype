@@ -31,7 +31,7 @@
 
           <form action="national-insurance" method="post">
 
-            <select class="govuk-c-select" id="select-1" name="select-1">
+            <select class="govuk-c-select" id="select-1" name="address">
                 <option value="1">1 Main Road, London, {{ data['postcode'] }}</option>
                 <option value="2">2 Main Road, London, {{ data['postcode'] }}</option>
                 <option value="3">3 Main Road, London, {{ data['postcode'] }}</option>
@@ -40,11 +40,27 @@
                 <option value="6">6 Main Road, London, {{ data['postcode'] }}</option>
                 <option value="7">7 Main Road, London, {{ data['postcode'] }}</option>
                 <option value="8">8 Main Road, London, {{ data['postcode'] }}</option>
-                <option value="9">8 Main Road, London, {{ data['postcode'] }}</option>
-                <option value="10">8 Main Road, London, {{ data['postcode'] }}</option>
-                <option value="11">8 Main Road, London, {{ data['postcode'] }}</option>
-                <option value="12">8 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="9">9 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="10">10 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="11">11 Main Road, London, {{ data['postcode'] }}</option>
+                <option value="12">12 Main Road, London, {{ data['postcode'] }}</option>
               </select>
+
+            <!--select class="govuk-c-select" id="select-1" name="address">
+                  <option value="1">{{ addresses.addresses[0] }}</option>
+                  <option value="2">{{ addresses.addresses[1] }}</option>
+                  <option value="3">{{ addresses.addresses[2] }}</option>
+                  <option value="4">{{ addresses.addresses[3] }}</option>
+                  <option value="5">{{ addresses.addresses[4] }}</option>
+                  <option value="6">{{ addresses.addresses[5] }}</option>
+                  <option value="7">{{ addresses.addresses[6] }}</option>
+                  <option value="8">{{ addresses.addresses[7] }}</option>
+                  <option value="9">{{ addresses.addresses[8] }}</option>
+                  <option value="10">{{ addresses.addresses[9] }}</option>
+                  <option value="11">{{ addresses.addresses[10] }}</option>
+                  <option value="12">{{ addresses.addresses[11] }}</option>
+                </select-->
+
             <br><br>
             <p class="govuk-body"><a href="#">Enter address manually</a></p>
 
