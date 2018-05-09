@@ -1,11 +1,9 @@
 {% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
 
-<script src="/public/javascripts/jquery-1.11.3.js"></script>
-
 <div class="govuk-o-width-container">
 
   <div class="govuk-c-phase-banner">
-    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
         alpha
       </strong>
       <span class="govuk-c-phase-banner__text">
@@ -16,7 +14,7 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="means-result">Back</a>
+    <a class="govuk-c-back-link" href="premium-bonds">Back</a>
 
     <p class="govuk-body"></p>
 
@@ -24,21 +22,16 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-xl">
-          Next steps
+          What is the value of your Premium Bonds?
         </h1>
+        <form class="form" action="capital-bonds" method="post">
 
-        <p class="govuk-body">
-          Name: <strong>John Doe</strong><br> Case reference: <strong>2018/LAA/4ewrqfdd</strong></p>
+          <div class="govuk-o-form-group">
+            £ <input class="govuk-c-input govuk-!-width-two-thirds" id="pb-amount" name="pb-amount" placeholder="0.00" type="number">
+          </div>
+          <input class="govuk-c-button" type="submit" value="Continue">
 
-        <p class="govuk-body">Your results have been submitted to the Legal Aid Agency and to your solicitor.</p>
-
-
-        <p class="govuk-body">Your solicitor will contact you to complete your legal aid application.</p>
-
-
-        <input class="govuk-c-button" type="submit" value="Finish">
-
-
+        </form>
       </div>
     </div>
   </main>
