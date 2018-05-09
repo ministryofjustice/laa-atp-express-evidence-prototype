@@ -1,0 +1,137 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="review-income">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            Review the citizen’s bank statement for outgoings
+          </h2>
+
+          <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert">
+            <ul class="govuk-list govuk-list--bullet" style = "color: #b10e1e";>
+              <li>
+                <a><b>Until all the sections are complete, you will not be able to submit this application.</b></a>
+              </li>
+              <br>
+              <li>
+                <a><b>You can complete it in whichever order suits you</b></a>
+              </li>
+            </ul>
+          </div>
+
+          </br>
+          <h2 class="govuk-heading-m">
+            Selected outgoings
+          </h2>
+
+          <div>
+            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">06 Jan 18</td>
+                  <td class="govuk-c-table__cell">Halifax Mortgage</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1200.00</td>
+                  <td class="govuk-c-table__cell"><a href="">Change</a></td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">18 Jan 18</td>
+                  <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£600.00</td>
+                  <td class="govuk-c-table__cell"><a href="">Change</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <h2 class="govuk-heading-m">
+              Unexplained outgoings
+            </h2>
+
+            <div>
+              <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+                <thead class="govuk-c-table__head">
+                  <tr class="govuk-c-table__row">
+                    <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
+                    <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
+                    <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                    <th class="govuk-c-table__header" scope="col" style="border-width:thick;"></th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-c-table__body">
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">06 Jan 18</td>
+                    <td class="govuk-c-table__cell">Payment from ebay</td>
+                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£250.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">18 Jan 18</td>
+                    <td class="govuk-c-table__cell">Cash for tickets</td>
+                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£25.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">23 Jan 18</td>
+                    <td class="govuk-c-table__cell">Refund from hairdressers</td>
+                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£16.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">26 Jan 18</td>
+                    <td class="govuk-c-table__cell">Interest charge</td>
+                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.23</td>
+                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">03 Feb 18</td>
+                    <td class="govuk-c-table__cell">Transfer from Dave</td>
+                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£20.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">06 Feb 18</td>
+                    <td class="govuk-c-table__cell">Transfer from Owen</td>
+                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£12.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+
+            <a class="govuk-c-button govuk-c-button" href="paid-cash" role="button">Continue</a>
+
+          </div>
+
+    </main>
+    </div>
+</body>
+{% endblock %}
