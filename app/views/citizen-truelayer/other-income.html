@@ -29,27 +29,31 @@
               Did you receive any income not paid into your bank?
         </h2>
 
-        <div class="govuk-c-radios">
-          <fieldset class="govuk-c-fieldset">
-            <legend class="govuk-c-fieldset__legend">
-              <p class="govuk-body">For example, if you get paid in cash for a temporary or casual job.</p>
-            </legend>
-            <div class="govuk-c-radios__item">
-              <input class="govuk-c-radios__input" id="non-bank-money-1" name="non-bank-money" type="radio" value="yes" required>
-              <label class="govuk-c-label govuk-c-radios__label" for="non-bank-money-1">
+        <form action="/citizen-truelayer/cash" method="get">
+
+          <div class="govuk-c-radios">
+            <fieldset class="govuk-c-fieldset">
+              <legend class="govuk-c-fieldset__legend">
+                <p class="govuk-body">For example, if you get paid in cash for a temporary or casual job.</p>
+              </legend>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="cash-1" name="cash" type="radio" value="yes" required>
+                <label class="govuk-c-label govuk-c-radios__label" for="cash-1">
                 Yes
               </label>
-            </div>
-            <div class="govuk-c-radios__item">
-              <input class="govuk-c-radios__input" id="non-bank-money-2" name="non-bank-money" type="radio" value="no">
-              <label class="govuk-c-label govuk-c-radios__label" for="non-bank-money-2">
+              </div>
+              <div class="govuk-c-radios__item">
+                <input class="govuk-c-radios__input" id="cash-2" name="cash" type="radio" value="no">
+                <label class="govuk-c-label govuk-c-radios__label" for="cash-2">
                  No
               </label>
-            </div>
-          </fieldset>
-        </div>
+              </div>
+            </fieldset>
+          </div>
 
-        <a class="govuk-c-button govuk-c-button" href="benefits-kind" role="button">Continue</a>
+          <!--a class="govuk-c-button govuk-c-button" href="benefits-kind" role="button">Continue</a-->
+          <input class="govuk-c-button" type="submit" value="Continue">
+        </form>
       </div>
 
     </div>

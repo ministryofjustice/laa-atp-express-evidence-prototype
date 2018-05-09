@@ -47,6 +47,65 @@ router.get('/generic/multibank', function (req, res) {
   }
 })
 
+/***************************  Crime Remote  **************************/
+
+router.get('/crime-remote/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/crime-remote/obbank')
+  } else {
+    res.render('crime-remote/benefits-kind')
+  }
+})
+
+router.get('/crime-remote/remote', function (req, res) {
+
+  var remoteAccess = req.query.remote
+
+  if (remoteAccess === 'yes') {
+    res.redirect('/crime-remote/remote-notification')
+  } else {
+    res.render('crime/obbank')
+  }
+})
+
+router.get('/crime-remote/citizen-multi', function (req, res) {
+
+  var citmultiBank = req.query.citmultibank
+
+  if (citmultiBank === 'yes') {
+    res.redirect('/crime-remote/citizen-obbank')
+  } else {
+    res.render('crime-remote/citizen-final')
+  }
+})
+
+router.get('/crime-remote/citizen-evi', function (req, res) {
+
+  var citEvidence = req.query.citevidence
+
+  if (citEvidence === 'yes') {
+    res.redirect('/crime-remote/citizen-identify-income')
+  } else {
+    res.render('crime-remote/citizen-final-branch')
+  }
+})
+
+/************************  Generic TrueLayer  ************************/
+
+router.get('/generic-truelayer/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/generic-truelayer/obbank')
+  } else {
+    res.render('generic-truelayer/other-income')
+  }
+})
+
 router.get('/generic-truelayer/bank-success', function (req, res, next) {
 
   var domain = req.hostname;
@@ -145,66 +204,43 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
       });
 })
 
-/***************************  Crime Remote  **************************/
-
-router.get('/crime-remote/multibank', function (req, res) {
-
-  var multiBank = req.query.multibank
-
-  if (multiBank === 'yes') {
-    res.redirect('/crime-remote/obbank')
-  } else {
-    res.render('crime-remote/benefits-kind')
-  }
-})
-
-router.get('/crime-remote/remote', function (req, res) {
-
-  var remoteAccess = req.query.remote
-
-  if (remoteAccess === 'yes') {
-    res.redirect('/crime-remote/remote-notification')
-  } else {
-    res.render('crime/obbank')
-  }
-})
-
-router.get('/crime-remote/citizen-multi', function (req, res) {
-
-  var citmultiBank = req.query.citmultibank
-
-  if (citmultiBank === 'yes') {
-    res.redirect('/crime-remote/citizen-obbank')
-  } else {
-    res.render('crime-remote/citizen-final')
-  }
-})
-
-router.get('/crime-remote/citizen-evi', function (req, res) {
-
-  var citEvidence = req.query.citevidence
-
-  if (citEvidence === 'yes') {
-    res.redirect('/crime-remote/citizen-identify-income')
-  } else {
-    res.render('crime-remote/citizen-final-branch')
-  }
-})
-
-/************************  Generic TrueLayer  ************************/
-
-router.get('/generic-truelayer/multibank', function (req, res) {
-
-  var multiBank = req.query.multibank
-
-  if (multiBank === 'yes') {
-    res.redirect('/generic-truelayer/obbank')
-  } else {
-    res.render('generic-truelayer/other-income')
-  }
-})
-
 /************************  Citizen Truelayer  ************************/
+
+router.get('/citizen-truelayer/dwp-consent', function (req, res) {
+
+  var checkboxes = req.query.consent
+
+  var dwp = checkboxes[0]
+  var ob = checkboxes[1]
+
+  if (checkboxes === '_unchecked'){
+    res.redirect('/citizen-truelayer/property')
+  }
+  else{
+
+    if (dwp === 'dwp') {
+      res.redirect('/citizen-truelayer/dwpdetails')
+    } else {
+      res.render('citizen-truelayer/obbank')
+    }
+  }
+})
+
+
+router.get('/citizen-truelayer/ob-consent', function (req, res) {
+
+  var checkboxes =  req.session.data['consent']
+
+  var dwp = checkboxes[0]
+  var ob = checkboxes[1]
+
+  if (ob  === 'ob') {
+      res.redirect('/citizen-truelayer/obbank')
+    } else {
+      res.render('citizen-truelayer/property')
+  }
+})
+
 
 router.get('/citizen-truelayer/multibank', function (req, res) {
 
@@ -216,6 +252,130 @@ router.get('/citizen-truelayer/multibank', function (req, res) {
     res.render('citizen-truelayer/identify-income')
   }
 })
+
+router.get('/citizen-truelayer/cash', function (req, res) {
+
+  var cash = req.query.cash
+
+  if (cash === 'yes') {
+    res.redirect('/citizen-truelayer/cash-amount')
+  } else {
+    res.render('citizen-truelayer/benefits-kind')
+  }
+})
+
+router.get('/citizen-truelayer/benefitsinkind', function (req, res) {
+
+  var benefitsinkind = req.query.benefitsinkind
+
+  if (benefitsinkind === 'yes') {
+    res.redirect('/citizen-truelayer/benefits-kind-amount')
+  } else {
+    res.render('citizen-truelayer/identify-outgoings')
+  }
+})
+
+router.get('/citizen-truelayer/ownsproperty', function (req, res) {
+
+  var ownsproperty = req.query.ownsproperty
+
+  if (ownsproperty === 'yes') {
+    res.redirect('/citizen-truelayer/property-amount')
+  } else {
+    res.render('citizen-truelayer/capital-assets')
+  }
+})
+
+
+router.get('/citizen-truelayer/ownsproperty', function (req, res) {
+
+  var ownsproperty = req.query.ownsproperty
+
+  if (ownsproperty === 'yes') {
+    res.redirect('/citizen-truelayer/property-amount')
+  } else {
+    res.render('citizen-truelayer/capital-assets')
+  }
+})
+
+router.get('/citizen-truelayer/has-other-capital', function (req, res) {
+
+  var hasOtherCapital = req.query.hasOtherCapital
+
+  if (hasOtherCapital === 'yes') {
+    res.redirect('/citizen-truelayer/national-savings')
+  } else {
+    res.render('citizen-truelayer/means-result')
+  }
+})
+
+router.get('/citizen-truelayer/has-national-savings', function (req, res) {
+
+  var hasNationalSavings = req.query.hasNationalSavings
+
+  if (hasNationalSavings === 'yes') {
+    res.redirect('/citizen-truelayer/national-savings-amount')
+  } else {
+    res.render('citizen-truelayer/premium-bonds')
+  }
+})
+
+router.get('/citizen-truelayer/has-premium-bonds', function (req, res) {
+
+  var hasPremiumBonds = req.query.hasPremiumBonds
+
+  if (hasPremiumBonds === 'yes') {
+    res.redirect('/citizen-truelayer/premium-bonds-amount')
+  } else {
+    res.render('citizen-truelayer/capital-bonds')
+  }
+})
+
+router.get('/citizen-truelayer/has-capital-bonds', function (req, res) {
+
+  var hasCapitalBonds = req.query.hasCapitalBonds
+
+  if (hasCapitalBonds === 'yes') {
+    res.redirect('/citizen-truelayer/capital-bonds-amount')
+  } else {
+    res.render('citizen-truelayer/stocks-shares')
+  }
+})
+
+router.get('/citizen-truelayer/has-stocks-shares', function (req, res) {
+
+  var hasStocksShares = req.query.hasStocksShares
+
+  if (hasStocksShares === 'yes') {
+    res.redirect('/citizen-truelayer/stocks-shares-amount')
+  } else {
+    res.render('citizen-truelayer/other-savings')
+  }
+})
+
+router.get('/citizen-truelayer/has-other-savings', function (req, res) {
+
+  var hasOtherSavings = req.query.hasOtherSavings
+
+  if (hasOtherSavings === 'yes') {
+    res.redirect('/citizen-truelayer/other-savings-amount')
+  } else {
+    res.render('citizen-truelayer/means-result')
+  }
+})
+
+router.get('/citizen-truelayer/assets', function (req, res) {
+
+  var checkboxes = req.query.assets
+
+  if (checkboxes === '_unchecked'){
+    res.redirect('/citizen-truelayer/means-result')
+  }
+  else{
+    res.render('citizen-truelayer/capitalshares', {assets:checkboxes})
+  }
+})
+
 
 router.get('/citizen-truelayer/bank-success', function (req, res, next) {
 
@@ -323,12 +483,51 @@ router.get('/solicitor/newOrResume', function (req, res) {
   var newOrResume = req.query.newOrResume
 
   if (newOrResume === 'new') {
-    res.redirect('basic-details')
+    res.redirect('/solicitor/basic-details')
   } else {
-    res.redirect('case-dashboard')
+    res.render('solicitor/case-dashboard')
   }
 })
 
+router.get('/solicitor/find-address', function (req, res, next) {
+
+  console.warn('start')
+
+  var postcodeLookupUrl = 'https://api.getAddress.io/find/'
+  var postcode = req.query['postcode']
+  var postcodeNoSpaces = postcode.replace(/\s/g, '')
+  var postcodeApiKey = '48wlp1Lx7EC_fIcqSIeL2w13450'
+
+  var postcodeApiUrl = postcodeLookupUrl+postcode+'?api-key='+postcodeApiKey
+
+  var jsonIn
+
+  console.log(postcodeLookupUrl)
+  console.log(postcode)
+  console.log(postcodeApiUrl)
+
+  request.get({
+          url: postcodeApiUrl
+        },
+        function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+              console.log('success')
+              jsonIn = JSON.parse(body);
+              console.log(jsonIn);
+
+              res.render('solicitor/select-address', {addresses: jsonIn});
+          }
+          else {
+              console.log("There was an error: ") + response.statusCode;
+              console.log(body);
+              res.redirect('/solicitor/select-address');
+          }
+        }
+)
+
+//res.redirect('/solicitor/select-address');
+
+});
 
 
 /*********************************************************************/

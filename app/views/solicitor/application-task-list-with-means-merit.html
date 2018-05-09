@@ -1,10 +1,8 @@
-{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block header_class %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block content %}
-
-
 <style>
   .grid-row:after,
   #content:after,
@@ -188,7 +186,6 @@
   sup,
   tt,
   var,
-  b,
   u,
   i,
   center,
@@ -385,11 +382,12 @@
     letter-spacing: 1px;
     text-decoration: none;
     color: #fff;
-    background-color: #ffcc00;
+    background-color: #005ea5;
     float: right;
     margin-right: 0;
     padding-top: 3px;
   }
+
 
   @media (min-width: 641px) {
     .task-completed {
@@ -397,68 +395,128 @@
       line-height: 1.25;
     }
   }
+
+  .task-incomplete {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #00823b;
+    float: right;
+    margin-right: 0;
+    padding-top: 3px;
+  }
+
+
+  @media (min-width: 641px) {
+    .task-incomplete {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
 </style>
 
-<body>
-  <div class="govuk-o-width-container">
+<div class="govuk-o-width-container">
 
-    <div class="govuk-c-phase-banner">
-      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
         alpha
       </strong>
-        <span class="govuk-c-phase-banner__text">
+      <span class="govuk-c-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
       </span>
-      </p>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="bank-success">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">
+          Complete the following application sections
+        </h2>
+
+        <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert">
+          <ul class="govuk-list govuk-list--bullet" style = "color: #b10e1e";>
+            <li>
+              <a><b>Until all the sections are complete, you will not be able to submit this application.</b></a>
+            </li>
+            <br>
+            <li>
+              <a><b>You can complete it in whichever order suits you</b></a>
+            </li>
+          </ul>
+        </div>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">John Smith, JJ2319388</h2>
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                        Background information
+                </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                        Basic details
+                </a>
+                <a class="govuk-link" href="">
+                  <strong class="task-completed" id="other-1-completed">Completed</strong>
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="/solicitor/review-evidence">
+                        Means assessment
+                </a>
+                <a class="govuk-link" href="">
+                  <strong class="task-completed" id="other-1-completed">Completed</strong>
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                        Merit assessment
+                </a>
+                <a class="govuk-link" href="">
+                  <strong class="task-completed" id="other-1-completed">Completed</strong>
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="declared-evidence">
+                        Evidence submission
+                </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <a class="govuk-c-button govuk-c-button" href="" role="button">Continue</a>
+
+      </div>
+
     </div>
 
-    <main role="main" class="govuk-o-main-wrapper">
+  </main>
+</div>
 
-      <a class="govuk-c-back-link" href="start">Back</a>
-
-      <div>
-
-        <h2 class="govuk-heading-xl">Resume an application</h2>
-
-        <p class="govuk-body">
-          Choose an applicant for the following list of open applications. Once an applicant has completed their part of the assessment, this will appear as ready to progress.
-        </p>
-
-        </br>
-        <h2 class="task-list-section">
-            <span class="task-list-section-number">Open applications</span>
-        </h2>
-        <table class="govuk-c-table--two-thirds" style="border-collapse: collapse;">
-
-          <thead class="govuk-c-table__head">
-            <tr class="govuk-c-table__row">
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick">Applicant name</th>
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date of application</th>
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Reference</th>
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">&nbsp;</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-c-table__body">
-            <tr class="task-list-item">
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">John Doe</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">02/04/2018</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">2018/LAA/4ewrqfdd</a></td>
-              <td class="govuk-c-table__cell"><a class="govuk-link"><strong class="task-completed" id="other-1-completed" style="background-color:#00823b">Ready to progress</strong></a></td>
-            </tr>
-            <tr class="task-list-item">
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">Bob Dylan</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">08/04/2018</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">2018/LAA/5kspihsl</a></td>
-              <td class="govuk-c-table__cell">&nbsp</td>
-            </tr>
-          </tbody>
-
-        </table>
-      </div>
-      </br>
-      <a class="govuk-c-button govuk-c-button" href="granted-access" role="button">Continue</a>
-
-    </main>
-  </div>
-</body>
 {% endblock %}

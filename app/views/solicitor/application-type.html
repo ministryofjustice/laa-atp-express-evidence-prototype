@@ -19,30 +19,33 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
+      <a class="govuk-c-back-link" href="start">Back</a>
+
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <p></p>
-          <h2 class="govuk-heading-xl">What do you want to do?</h2>
+          <h2 class="govuk-heading-xl">Is it a civil or criminal case?</h2>
 
-          <form action="/solicitor/newOrResume" method="get">
+          <form class="form" action="basic-details" method="post">
 
             <div class="govuk-c-radios">
-              </br>
               <fieldset class="govuk-c-fieldset">
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="new" name="newOrResume" type="radio" value="new" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="new">Start a new application</label>
+                  <input class="govuk-c-radios__input" id="application-type-1" name="application-type" type="radio" value="Civil" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-1">
+                Civil
+              </label>
                 </div>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="resume" name="newOrResume" type="radio" value="resume">
-                  <label class="govuk-c-label govuk-c-radios__label" for="resume">Continue an application</label>
+                  <input class="govuk-c-radios__input" id="application-type-2" name="application-type" type="radio" value="Crime">
+                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-2">
+                Criminal
+              </label>
                 </div>
               </fieldset>
             </div>
 
-            <input class="govuk-c-button" type="submit" value="Next">
-
+            <input class="govuk-c-button" type="submit" value="Continue">
           </form>
 
         </div>

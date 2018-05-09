@@ -19,29 +19,21 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
+      <a class="govuk-c-back-link" href="document-upload-type">Back</a>
+
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <p></p>
-          <h2 class="govuk-heading-xl">What do you want to do?</h2>
+          <h2 class="govuk-heading-xl">Document upload for stocks and shares</h2>
 
-          <form action="/solicitor/newOrResume" method="get">
-
-            <div class="govuk-c-radios">
-              </br>
-              <fieldset class="govuk-c-fieldset">
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="new" name="newOrResume" type="radio" value="new" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="new">Start a new application</label>
-                </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="resume" name="newOrResume" type="radio" value="resume">
-                  <label class="govuk-c-label govuk-c-radios__label" for="resume">Continue an application</label>
-                </div>
-              </fieldset>
+            <div class="govuk-o-form-group"><label class="govuk-c-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <input type="file" id="file-upload-1" name="file-upload-1" class="govuk-c-file-upload">
             </div>
 
-            <input class="govuk-c-button" type="submit" value="Next">
+
+            <a class="govuk-c-button govuk-c-button" href="" role="button">Continue</a>
 
           </form>
 
