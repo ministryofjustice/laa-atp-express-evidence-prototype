@@ -19,32 +19,26 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="basic-details">Back</a>
+      <a class="govuk-c-back-link" href="declared-evidence-with-stocks">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <p></p>
-          <h2 class="govuk-heading-xl">
-            What is your client’s home address?
-          </h2>
+          <h2 class="govuk-heading-xl">Document upload for property</h2>
 
-          <form class="form" action="/solicitor/select-address" method="post">
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="select-1">
+            Select from the drop down what kind of evidence you are submitting
+          </label>
+            <select class="govuk-c-select" id="select-1" name="select-1">
+            <option value="1">Banking information</option>
+            <option value="2" selected>Stocks and shares</option>
+            <option value="3">Property interest</option>
+          </select>
+          </div>
 
-            <label class="govuk-c-label" for="name">
-              Enter postcode
-            </label>
-            <input class="govuk-c-input govuk-!-width-one-third" id="postcode" name="postcode" type="text" required>
-
-            <p class="govuk-body"><a href="#">Enter address manually</a></p>
-
-            <input class="govuk-c-button" type="submit" value="Find address">
+          <a class="govuk-c-button govuk-c-button" href="document-upload-property" role="button">Continue</a>
 
           </form>
-
-          <!--input class="govuk-c-button" type="submit" value="Continue"-->
-
-
 
         </div>
       </div>
