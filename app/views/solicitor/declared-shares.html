@@ -20,13 +20,31 @@
     <main role="main" class="govuk-o-main-wrapper">
 
       <a class="govuk-c-back-link" href="property">Back</a>
-
+    <p class="govuk-body"></p>
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <h2 class="govuk-heading-xl">The client has declared stocks and shares worth £1000</h2>
+          <h2 class="govuk-heading-xl">Your client said they own stocks and shares</h2>
 
-
+            <div>
+            <table class="govuk-c-table">
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" width="500" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Shares</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1000.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href=''>Change</a>
+          </div>
+          <br>
+          <br>
             <a class="govuk-c-button govuk-c-button" href="means-result" role="button">Continue</a>
 
           </form>
