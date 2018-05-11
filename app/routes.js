@@ -489,6 +489,28 @@ router.get('/solicitor/newOrResume', function (req, res) {
   }
 })
 
+router.get('/solicitor/stock-evidence-method', function (req, res) {
+
+  var method = req.query.stockEvidenceMethod
+
+  if (method === 'file') {
+    res.redirect('/solicitor/document-upload-type')
+  } else {
+    res.render('solicitor/photo-evidence-stocks-type')
+  }
+})
+
+router.get('/solicitor/property-evidence-method', function (req, res) {
+
+  var method = req.query.propertyEvidenceMethod
+
+  if (method === 'file') {
+    res.redirect('/solicitor/document-upload-type-property')
+  } else {
+    res.render('solicitor/photo-evidence-property-type')
+  }
+})
+
 router.get('/solicitor/find-address', function (req, res, next) {
 
   console.warn('start')

@@ -1,0 +1,53 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<head>
+
+  <script type="text/javascript">
+    function load() {
+      window.location.href = "photo-evidence-property-mobile-sent";
+    }
+
+    window.onload = setTimeout(load, 1500);;
+  </script>
+
+</head>
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="photo-evidence-property-mobile-confirm">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <p></p>
+          <h2 class="govuk-heading-xl">
+            Sending...
+          </h2>
+
+          <div align="center"><img src="../public/images/loading.gif"></div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

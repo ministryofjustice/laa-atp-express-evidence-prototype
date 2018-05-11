@@ -1,0 +1,49 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="evidence-submit-type">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">Document upload for property</h2>
+
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="select-1">
+            Select from the drop down what kind of evidence you are submitting
+          </label>
+            <select class="govuk-c-select" id="select-1" name="select-1">
+              <option value="1">Mortgage statement</option>
+              <option value="2">Surveyor's valuation</option>
+              <option value="3">Title deed</option>
+              <option value="4">Other</option>
+          </select>
+          </div>
+
+          <a class="govuk-c-button govuk-c-button" href="photo-evidence-property-mobile-number" role="button">Continue</a>
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

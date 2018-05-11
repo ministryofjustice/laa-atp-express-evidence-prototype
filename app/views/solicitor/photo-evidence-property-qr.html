@@ -1,0 +1,41 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="photo-evidence-property-mobile-confirm">Back</a>
+
+      <div class="govuk-o-grid">
+
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <div class="govuk-c-panel govuk-c-panel--confirmation govuk-!-mb-r6">
+            <p class="govuk-c-panel__body">Scan this code with your phone to progress</p>
+          </div>
+
+          <div align="center"><img src="../public/images/qr.png"></div>
+
+          <a class="govuk-c-button" role="button" href="document-upload-property-review">Continue</a>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

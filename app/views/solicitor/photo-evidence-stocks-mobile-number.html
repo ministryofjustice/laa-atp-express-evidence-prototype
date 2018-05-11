@@ -19,28 +19,20 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="declared-evidence-with-stocks">Back</a>
+      <a class="govuk-c-back-link" href="photo-evidence-stocks-type">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <h2 class="govuk-heading-xl">Please choose how you wish to submit this evidence</h2>
+          <p></p>
+          <h2 class="govuk-heading-xl">
+            Enter a mobile phone number
+          </h2>
 
-          <form action="property-evidence-method" method="post">
+          <form class="form" action="photo-evidence-stocks-mobile-confirm" method="post">
 
-            <div class="govuk-c-radios">
-              </br>
-              <fieldset class="govuk-c-fieldset">
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="file" name="propertyEvidenceMethod" type="radio" value="file" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="file">Upload a file</label>
-                </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="photo" name="propertyEvidenceMethod" type="radio" value="photo">
-                  <label class="govuk-c-label govuk-c-radios__label" for="photo">Take a photo</label>
-                </div>
-              </fieldset>
-            </div>
+            <input class="govuk-c-input govuk-!-width-one-third" id="mobile-evidence" name="mobile-evidence" type="number" required>
+            </br>
 
             <input class="govuk-c-button" type="submit" value="Continue">
 
