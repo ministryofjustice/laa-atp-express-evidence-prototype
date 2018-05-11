@@ -18,30 +18,34 @@
     </div>
 
     <main role="main" class="govuk-o-main-wrapper">
-  <p class="govuk-body"></p>
+
+      <a class="govuk-c-back-link" href="exceptional-funding">Back</a>
+    <p class="govuk-body"></p>
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <h2 class="govuk-heading-xl">What do you want to do?</h2>
+          <h2 class="govuk-heading-xl">Has your client been to court on a family matter in the past 12 months?</h2>
 
-          <form action="/solicitor/newOrResume" method="get">
+          <form class="form" action="court-details" method="post">
 
             <div class="govuk-c-radios">
-              </br>
               <fieldset class="govuk-c-fieldset">
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="new" name="newOrResume" type="radio" value="new" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="new">Start a new application</label>
+                  <input class="govuk-c-radios__input" id="application-type-1" name="application-type" type="radio" value="Civil" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-1">
+                Yes
+              </label>
                 </div>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="resume" name="newOrResume" type="radio" value="resume">
-                  <label class="govuk-c-label govuk-c-radios__label" for="resume">Continue an existing application</label>
+                  <input class="govuk-c-radios__input" id="application-type-2" name="application-type" type="radio" value="Crime">
+                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-2">
+                No
+              </label>
                 </div>
               </fieldset>
             </div>
 
-            <input class="govuk-c-button" type="submit" value="Next">
-
+            <input class="govuk-c-button" type="submit" value="Continue">
           </form>
 
         </div>

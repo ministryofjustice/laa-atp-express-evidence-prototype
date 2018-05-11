@@ -19,30 +19,37 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="start">Back</a>
+      <a class="govuk-c-back-link" href="previous-court-proceedings">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <h2 class="govuk-heading-xl">Is it a civil or criminal Legal Aid application?</h2>
+          <h2 class="govuk-heading-xl">Attempts to settle</h2>
 
-          <form class="form" action="basic-details" method="post">
+          <form class="form" action="statement-of-case" method="post">
 
             <div class="govuk-c-radios">
               <fieldset class="govuk-c-fieldset">
+                <p class="govuk-body">Have any attempts been made so far to settle the matter through negotiation, corrispondence or otherwise? </p>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="application-type-1" name="application-type" type="radio" value="Civil" required>
                   <label class="govuk-c-label govuk-c-radios__label" for="application-type-1">
-                Civil
+                Yes
               </label>
                 </div>
                 <div class="govuk-c-radios__item">
                   <input class="govuk-c-radios__input" id="application-type-2" name="application-type" type="radio" value="Crime">
                   <label class="govuk-c-label govuk-c-radios__label" for="application-type-2">
-                Criminal
+                No
               </label>
                 </div>
               </fieldset>
+            </div>
+
+            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+              Please confirm why no attempts to settle have been made
+            </label>
+            <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
             </div>
 
             <input class="govuk-c-button" type="submit" value="Continue">

@@ -19,35 +19,27 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="basic-details">Back</a>
+      <a class="govuk-c-back-link" href="urgent-application">Back</a>
+    <p class="govuk-body"></p>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <p></p>
-          <h2 class="govuk-heading-xl">
-            What is your client’s home address?
+          <h2 class="govuk-heading-xl">              
+            Why is your client applying for legal representation?
           </h2>
 
-          <form class="form" action="/solicitor/select-address" method="post">
-
-            <label class="govuk-c-label" for="name">
-              Enter postcode
+            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+              Enter reasons
             </label>
-            <input class="govuk-c-input govuk-!-width-one-third" id="postcode" name="postcode" type="text" required>
+            <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
 
-            <p class="govuk-body"><a href="#">Enter address manually</a></p>
-
-            <input class="govuk-c-button" type="submit" value="Find address">
-
-          </form>
-
-          <!--input class="govuk-c-button" type="submit" value="Continue"-->
-
-
+          </div>
 
         </div>
       </div>
+
+      <a class="govuk-c-button govuk-c-button" href="exceptional-funding" role="button">Continue</a>
     </main>
   </div>
 </body>

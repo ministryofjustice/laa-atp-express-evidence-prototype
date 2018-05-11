@@ -19,32 +19,22 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="basic-details">Back</a>
+      <a class="govuk-c-back-link" href="document-upload-type-property">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <p></p>
-          <h2 class="govuk-heading-xl">
-            What is your client’s home address?
-          </h2>
+          <h2 class="govuk-heading-xl">Document upload for property</h2>
 
-          <form class="form" action="/solicitor/select-address" method="post">
-
-            <label class="govuk-c-label" for="name">
-              Enter postcode
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="file-upload-1">
+              Upload a file
             </label>
-            <input class="govuk-c-input govuk-!-width-one-third" id="postcode" name="postcode" type="text" required>
+            <input type="file" id="file-upload-1" name="file-upload-1" class="govuk-c-file-upload">
+          </div>
 
-            <p class="govuk-body"><a href="#">Enter address manually</a></p>
-
-            <input class="govuk-c-button" type="submit" value="Find address">
+          <a class="govuk-c-button govuk-c-button" href="document-upload-property-review" role="button">Continue</a>
 
           </form>
-
-          <!--input class="govuk-c-button" type="submit" value="Continue"-->
-
-
 
         </div>
       </div>

@@ -1,0 +1,83 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="attempts-settle">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">Statement of Case</h2>
+
+          <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert">
+             <p class="govuk-body" style = "color: #b10e1e; font-weight:800;">You will need to include what has happened so far, personal information including the parties involved,
+             their relationship and/or children. Please provide details of these and explain why these current proceedings are neccessary</p>
+          </div>
+
+          <br>
+
+            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+              What is the clients position and what are they seeking and why? You must provide sufficent information to satisfy
+              the regulations applicable to the case including the benefit likey to be obtained
+            </label>
+            <textarea id="more-detail" name="more-detail" rows="20" class="govuk-c-textarea"></textarea>
+            </div>
+
+        </div>
+      </div>
+
+        <details class="govuk-c-details">
+          <summary class="govuk-c-details__summary">
+            <span class="govuk-c-details__summary-text">
+              Substantive applications
+            </span>
+          </summary>
+          <div class="govuk-c-details__text">
+            Placeholder text
+          </div>
+        </details>
+
+        <details class="govuk-c-details">
+          <summary class="govuk-c-details__summary">
+            <span class="govuk-c-details__summary-text">
+              Emergency applications
+            </span>
+          </summary>
+          <div class="govuk-c-details__text">
+            Placeholder text
+          </div>
+        </details>
+
+        <details class="govuk-c-details">
+          <summary class="govuk-c-details__summary">
+            <span class="govuk-c-details__summary-text">
+              What if I run out of space?
+            </span>
+          </summary>
+          <div class="govuk-c-details__text">
+            Placeholder text
+          </div>
+        </details>
+
+      <a class="govuk-c-button govuk-c-button" href="merits-evidence" role="button">Continue</a>
+    </main>
+  </div>
+</body>
+{% endblock %}
