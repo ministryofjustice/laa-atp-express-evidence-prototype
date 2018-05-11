@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--one-thirds">
+
+        <h2 class="govuk-heading-xl">
+          How many pages do you need to photograph?
+        </h2>
+
+        <div class="govuk-c-date-input__item">
+          Pages:
+          <input class="govuk-c-input" id="pages" name="pages" type="number" required>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <a class="govuk-c-button" href="good-bad-photos" role="button">Continue</a>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
