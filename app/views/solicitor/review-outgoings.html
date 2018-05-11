@@ -20,15 +20,16 @@
     <main role="main" class="govuk-o-main-wrapper">
 
       <a class="govuk-c-back-link" href="review-income">Back</a>
+      <p class="govuk-body"></p>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h2 class="govuk-heading-xl">
-            Review the citizen’s bank statement for outgoings
+            Check your client's outgoings
           </h2>
 
-          <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert">
+          <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert" hidden="">
             <ul class="govuk-list govuk-list--bullet" style = "color: #b10e1e";>
               <li>
                 <a><b>Until all the sections are complete, you will not be able to submit this application.</b></a>
@@ -53,6 +54,7 @@
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Explaination</th>
                   <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;"></th>
                 </tr>
               </thead>
@@ -62,6 +64,7 @@
                   <td class="govuk-c-table__cell">Halifax Mortgage</td>
                   <td class="govuk-c-table__cell">Mortgage payment</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1200.00</td>
+                  <td class="govuk-c-table__cell">Mortgage, rent and council tax</td>
                   <td class="govuk-c-table__cell"><a href="">Change</a></td>
                 </tr>
                 <tr class="govuk-c-table__row">
@@ -69,14 +72,16 @@
                   <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
                   <td class="govuk-c-table__cell">Chilcare cost</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">£600.00</td>
+                  <td class="govuk-c-table__cell">Childcare, maintenance and legal aid</td>
                   <td class="govuk-c-table__cell"><a href="">Change</a></td>
                 </tr>
               </tbody>
             </table>
             <br>
+            <br>
 
             <h2 class="govuk-heading-m">
-              Unexplained outgoings
+              Other outgoings (not selected)
             </h2>
 
             <div>
@@ -94,37 +99,37 @@
                     <td class="govuk-c-table__cell">06 Jan 18</td>
                     <td class="govuk-c-table__cell">Payment from ebay</td>
                     <td class="govuk-c-table__cell govuk-c-table__header--numeric">£250.00</td>
-                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
                     <td class="govuk-c-table__cell">18 Jan 18</td>
                     <td class="govuk-c-table__cell">Cash for tickets</td>
                     <td class="govuk-c-table__cell govuk-c-table__header--numeric">£25.00</td>
-                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
                     <td class="govuk-c-table__cell">23 Jan 18</td>
                     <td class="govuk-c-table__cell">Refund from hairdressers</td>
                     <td class="govuk-c-table__cell govuk-c-table__header--numeric">£16.00</td>
-                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
                     <td class="govuk-c-table__cell">26 Jan 18</td>
                     <td class="govuk-c-table__cell">Interest charge</td>
                     <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.23</td>
-                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
                     <td class="govuk-c-table__cell">03 Feb 18</td>
                     <td class="govuk-c-table__cell">Transfer from Dave</td>
                     <td class="govuk-c-table__cell govuk-c-table__header--numeric">£20.00</td>
-                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
                     <td class="govuk-c-table__cell">06 Feb 18</td>
                     <td class="govuk-c-table__cell">Transfer from Owen</td>
                     <td class="govuk-c-table__cell govuk-c-table__header--numeric">£12.00</td>
-                    <td class="govuk-c-table__cell"><a href="">Explain</a></td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                 </tbody>
               </table>
