@@ -18,23 +18,25 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="case-dashboard">Back</a>
     <p class="govuk-body"></p>
+
     <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+      <div class="govuk-o-grid__item govuk-o-grid__item--one-thirds">
 
         <h2 class="govuk-heading-xl">
-          Your client should be eligible for legal aid
+          How many pages do you need to photograph?
         </h2>
 
-        <p class="govuk-body">Your client gave us access to 3 months of transactions from:</p>
+        <div class="govuk-c-date-input__item">
+          Pages:
+          <input class="govuk-c-input" id="pages" name="pages" type="number" required>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="client-accounts">2 bank accounts</a></li>
-          <li><a href="client-accounts">1 ISA account</a></li>
-        </ul>
-
-        <a class="govuk-c-button govuk-c-button" href="/solicitor/application-task-list" role="button">Continue</a>
+        <a class="govuk-c-button" href="good-bad-photos" role="button">Continue</a>
 
       </div>
 

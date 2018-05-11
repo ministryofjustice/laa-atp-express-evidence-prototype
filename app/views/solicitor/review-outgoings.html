@@ -23,21 +23,15 @@
       <p class="govuk-body"></p>
 
       <div class="govuk-o-grid">
-        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <div class="govuk-o-grid__item">
 
           <h2 class="govuk-heading-xl">
             Check your client's outgoings
           </h2>
 
-          <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert" hidden="">
-            <ul class="govuk-list govuk-list--bullet" style = "color: #b10e1e";>
-              <li>
-                <a><b>Until all the sections are complete, you will not be able to submit this application.</b></a>
-              </li>
-              <br>
-              <li>
-                <a><b>You can complete it in whichever order suits you</b></a>
-              </li>
+          <div class="govuk-c-error-summary govuk-o-grid__item--two-thirds" aria-labelledby="error-summary-title" role="alert">
+            <ul class="govuk-body" style="color: #b10e1e; font-weight:800;">
+              <li>Make sure to review what your client has declared and amend as necessary.</li>
             </ul>
           </div>
 
@@ -52,6 +46,7 @@
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Explanation</th>
                   <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;"></th>
@@ -61,6 +56,7 @@
                 <tr class="govuk-c-table__row">
                   <td class="govuk-c-table__cell">06 Jan 18</td>
                   <td class="govuk-c-table__cell">Halifax Mortgage</td>
+                  <td class="govuk-c-table__cell">Mortgage payment</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1200.00</td>
                   <td class="govuk-c-table__cell">Mortgage, rent and council tax</td>
                   <td class="govuk-c-table__cell"><a href="">Change</a></td>
@@ -68,6 +64,7 @@
                 <tr class="govuk-c-table__row">
                   <td class="govuk-c-table__cell">18 Jan 18</td>
                   <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
+                  <td class="govuk-c-table__cell">Chilcare cost</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">£600.00</td>
                   <td class="govuk-c-table__cell">Childcare, maintenance and legal aid</td>
                   <td class="govuk-c-table__cell"><a href="">Change</a></td>
@@ -132,9 +129,9 @@
               </table>
               <br>
 
-            <a class="govuk-c-button govuk-c-button" href="paid-cash" role="button">Continue</a>
+              <a class="govuk-c-button govuk-c-button" href="paid-cash" role="button">Continue</a>
 
-          </div>
+            </div>
 
     </main>
     </div>

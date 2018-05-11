@@ -26,8 +26,8 @@
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h2 class="govuk-heading-xl">Your client said all income was paid into the bank</h2>
-          
-          <p class="govuk-body">Your client does not have any income paid in cash.</p>
+
+          <p class="govuk-body">Your client does not have any income paid in cash. Is this correct?</p>
 
           <form action="/solicitor/benefits-kind" method="post">
 
@@ -35,11 +35,11 @@
               </br>
               <fieldset class="govuk-c-fieldset">
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="cashYes" name="cashPay" type="radio" value="cashyes" required>
+                  <input class="govuk-c-radios__input" id="cashYes" name="cashPay" type="radio" value="yes" required>
                   <label class="govuk-c-label govuk-c-radios__label" for="cashYes">Yes</label>
                 </div>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="cashNo" name="cashPay" type="radio" value="cashno">
+                  <input class="govuk-c-radios__input" id="cashNo" name="cashPay" type="radio" value="no">
                   <label class="govuk-c-label govuk-c-radios__label" for="cashNo">No</label>
                 </div>
               </fieldset>
