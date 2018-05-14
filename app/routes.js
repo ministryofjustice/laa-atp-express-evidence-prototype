@@ -146,10 +146,10 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
               console.log(authJsonIn);
 
               var token = authJsonIn.access_token;
-              var accountId = '8c0f6b05fa00f3f7142660c377237be1';
+              var accountId;
               var getAccountsUrl = 'https://api.truelayer.com/data/v1/accounts';
-              var getBalanceUrl = getAccountsUrl + '/' + accountId + '/balance';
-              var getTransactionsUrl = getAccountsUrl + '/' + accountId + '/transactions';
+              var getBalanceUrl;
+              var getTransactionsUrl;
 
               var bearerToken = "Bearer " + token;
 
@@ -161,6 +161,10 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
                           accountsJsonIn = JSON.parse(body);
                           console.log(accountsJsonIn);
 
+                          accountId = accountsJsonIn['results'][0].account_id;
+
+                          getBalanceUrl= getAccountsUrl + '/' + accountId + '/balance';
+
                           request.get({
                               url: getBalanceUrl,
                               headers: {Authorization: bearerToken}
@@ -168,6 +172,8 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
                                 if (!error && response.statusCode == 200) {
                                     balanceJsonIn = JSON.parse(body);
                                     console.log(balanceJsonIn);
+
+                                    getTransactionsUrl = getAccountsUrl + '/' + accountId + '/transactions';
 
                                     request.get({
                                       url: getTransactionsUrl,
@@ -417,10 +423,10 @@ router.get('/citizen-truelayer/bank-success', function (req, res, next) {
               console.log(authJsonIn);
 
               var token = authJsonIn.access_token;
-              var accountId = '8c0f6b05fa00f3f7142660c377237be1';
+              var accountId;
               var getAccountsUrl = 'https://api.truelayer.com/data/v1/accounts';
-              var getBalanceUrl = getAccountsUrl + '/' + accountId + '/balance';
-              var getTransactionsUrl = getAccountsUrl + '/' + accountId + '/transactions';
+              var getBalanceUrl;
+              var getTransactionsUrl;
 
               var bearerToken = "Bearer " + token;
 
@@ -432,6 +438,10 @@ router.get('/citizen-truelayer/bank-success', function (req, res, next) {
                           accountsJsonIn = JSON.parse(body);
                           console.log(accountsJsonIn);
 
+                          accountId = accountsJsonIn['results'][0].account_id;
+
+                          getBalanceUrl = getAccountsUrl + '/' + accountId + '/balance';
+
                           request.get({
                               url: getBalanceUrl,
                               headers: {Authorization: bearerToken}
@@ -439,6 +449,8 @@ router.get('/citizen-truelayer/bank-success', function (req, res, next) {
                                 if (!error && response.statusCode == 200) {
                                     balanceJsonIn = JSON.parse(body);
                                     console.log(balanceJsonIn);
+
+                                    getTransactionsUrl = getAccountsUrl + '/' + accountId + '/transactions';
 
                                     request.get({
                                       url: getTransactionsUrl,
