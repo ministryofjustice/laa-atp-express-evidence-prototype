@@ -27,20 +27,49 @@
           Your client should be eligible for legal aid
         </h2>
 
-        <p class="govuk-body">Your client gave us access to 3 months of transactions from:</p>
+        <p class="govuk-body">Your client gave us access to 3 months of transactions from these accounts:</p>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="client-accounts">2 bank accounts</a></li>
-          <li><a href="client-accounts">1 ISA account</a></li>
-        </ul>
+        <div>
+          <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+            <thead class="govuk-c-table__head">
+              <tr class="govuk-c-table__row">
+                <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Account number</th>
+                <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Sort code</th>
+                <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Balance</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-c-table__body">
+              <tr class="govuk-c-table__row">
+                <td class="govuk-c-table__cell">Mock Bank Current account</td>
+                <td class="govuk-c-table__cell govuk-c-table__cell--numeric">123456789</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">£470.00</td>
+              </tr>
+              <tr class="govuk-c-table__row">
+                <td class="govuk-c-table__cell">Mock Bank Savings account</td>
+                <td class="govuk-c-table__cell govuk-c-table__cell--numeric">987654321</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1400.00</td>
+              </tr>
+              <tr class="govuk-c-table__row">
+                <td class="govuk-c-table__cell">Mock Bank Cash ISA</td>
+                <td class="govuk-c-table__cell govuk-c-table__cell--numeric">248163264</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.00</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <a class="govuk-c-button govuk-c-button" href="/solicitor/application-task-list" role="button">Continue</a>
+          </br>
+
+          <a class="govuk-c-button govuk-c-button" href="/solicitor/application-task-list" role="button">Continue</a>
+
+        </div>
 
       </div>
 
-    </div>
-
   </main>
-</div>
+  </div>
 
-{% endblock %}
+  {% endblock %}
