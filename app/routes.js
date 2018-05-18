@@ -495,7 +495,7 @@ router.get('/solicitor/newOrResume', function (req, res) {
   var newOrResume = req.query.newOrResume
 
   if (newOrResume === 'new') {
-    res.redirect('/solicitor/basic-details')
+    res.redirect('/solicitor/application-type')
   } else {
     res.render('solicitor/case-dashboard')
   }
