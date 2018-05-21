@@ -501,6 +501,17 @@ router.get('/solicitor/newOrResume', function (req, res) {
   }
 })
 
+router.get('/solicitor/selectCivilCategory', function (req, res) {
+
+  var applicationType = req.query.applicationType
+
+  if (applicationType === 'civil') {
+    res.redirect('/solicitor/category-law-civil')
+  } else {
+    res.render('solicitor/basic-details')
+  }
+})
+
 router.get('/solicitor/stock-evidence-method', function (req, res) {
 
   var method = req.query.stockEvidenceMethod

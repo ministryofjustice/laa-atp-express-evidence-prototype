@@ -1,0 +1,61 @@
+{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="application-type">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            What is the category of law?
+          </h2>
+
+          <form action="basic-details" method="post">
+
+            <select class="govuk-c-select" id="select-category" name="category">
+                <option value="1">Clinical negligence</option>
+                <option value="2">Community care</option>
+                <option value="3">Discrimination</option>
+                <option value="4">Domestic abuse</option>
+                <option value="5">Education</option>
+                <option value="6">Employment</option>
+                <option value="7">Family</option>
+                <option value="8">Housing</option>
+                <option value="9">Immigration and asylum</option>
+                <option value="10">Mental health</option>
+                <option value="11">Personal injury</option>
+                <option value="12">Public law</option>
+                <option value="13">Trouble with the police and other public authorities</option>
+                <option value="14">Welfare benefits</option>
+              </select>
+
+            <br><br>
+
+            <input class="govuk-c-button" type="submit" value="Continue">
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}
