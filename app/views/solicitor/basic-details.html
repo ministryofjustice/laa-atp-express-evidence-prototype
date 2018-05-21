@@ -19,8 +19,9 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="category-law-civil">Back</a>
-    <p class="govuk-body"></p>
+      {% if data['applicationType'] == 'Civil' %} <a class="govuk-c-back-link" href="category-law-civil">Back</a> {% else %} <a class="govuk-c-back-link" href="application-type">Back</a> {% endif %}
+
+      <p class="govuk-body"></p>
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 

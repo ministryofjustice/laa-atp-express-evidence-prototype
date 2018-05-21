@@ -505,7 +505,7 @@ router.get('/solicitor/selectCivilCategory', function (req, res) {
 
   var applicationType = req.query.applicationType
 
-  if (applicationType === 'civil') {
+  if (applicationType === 'Civil') {
     res.redirect('/solicitor/category-law-civil')
   } else {
     res.render('solicitor/basic-details')
