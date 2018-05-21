@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+ {% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block header_class %}
 <!-- blank to remove the proposition header -->
@@ -19,27 +19,34 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="start">Back</a>
-    <p class="govuk-body"></p>
+      <a class="govuk-c-back-link" href="online-banking">Back</a>
+
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-          <h2 class="govuk-heading-xl">Are you applying for civil or criminal legal aid?</h2>
+          <p></p>
+          <h2 class="govuk-heading-xl">
+            Does your client want to complete the financial assessment remotely?
+          </h2>
 
-          <form class="form" action="basic-details" method="post">
+          <form class="form" action="email-address" method="post">
+
+
+            <p class="govuk-body">Let your client complete the legal aid financial assessment from home or another location.</p>
+
 
             <div class="govuk-c-radios">
               <fieldset class="govuk-c-fieldset">
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="application-type-1" name="application-type" type="radio" value="Civil" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-1">
-                Civil
+                  <input class="govuk-c-radios__input" id="benefits-in-kind-1" name="benefits-in-kind" type="radio" value="yes" required>
+                  <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-1">
+                Yes
               </label>
                 </div>
                 <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="application-type-2" name="application-type" type="radio" value="Crime">
-                  <label class="govuk-c-label govuk-c-radios__label" for="application-type-2">
-                Criminal
+                  <input class="govuk-c-radios__input" id="benefits-in-kind-2" name="benefits-in-kind" type="radio" value="no">
+                  <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-2">
+                No
               </label>
                 </div>
               </fieldset>
