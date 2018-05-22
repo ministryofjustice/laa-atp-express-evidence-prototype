@@ -19,7 +19,7 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      <a class="govuk-c-back-link" href="email-address">Back</a>
+      <a class="govuk-c-back-link" href="application-task-list">Back</a>
 
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
@@ -32,13 +32,25 @@
             <dl class="govuk-check-your-answers cya-questions" style="width:600px">
               <div>
                 <dt class="cya-question" style="width:275px">Application type</dt>
-                <dd class="cya-answer">{{ data['application-type'] }}</dd>
+                <dd class="cya-answer">{{ data['applicationType'] }}</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="application-type">
                     Change<span class="visually-hidden">type</span>
                   </a>
                 </dd>
               </div>
+
+              {% if data['applicationType'] == 'Civil' %}
+              <div>
+                <dt class="cya-question" style="width:275px">Category of law</dt>
+                <dd class="cya-answer">{{ data['category'] }}</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="category-law-civil">
+                    Change<span class="visually-hidden">type</span>
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
 
               <div>
                 <dt class="cya-question">Name</dt>
@@ -54,7 +66,7 @@
                 <dt class="cya-question">Date of birth</dt>
                 <dd class="cya-answer">{{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="enter-NI">
                     Change<span class="visually-hidden">date of birth</span>
                   </a>
                 </dd>
@@ -64,7 +76,7 @@
                 <dt class="cya-question">National Insurance number</dt>
                 <dd class="cya-answer">{{ data['nino'] }}</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="enter-NI">
                     Change<span class="visually-hidden">national insurance number</span>
                   </a>
                 </dd>
@@ -74,7 +86,7 @@
                 <dt class="cya-question">Email address</dt>
                 <dd class="cya-answer">{{ data['email']}}</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="email-address">
                     Change<span class="visually-hidden">email-address</span>
                   </a>
                 </dd>
@@ -91,7 +103,7 @@
                 <dt class="cya-question" style="width:275px">Number</dt>
                 <dd class="cya-answer">{{ data['address']}}</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="postcode">
                     Change<span class="visually-hidden">number</span>
                   </a>
                 </dd>
@@ -100,7 +112,7 @@
                 <dt class="cya-question">Address line 1</dt>
                 <dd class="cya-answer">Main Road</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="postcode">
                     Change<span class="visually-hidden">address line 1</span>
                   </a>
                 </dd>
@@ -109,7 +121,7 @@
                 <dt class="cya-question">Address line 2</dt>
                 <dd class="cya-answer"></dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="postcode">
                     Change<span class="visually-hidden">address line 2</span>
                   </a>
                 </dd>
@@ -118,7 +130,7 @@
                 <dt class="cya-question">Town or city</dt>
                 <dd class="cya-answer">London</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="postcode">
                     Change<span class="visually-hidden">city</span>
                   </a>
                 </dd>
@@ -127,7 +139,7 @@
                 <dt class="cya-question">County</dt>
                 <dd class="cya-answer"></dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="postcode">
                     Change<span class="visually-hidden">county</span>
                   </a>
                 </dd>
@@ -136,7 +148,7 @@
                 <dt class="cya-question">Postcode</dt>
                 <dd class="cya-answer">{{ data['postcode']}}</dd>
                 <dd class="cya-change">
-                  <a class="govuk-link" href="basic-details">
+                  <a class="govuk-link" href="postcode">
                     Change<span class="visually-hidden">postcode</span>
                   </a>
                 </dd>
