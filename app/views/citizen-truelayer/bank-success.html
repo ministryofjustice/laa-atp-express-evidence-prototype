@@ -20,7 +20,7 @@
     <main role="main" class="govuk-o-main-wrapper">
 
       <a class="govuk-c-back-link" href="obbank">Back</a>
-    <p class="govuk-body"></p>
+      <p class="govuk-body"></p>
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
@@ -49,7 +49,22 @@
           <h2 class="govuk-heading-m">
             Your account(s)
           </h2>
-
+          </br>
+          <dl class="govuk-check-your-answers cya-questions">
+            <div>
+              <dt class="cya-question">Account holder's name</dt>
+              <dd class="cya-answer">Mr John Doe</dd>
+            </div>
+            <div>
+              <dt class="cya-question">Account holder's date of birth</dt>
+              <dd class="cya-answer">{{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}</dd>
+            </div>
+            <div>
+              <dt class="cya-question">Account holder's address</dt>
+              <dd class="cya-answer">10 Main Road, London, SW1H 9AJ</dd>
+            </div>
+          </dl>
+          </br>
           <div>
             <table class="govuk-c-table--two-thirds" style="border-spacing:0">
               <thead class="govuk-c-table__head">
