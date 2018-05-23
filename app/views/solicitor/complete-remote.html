@@ -1,0 +1,67 @@
+ {% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="online-banking">Back</a>
+
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <p></p>
+          <h2 class="govuk-heading-xl">
+           About the online financial assessment
+          </h2>
+
+          <form class="form" action="email-address" method="post">
+            
+            <p class="govuk-body">
+              Send an email to your client with a secure link to the online assessment.
+            </p>
+
+            <p class="govuk-body">Your client will be asked to sign in to online banking and give one-time access to their bank accounts for 1 hour.</p>
+
+            <p class="govuk-body">Your client will need to share all bank accounts, including any in joint names or with no money.</p>
+
+
+            <div class="govuk-c-warning-text">
+              <span class="govuk-c-warning-text__icon govuk-o-circle" aria-hidden="true">!</span>
+              <strong class="govuk-c-warning-text__text">
+                 How we use your client's details
+              </strong>
+            </div>
+
+            <p class="govuk-body">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>We download 3 months of bank transactions</li>
+                <Li>We only use information for the legal aid application</Li>
+                <li>We automatically end the bank connection after 1 hour</li>
+                <li>We do not save online banking details</li>
+              </ul>
+            </p>
+
+          <a role="button" class="govuk-c-button" href="email-address">Continue</a>
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

@@ -4,6 +4,40 @@
 <!-- blank to remove the proposition header -->
 {% endblock %} {% block content %}
 
+<head>
+
+  <script language="JavaScript" type="text/javascript" src="/public/javascripts/jquery-1.11.3.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#outgoings').after('</br><div id="nav" class="govuk-body"></div>');
+      var rowsShown = 10;
+      var rowsTotal = $('#outgoings tbody tr').length;
+      var numPages = rowsTotal / rowsShown;
+      for (i = 0; i < numPages; i++) {
+        var pageNum = i + 1;
+        $('#nav').append('<a href="#" rel="' + i + '">' + pageNum + '</a> ');
+      }
+      $('#outgoings tbody tr').hide();
+      $('#outgoings tbody tr').slice(0, rowsShown).show();
+      $('#nav a:first').addClass('active');
+      $('#nav a').bind('click', function() {
+
+        $('#nav a').removeClass('active');
+        $(this).addClass('active');
+        var currPage = $(this).attr('rel');
+        var startItem = currPage * rowsShown;
+        var endItem = startItem + rowsShown;
+        $('#outgoings tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+        css('display', 'table-row').animate({
+          opacity: 1
+        }, 300);
+      });
+    });
+  </script>
+
+</head>
+
 <body>
   <div class="govuk-o-width-container">
 
@@ -31,13 +65,14 @@
 
           <div class="govuk-c-error-summary govuk-o-grid__item--two-thirds" aria-labelledby="error-summary-title" role="alert">
             <ul class="govuk-body" style="color: #b10e1e; font-weight:800;">
-              <li>Make sure to review what your client has declared and amend as necessary.</li>
+              <li>Review your client's declarations and change as necessary.</li>
             </ul>
           </div>
 
           </br>
+          <br>
           <h2 class="govuk-heading-m">
-            Selected outgoings
+          Your client declared the following as outgoings
           </h2>
 
           <div>
@@ -46,7 +81,6 @@
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
-                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Explanation</th>
                   <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;"></th>
@@ -55,16 +89,14 @@
               <tbody class="govuk-c-table__body">
                 <tr class="govuk-c-table__row">
                   <td class="govuk-c-table__cell">06 Jan 18</td>
-                  <td class="govuk-c-table__cell">Halifax Mortgage</td>
-                  <td class="govuk-c-table__cell">Mortgage payment</td>
+                  <td class="govuk-c-table__cell">RENT</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1200.00</td>
                   <td class="govuk-c-table__cell">Mortgage, rent and council tax</td>
                   <td class="govuk-c-table__cell"><a href="">Change</a></td>
                 </tr>
                 <tr class="govuk-c-table__row">
                   <td class="govuk-c-table__cell">18 Jan 18</td>
-                  <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
-                  <td class="govuk-c-table__cell">Chilcare cost</td>
+                  <td class="govuk-c-table__cell">WIGGLY-TOTS NURSERY</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">£600.00</td>
                   <td class="govuk-c-table__cell">Childcare, maintenance and legal aid</td>
                   <td class="govuk-c-table__cell"><a href="">Change</a></td>
@@ -75,11 +107,11 @@
             <br>
 
             <h2 class="govuk-heading-m">
-              Other outgoings (not selected)
+              Other outgoing transactions
             </h2>
 
             <div>
-              <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+              <table class="govuk-c-table--two-thirds" id="outgoings" style="border-spacing:0">
                 <thead class="govuk-c-table__head">
                   <tr class="govuk-c-table__row">
                     <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
@@ -90,39 +122,183 @@
                 </thead>
                 <tbody class="govuk-c-table__body">
                   <tr class="govuk-c-table__row">
-                    <td class="govuk-c-table__cell">06 Jan 18</td>
-                    <td class="govuk-c-table__cell">Payment from ebay</td>
-                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£250.00</td>
+                    <td class="govuk-c-table__cell">09 APR 2018</td>
+                    <td class="govuk-c-table__cell">PARKRETAIL.CO.UK</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£550.00</td>
                     <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
-                    <td class="govuk-c-table__cell">18 Jan 18</td>
-                    <td class="govuk-c-table__cell">Cash for tickets</td>
-                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£25.00</td>
+                    <td class="govuk-c-table__cell">11 APR 2018</td>
+                    <td class="govuk-c-table__cell">MR JOHN SMITH TRANSFER</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£302.91</td>
                     <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
-                    <td class="govuk-c-table__cell">23 Jan 18</td>
-                    <td class="govuk-c-table__cell">Refund from hairdressers</td>
-                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£16.00</td>
+                    <td class="govuk-c-table__cell">12 APR 2018</td>
+                    <td class="govuk-c-table__cell">ARGOS LTD</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£150.00</td>
                     <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
-                    <td class="govuk-c-table__cell">26 Jan 18</td>
-                    <td class="govuk-c-table__cell">Interest charge</td>
-                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.23</td>
+                    <td class="govuk-c-table__cell">21 APR 2018</td>
+                    <td class="govuk-c-table__cell">LNK ATM WITHDRAWAL</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£100.00</td>
                     <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
-                    <td class="govuk-c-table__cell">03 Feb 18</td>
-                    <td class="govuk-c-table__cell">Transfer from Dave</td>
-                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£20.00</td>
+                    <td class="govuk-c-table__cell">28 APR 2018</td>
+                    <td class="govuk-c-table__cell">LNK ATM WITHDRAWAL</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£100.00</td>
                     <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                   <tr class="govuk-c-table__row">
-                    <td class="govuk-c-table__cell">06 Feb 18</td>
-                    <td class="govuk-c-table__cell">Transfer from Owen</td>
-                    <td class="govuk-c-table__cell govuk-c-table__header--numeric">£12.00</td>
+                    <td class="govuk-c-table__cell">03 APR 2018</td>
+                    <td class="govuk-c-table__cell">TALKTALK TELECOM</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£46.82</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">27 APR 2018</td>
+                    <td class="govuk-c-table__cell">LNK ATM WITHDRAWAL</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£40.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">05 APR 2018</td>
+                    <td class="govuk-c-table__cell">TESCO PURCHASE</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£39.99</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">21 APR 2018</td>
+                    <td class="govuk-c-table__cell">TESCO MOBILE LTD</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£39.25</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">12 APR 2018</td>
+                    <td class="govuk-c-table__cell">PAYPAL WWW.EBAY.COM</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£36.59</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">18 APR 2018</td>
+                    <td class="govuk-c-table__cell">MR JOHN SMITH TRANSFER</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£32.72</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">20 APR 2018</td>
+                    <td class="govuk-c-table__cell">LNK ATM WITHDRAWAL</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£30.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">22 APR 2018</td>
+                    <td class="govuk-c-table__cell">TESCO EXTRA</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£30.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">29 APR 2018</td>
+                    <td class="govuk-c-table__cell">SAINSBURYS</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£23.99</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">01 APR 2018</td>
+                    <td class="govuk-c-table__cell">TESCO ONLINE SHOPPING</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£23.62</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">03 APR 2018</td>
+                    <td class="govuk-c-table__cell">AA MEMBERSHIP</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£23.11</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">25 APR 2018</td>
+                    <td class="govuk-c-table__cell">MR JOHN SMITH TRANSFER</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£22.70</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">04 APR 2018</td>
+                    <td class="govuk-c-table__cell">MORRISONS PETROL</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£20.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">29 APR 2018</td>
+                    <td class="govuk-c-table__cell">LNK ATM WITHDRAWAL</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£20.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">30 APR 2018</td>
+                    <td class="govuk-c-table__cell">WWW.METROBANK.COM</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£20.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">11 APR 2018</td>
+                    <td class="govuk-c-table__cell">AMAZON INT'L</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£17.25</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">17 APR 2018</td>
+                    <td class="govuk-c-table__cell">WWW.BINGO.COM</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£10.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">05 APR 2018</td>
+                    <td class="govuk-c-table__cell">AMAZON PRIME</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£7.99</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">17 APR 2018</td>
+                    <td class="govuk-c-table__cell">MS JANE DOE TRANSFER</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£7.93</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">05 APR 2018</td>
+                    <td class="govuk-c-table__cell">PAYPAL WWW.EBAY.COM</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£7.56</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">07 APR 2018</td>
+                    <td class="govuk-c-table__cell">TAILS.COM</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£6.37</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">06 APR 2018</td>
+                    <td class="govuk-c-table__cell">WWW.ASDA.COM</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£5.11</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">20 APR 2018</td>
+                    <td class="govuk-c-table__cell">AMAZON INT'L</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£5.00</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">08 APR 2018</td>
+                    <td class="govuk-c-table__cell">GOOGLE PLAY STORE</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£2.99</td>
+                    <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
+                  </tr>
+                  <tr class="govuk-c-table__row">
+                    <td class="govuk-c-table__cell">03 APR 2018</td>
+                    <td class="govuk-c-table__cell">E&L INSURANCE</td>
+                    <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£2.99</td>
                     <td class="govuk-c-table__cell"><a href="">Add as outgoing</a></td>
                   </tr>
                 </tbody>
