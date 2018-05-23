@@ -26,29 +26,37 @@
 
           <p></p>
           <h2 class="govuk-heading-xl">
-            Does your client want to do their financial assessment from home or another location?
+           About the online financial assessment
           </h2>
 
           <form class="form" action="email-address" method="post">
             
-            <div class="govuk-c-radios">
-              <fieldset class="govuk-c-fieldset">
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="benefits-in-kind-1" name="benefits-in-kind" type="radio" value="yes" required>
-                  <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-1">
-                Yes
-              </label>
-                </div>
-                <div class="govuk-c-radios__item">
-                  <input class="govuk-c-radios__input" id="benefits-in-kind-2" name="benefits-in-kind" type="radio" value="no">
-                  <label class="govuk-c-label govuk-c-radios__label" for="benefits-in-kind-2">
-                No
-              </label>
-                </div>
-              </fieldset>
+            <p class="govuk-body">
+              Send an email to your client with a secure link to the online assessment.
+            </p>
+
+            <p class="govuk-body">Your client will be asked to sign in to online banking and give one-time access to their bank accounts for 1 hour.</p>
+
+            <p class="govuk-body">Your client will need to share all bank accounts, including any in joint names or with no money.</p>
+
+
+            <div class="govuk-c-warning-text">
+              <span class="govuk-c-warning-text__icon govuk-o-circle" aria-hidden="true">!</span>
+              <strong class="govuk-c-warning-text__text">
+                 How we use your client's details
+              </strong>
             </div>
 
-            <input class="govuk-c-button" type="submit" value="Continue">
+            <p class="govuk-body">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>We download 3 months of bank transactions</li>
+                <Li>We only use information for the legal aid application</Li>
+                <li>We automatically end the bank connection after 1 hour</li>
+                <li>We do not save online banking details</li>
+              </ul>
+            </p>
+
+          <a role="button" class="govuk-c-button" href="email-address">Continue</a>
           </form>
 
         </div>
