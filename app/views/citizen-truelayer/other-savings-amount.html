@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
 
 <div class="govuk-o-width-container">
 
@@ -24,21 +24,21 @@
         <h1 class="govuk-heading-xl">
           What is the value of your other savings?
         </h1>
-       <form class="form" action="means-result
+        <form class="form" action="means-result
        " method="post">
           <div class="govuk-o-form-group"><label class="govuk-c-label" for="premium-bonds-amount">
             <label class="govuk-c-label">Enter amount</label>
-        <form class="form" action="other-savings" method="post">
+            <form class="form" action="other-savings" method="post">
 
-          <div class="govuk-o-form-group">
-          £ <input class="govuk-c-input govuk-!-width-two-thirds" id="os-amount" name="os-amount" placeholder="0.00" type="number">
+              <div class="govuk-o-form-group">
+                £ <input class="govuk-c-input govuk-!-width-two-thirds" id="os-amount" name="os-amount" placeholder="0.00" type="number">
+              </div>
+              <input class="govuk-c-button" type="submit" value="Continue">
+
+            </form>
           </div>
-          <input class="govuk-c-button" type="submit" value="Continue">
-
-        </form>
       </div>
-    </div>
   </main>
-</div>
+  </div>
 
-{% endblock %}
+  {% endblock %}
