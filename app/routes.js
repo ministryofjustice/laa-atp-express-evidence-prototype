@@ -211,7 +211,7 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
 })
 
 /************************  Citizen Truelayer  ************************/
-
+/*
 router.get('/citizen-truelayer/dwp-consent', function (req, res) {
 
   var checkboxes = req.query.consent
@@ -231,8 +231,8 @@ router.get('/citizen-truelayer/dwp-consent', function (req, res) {
     }
   }
 })
-
-
+*/
+/*
 router.get('/citizen-truelayer/ob-consent', function (req, res) {
 
   var checkboxes =  req.session.data['consent']
@@ -246,18 +246,30 @@ router.get('/citizen-truelayer/ob-consent', function (req, res) {
       res.render('citizen-truelayer/property')
   }
 })
-
+*/
 
 router.get('/citizen-truelayer/multibank', function (req, res) {
 
   var multiBank = req.query.multibank
 
   if (multiBank === 'yes') {
+    res.redirect('/citizen-truelayer/obmultiple-yes')
+  } else {
+    res.render('citizen-truelayer/identify-income')
+  }
+})
+
+router.get('/citizen-truelayer/suitable-for-ob', function (req, res) {
+
+  var suitable = req.query.suitable
+
+  if (suitable === 'yes') {
     res.redirect('/citizen-truelayer/obbank')
   } else {
     res.render('citizen-truelayer/identify-income')
   }
 })
+
 
 router.get('/citizen-truelayer/cash', function (req, res) {
 

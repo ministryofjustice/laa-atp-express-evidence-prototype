@@ -1,5 +1,33 @@
 {% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block content %}
 
+<style>
+  details summary {
+    display: inline-block;
+    color: #005ea5;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0.26316em;
+  }
+
+  details summary:hover {
+    color: #2b8cc4;
+  }
+
+  details summary:focus {
+    outline: 3px solid #ffbf47;
+  }
+
+  details .summary {
+    text-decoration: underline;
+  }
+
+  details .arrow {
+    margin-right: .35em;
+    font-style: normal;
+  }
+</style>
+
+
 <div class="govuk-o-width-container">
 
   <div class="govuk-c-phase-banner">
@@ -26,7 +54,25 @@
 
         <p class="govuk-body">We will contact the Department for Work and Pensions (DWP) and HM Revenue and Customs (HMRC) to check your tax and benefits status.</p>
         <br>
-        <form class="form" action="ob-consent" method="get">
+        <details>
+          <summary><span class="summary">Find out how we use and store your personal data</span></summary>
+
+          <div class="panel panel-border-narrow">
+
+            <p style="govuk-body">
+              <ul style="govuk">
+                <li>We will contact DWP to check whether you are receiving benefits</li>
+                <li>We will contact HMRC to request your gross income amount</li>
+                <li>We will not contact DWP or HMRC for any other reason and we will not provide them with any other details from your legal aid application</li>
+                <li>We will not have any ongoing access to your details</li>
+                <li>We will use details of your benefits and gross income to assess your eligibility for legal aid</li>
+            </p>
+          </div>
+        </details>
+        </br>
+
+
+        <form class="form" action="obbank" method="get">
 
           <label class="govuk-c-label" for="national-insurance-number">
             Enter your National Insurance number

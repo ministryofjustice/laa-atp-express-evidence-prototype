@@ -397,6 +397,7 @@
   }
 </style>
 
+
 <div class="govuk-o-width-container">
 
   <div class="govuk-c-phase-banner">
@@ -411,7 +412,7 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="select-childcare">Back</a>
+    <a class="govuk-c-back-link" href="select-council-tax">Back</a>
 
     <p class="govuk-body"></p>
 
@@ -419,16 +420,19 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h2 class="govuk-heading-xl">
-              Tell us about your outgoings over the last 30 days
+          Outgoings
         </h2>
-        <p class="govuk-body">
-          Add relevant transactions from your bank statement(s).
-        </p>
+
+        <h3 class="govuk-heading-m">
+          Tell us about your outgoings over the last 30 days
+        </h3>
+
+        <p class="govuk-body">We will now list all payments out of your account. Please mark which of these payments fall into the following categories.</p>
 
         <ol class="task-list">
           <li>
             <h2 class="task-list-section">
-                    <span class="task-list-section-number">1. </span>Mortgage, rent and council tax
+                <span class="task-list-section-number">1. </span>Mortgage, rent and council tax
             </h2>
             <p class="govuk-body"><span class="govuk-c-label__hint">
               Add payments for mortgage, rent, board or lodging, and council tax bills
@@ -436,7 +440,15 @@
             <ul class="task-list-items">
               <li class="task-list-item">
                 <a class="task-name" aria-describedby="housing-1-completed">
-                  RENT - £1200.00
+                    RENT - £1200.00
+                </a>
+                <a style="color:red">
+                  <href='#'><u>Remove</u>
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" aria-describedby="tax-1-completed">
+                    COUNCIL TAX - £220.00
                 </a>
                 <a style="color:red">
                   <href='#'><u>Remove</u>
@@ -454,21 +466,12 @@
               <span class="task-list-section-number">2. </span>Childcare, maintenance and legal aid
             </h2>
             <p class="govuk-body"><span class="govuk-c-label__hint">
-
-              Add payments to a registered childcare provider, maintenance payments and existing legal aid contributions 
+              Add payments to a registered childcare provider, maintenance payments and existing legal aid contributions
 
             </span></p>
             <ul class="task-list-items">
               <li class="task-list-item">
-                <a class="task-name" aria-describedby="childcare-1-completed">
-                  WIGGLY-TOTS NURSERY - £600.00
-                </a>
-                <a style="color:red">
-                  <href='#'><u>Remove</u>
-                </a>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#">
+                <a class="task-name" href="select-childcare">
                   Add item
                 </a>
               </li>
@@ -477,7 +480,7 @@
 
         </ol>
 
-        <a class="govuk-c-button govuk-c-button" href="check-evidence" role="button">Continue</a>
+        <a class="govuk-c-button govuk-c-button" href="" role="button">Continue</a>
 
       </div>
 
