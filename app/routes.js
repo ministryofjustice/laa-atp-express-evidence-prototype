@@ -520,7 +520,20 @@ router.get('/solicitor/selectCivilCategory', function (req, res) {
   if (applicationType === 'Civil') {
     res.redirect('/solicitor/category-law-civil')
   } else {
-    res.render('solicitor/basic-details')
+    res.render('solicitor/case-type-crime')
+  }
+})
+
+router.get('/solicitor/employed-status', function (req, res) {
+
+  var employed = req.query.employed
+
+  console.log(employed)
+
+  if (employed === 'Yes') {
+    res.redirect('/solicitor/basic-details')
+  } else {
+    res.render('solicitor/unemployed-three-months')
   }
 })
 
@@ -546,7 +559,7 @@ router.get('/solicitor/property-evidence-method', function (req, res) {
   }
 })
 
-router.get('/solicitor/find-address', function (req, res, next) {
+/*outer.get('/solicitor/find-address', function (req, res, next) {
 
   console.warn('start')
 
@@ -582,10 +595,10 @@ router.get('/solicitor/find-address', function (req, res, next) {
         }
 )
 
-//res.redirect('/solicitor/select-address');
+res.redirect('/solicitor/select-address');
 
 });
-
+*/
 
 /*********************************************************************/
 

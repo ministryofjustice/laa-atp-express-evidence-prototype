@@ -1,8 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
 
 <body>
   <div class="govuk-o-width-container">
@@ -20,46 +16,46 @@
     <main role="main" class="govuk-o-main-wrapper">
 
       <a class="govuk-c-back-link" href="legal-help">Back</a>
-    <p class="govuk-body"></p>
+      <p class="govuk-body"></p>
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h2 class="govuk-heading-xl">Are you applying for exceptional funding?</h2>
 
-            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
               How important are the issues in this case for your client?
             </label>
             <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
-            </div>
+          </div>
 
-            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
               How complex are the proceedings, the area of law and the facts/evidence in the case?
             </label>
             <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
-            </div>
+          </div>
 
-            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
               How capable is the client of presenting the case effectively?
             </label>
             <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
-            </div>
+          </div>
 
-            <details class="govuk-c-details">
-              <summary class="govuk-c-details__summary">
-                <span class="govuk-c-details__summary-text">
+          <details class="govuk-c-details">
+            <summary class="govuk-c-details__summary">
+              <span class="govuk-c-details__summary-text">
                   What information should be included?
                 </span>
-              </summary>
-              <div class="govuk-c-details__text">
-                Placeholder text
-              </div>
-            </details>
+            </summary>
+            <div class="govuk-c-details__text">
+              Placeholder text
+            </div>
+          </details>
 
-            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
               Please provide any additional information that is relevant to the determination
             </label>
             <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
-            </div>
+          </div>
 
         </div>
       </div>

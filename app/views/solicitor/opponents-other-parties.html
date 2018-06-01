@@ -1,8 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
 
 <body>
   <div class="govuk-o-width-container">
@@ -48,8 +44,8 @@
             <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
               Enter reasons why your client needs separate representation
             </label>
-            <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
-            <p class="govuk-body">Please ensure the reason why separate representation is required is dealt with in respect of all parties. </p>
+              <textarea id="more-detail" name="more-detail" rows="5" class="govuk-c-textarea"></textarea>
+              <p class="govuk-body">Please ensure the reason why separate representation is required is dealt with in respect of all parties. </p>
             </div>
 
             <input class="govuk-c-button" type="submit" value="Continue">

@@ -1,8 +1,4 @@
- {% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
 
 <body>
   <div class="govuk-o-width-container">
@@ -30,7 +26,7 @@
           </h2>
 
           <form class="form" action="email-address" method="post">
-            
+
             <p class="govuk-body">
               Send an email to your client with a secure link to the online assessment.
             </p>
@@ -56,7 +52,7 @@
               </ul>
             </p>
 
-          <a role="button" class="govuk-c-button" href="email-address">Continue</a>
+            <a role="button" class="govuk-c-button" href="email-address">Continue</a>
           </form>
 
         </div>

@@ -15,26 +15,29 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      {% if data['applicationType'] == 'Civil' %} <a class="govuk-c-back-link" href="category-law-civil">Back</a> {% else %} <a class="govuk-c-back-link" href="employed">Back</a> {% endif %}
-
+      <a class="govuk-c-back-link" href="application-type">Back</a>
       <p class="govuk-body"></p>
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h2 class="govuk-heading-xl">
-            What is your client's full name?
+            What type of case is it?
           </h2>
 
-          <form class="form" action="postcode" method="post">
+          <form action="court-crime-commenced" method="post">
 
-            <label class="govuk-c-label" for="name">
-              Enter full name
-              <span class="govuk-c-label__hint govuk-!-width-two-thirds">
-                Including all middle names
-              </span>
-            </label>
-            <input class="govuk-c-input govuk-!-width-two-thirds" id="name" name="name" type="text" required>
-            </br>
+            <select class="govuk-c-select" id="select-type" name="case-type">
+                <option value="Summary only">Summary only</option>
+                <option value="Either way">Either way</option>
+                <option value="Indictable">Indictable</option>
+                <option value="Trial already in Crown Court">Trial already in Crown Court</option>
+                <option value="Committal for sentence">Committal for sentence</option>
+                <option value="Appeal to Crown Court">Appeal to Crown Court</option>
+                <option value="Appeal to Crown Court and no changes">Appeal to Crown Court and no changes</option>
+              </select>
+
+            <br><br>
+
             <input class="govuk-c-button" type="submit" value="Continue">
 
           </form>

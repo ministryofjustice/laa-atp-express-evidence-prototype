@@ -1,8 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
 
 <body>
   <div class="govuk-o-width-container">
@@ -20,50 +16,48 @@
     <main role="main" class="govuk-o-main-wrapper">
 
       <a class="govuk-c-back-link" href="attempts-settle">Back</a>
-    <p class="govuk-body"></p>
+      <p class="govuk-body"></p>
       <div class="govuk-o-grid">
         <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
           <h2 class="govuk-heading-xl">Statement of case</h2>
 
           <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert">
-             <p class="govuk-body" style = "color: #b10e1e; font-weight:800;">Provide details of what has happened so far, personal information including the parties involved, and
-             their relationship and/or children. Explain why these current proceedings are neccessary.</p>
+            <p class="govuk-body" style="color: #b10e1e; font-weight:800;">Provide details of what has happened so far, personal information including the parties involved, and their relationship and/or children. Explain why these current proceedings are neccessary.</p>
           </div>
           <br>
-             <p class="govuk-body">What is the client's position? What are they seeking and why? You must provide sufficent information to satisfy
-              the regulations applicable to the case including the benefit likely to be obtained.</p>
+          <p class="govuk-body">What is the client's position? What are they seeking and why? You must provide sufficent information to satisfy the regulations applicable to the case including the benefit likely to be obtained.</p>
 
-            <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="more-detail">
               Enter statement of case
             </label>
             <textarea id="more-detail" name="more-detail" rows="20" class="govuk-c-textarea"></textarea>
-            </div>
+          </div>
 
         </div>
       </div>
 
-        <details class="govuk-c-details">
-          <summary class="govuk-c-details__summary">
-            <span class="govuk-c-details__summary-text">
+      <details class="govuk-c-details">
+        <summary class="govuk-c-details__summary">
+          <span class="govuk-c-details__summary-text">
               Substantive applications
             </span>
-          </summary>
-          <div class="govuk-c-details__text">
-            Placeholder text
-          </div>
-        </details>
+        </summary>
+        <div class="govuk-c-details__text">
+          Placeholder text
+        </div>
+      </details>
 
-        <details class="govuk-c-details">
-          <summary class="govuk-c-details__summary">
-            <span class="govuk-c-details__summary-text">
+      <details class="govuk-c-details">
+        <summary class="govuk-c-details__summary">
+          <span class="govuk-c-details__summary-text">
               Emergency applications
             </span>
-          </summary>
-          <div class="govuk-c-details__text">
-            Placeholder text
-          </div>
-        </details>
+        </summary>
+        <div class="govuk-c-details__text">
+          Placeholder text
+        </div>
+      </details>
 
       <a class="govuk-c-button govuk-c-button" href="merits-evidence" role="button">Continue</a>
     </main>

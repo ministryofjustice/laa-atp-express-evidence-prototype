@@ -183,7 +183,6 @@
   sup,
   tt,
   var,
-  b,
   u,
   i,
   center,
@@ -380,7 +379,7 @@
     letter-spacing: 1px;
     text-decoration: none;
     color: #fff;
-    background-color: #ffcc00;
+    background-color: #005ea5;
     float: right;
     margin-right: 0;
     padding-top: 3px;
@@ -394,63 +393,88 @@
   }
 </style>
 
-<body>
-  <div class="govuk-o-width-container">
 
-    <div class="govuk-c-phase-banner">
-      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
         alpha
       </strong>
-        <span class="govuk-c-phase-banner__text">
+      <span class="govuk-c-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
       </span>
-      </p>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="select-housing">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">
+          Outgoings
+        </h2>
+
+        <h3 class="govuk-heading-m">
+          Tell us about your outgoings over the last 30 days
+        </h3>
+
+        <p class="govuk-body">We will now list all payments out of your account. Please mark which of these payments fall into the following categories.</p>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+                <span class="task-list-section-number">1. </span>Mortgage, rent and council tax
+            </h2>
+            <p class="govuk-body"><span class="govuk-c-label__hint">
+              Add payments for mortgage, rent, board or lodging, and council tax bills
+            </span></p>
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" aria-describedby="housing-1-completed">
+                    RENT - £1200.00
+                </a>
+                <a style="color:red">
+                  <href='#'><u>Remove</u>
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="select-council-tax">
+                  Add a transaction
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="task-list-section">
+              <span class="task-list-section-number">2. </span>Childcare, maintenance and legal aid
+            </h2>
+            <p class="govuk-body"><span class="govuk-c-label__hint">
+              Add payments to a registered childcare provider, maintenance payments and existing legal aid contributions
+
+            </span></p>
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="#">
+                  Add a transaction
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ol>
+
+        <a class="govuk-c-button govuk-c-button" href="" role="button">Continue</a>
+
+      </div>
+
     </div>
 
-    <main role="main" class="govuk-o-main-wrapper">
+  </main>
+</div>
 
-      <a class="govuk-c-back-link" href="start">Back</a>
-      <p class="govuk-body"></p>
-      <div>
-        <h2 class="govuk-heading-xl">Your legal aid applications</h2>
-
-        <p class="govuk-body">
-          When a client has completed the financial means assessment, the case will be marked as 'Ready to progress'.
-        </p>
-
-        </br>
-        <h2 class="task-list-section">
-            <span class="task-list-section-number"></span>
-        </h2>
-        <table class="govuk-c-table" style="border-collapse: collapse;">
-
-          <thead class="govuk-c-table__head">
-            <tr class="govuk-c-table__row">
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick">Client's name</th>
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date started</th>
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Case reference</th>
-              <th class="govuk-c-table__header" scope="col" style="border-width:thick;">&nbsp;</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-c-table__body">
-            <tr class="task-list-item">
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed" href="granted-access">John Doe</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed" href="granted-access">02/04/2018</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed" href="granted-access">2018/LAA/4ewrqfdd</a></td>
-              <td class="govuk-c-table__cell"><a class="govuk-link" href="granted-access"><strong class="task-completed" id="other-1-completed" style="background-color:#00823b">Ready to progress</strong></a></td>
-            </tr>
-            <tr class="task-list-item">
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">Jane Dole</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">08/04/2018</a></td>
-              <td class="govuk-c-table__cell"><a class="task-name" aria-describedby="other-1-completed">2018/LAA/5kspihsl</a></td>
-              <td class="govuk-c-table__cell">&nbsp</td>
-            </tr>
-          </tbody>
-
-        </table>
-      </div>
-      <br>
-    </main>
-  </div>
-</body>
 {% endblock %}
