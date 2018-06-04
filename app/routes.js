@@ -116,7 +116,7 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
   else{
     var redirect_uri = 'https://laa-atp-express-evidence-proto.herokuapp.com/generic-truelayer/bank-success'
   }
-
+/*
   console.log('>>>>>>>>>>>'+redirect_uri);
 
   var authRequestUrl = 'https://auth.truelayer.com/connect/token';
@@ -208,6 +208,7 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
               console.log(body);
           }
       });
+      */
 })
 
 /************************  Citizen Truelayer  ************************/
