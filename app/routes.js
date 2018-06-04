@@ -528,8 +528,6 @@ router.get('/solicitor/employed-status', function (req, res) {
 
   var employed = req.query.employed
 
-  console.log(employed)
-
   if (employed === 'Yes') {
     res.redirect('/solicitor/basic-details')
   } else {
