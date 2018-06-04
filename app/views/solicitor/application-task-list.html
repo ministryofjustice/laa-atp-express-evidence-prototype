@@ -481,14 +481,45 @@
                   <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
                 </a>
               </li>
+
+              {% if data['applicationType'] == 'Civil' %}
               <li class="task-list-item">
                 <a class="task-name" href="">
-                        Merit assessment
-                </a>
+                    Merit assessment
+                  </a>
                 <a class="govuk-link" href="">
                   <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
                 </a>
               </li>
+              {% else %}
+
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                    Interests of justice
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                    Legal representation
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                    Declarations
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+
+              {% endif %}
+
               <li class="task-list-item">
                 <a class="task-name" href="">
                         Submit evidence

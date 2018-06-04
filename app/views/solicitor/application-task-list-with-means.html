@@ -436,7 +436,7 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="bank-success">Back</a>
+    <a class="govuk-c-back-link" href="means-result">Back</a>
 
     <p class="govuk-body"></p>
 
@@ -482,17 +482,47 @@
                   <strong class="task-completed" id="other-1-completed">Completed</strong>
                 </a>
               </li>
+              {% if data['applicationType'] == 'Civil' %}
               <li class="task-list-item">
                 <a class="task-name" href="merits-introduction">
-                        Merit assessment
+                    Merit assessment
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
                 </a>
+              </li>
+              {% else %}
+
+              <li class="task-list-item">
+                <a class="task-name" href="interests-of-justice-1">
+                    Interests of justice
+                  </a>
                 <a class="govuk-link" href="">
                   <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
                 </a>
               </li>
               <li class="task-list-item">
                 <a class="task-name" href="">
-                        Submit evidence
+                    Legal representation
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                    Declarations
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+
+              {% endif %}
+
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                    Submit evidence
                 </a>
                 <a class="govuk-link" href="">
                   <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->

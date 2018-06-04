@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="application-task-list-with-means-merit">Back</a>
+
+      <p class="govuk-body"></p>
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            What is the name of the solicitor who will represent the client?
+          </h2>
+
+          <form class="form" action="application-task-list-with-means-merit-legal-rep" method="post">
+
+            <label class="govuk-c-label" for="solicitor-name">
+              Enter full name
+              <span class="govuk-c-label__hint govuk-!-width-two-thirds">
+                Including all middle names
+              </span>
+            </label>
+            <input class="govuk-c-input govuk-!-width-two-thirds" id="solicitor-name" name="solicitor-name" type="text" required>
+            </br>
+            <input class="govuk-c-button" type="submit" value="Continue">
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

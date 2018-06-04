@@ -436,7 +436,8 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="application-task-list-with-means-merit">Back</a>
+    {% if data['applicationType'] == 'Civil' %}<a class="govuk-c-back-link" href="application-task-list-with-means-merit">Back</a>{% else %}<a class="govuk-c-back-link" href="application-task-list-with-means-merit-legal-rep-declarations">Back</a>{% endif
+    %}
 
     <p class="govuk-body"></p>
 
