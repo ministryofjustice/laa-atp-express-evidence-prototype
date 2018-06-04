@@ -106,7 +106,7 @@ router.get('/generic-truelayer/multibank', function (req, res) {
   }
 })
 
-router.get('/generic-truelayer/bank-success', function (req, res, next) {
+/*router.get('/generic-truelayer/bank-success', function (req, res, next) {
 
   var domain = req.hostname;
 
@@ -116,7 +116,7 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
   else{
     var redirect_uri = 'https://laa-atp-express-evidence-proto.herokuapp.com/generic-truelayer/bank-success'
   }
-/*
+
   console.log('>>>>>>>>>>>'+redirect_uri);
 
   var authRequestUrl = 'https://auth.truelayer.com/connect/token';
@@ -208,8 +208,8 @@ router.get('/generic-truelayer/bank-success', function (req, res, next) {
               console.log(body);
           }
       });
-      */
-})
+
+})*/
 
 /************************  Citizen Truelayer  ************************/
 /*
@@ -396,7 +396,7 @@ router.get('/citizen-truelayer/assets', function (req, res) {
 })
 
 
-router.get('/citizen-truelayer/bank-success', function (req, res, next) {
+/*router.get('/citizen-truelayer/bank-success', function (req, res, next) {
 
   var domain = req.hostname;
 
@@ -498,7 +498,8 @@ router.get('/citizen-truelayer/bank-success', function (req, res, next) {
               console.log(body);
           }
       });
-})
+
+})*/
 
 
 /************************  Citizen Truelayer - Crime  ************************/
@@ -686,7 +687,7 @@ router.get('/citizen-truelayer-crime/assets', function (req, res) {
 })
 
 
-router.get('/citizen-truelayer-crime/bank-success', function (req, res, next) {
+/*router.get('/citizen-truelayer-crime/bank-success', function (req, res, next) {
 
   var domain = req.hostname;
 
@@ -788,7 +789,8 @@ router.get('/citizen-truelayer-crime/bank-success', function (req, res, next) {
               console.log(body);
           }
       });
-})
+
+})*/
 
 /****************************  Solicitor  ****************************/
 
