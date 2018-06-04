@@ -1,0 +1,101 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="declarations-fraud">Back</a>
+
+      <p class="govuk-body"></p>
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            Declaration by the applicant
+          </h2>
+
+          <form class="form" action="declarations-solicitor" method="post">
+
+            <p class="govuk-body">I apply for the right to representation for the purposes of criminal proceedings under the Legal Aid, Sentencing and Punishment of Offenders Act 2012</p>
+
+            <p class="govuk-body">I understand that if I have declared anything that is not true on this form, or the documents sent with it, or left anything out:</p>
+
+            <ul class="govuk-body">
+              <li>I may be prosecuted for fraud. I understand that if I am convicted, I may be sent to prison or pay a fine.</li>
+              <li>My legal aid may be stopped and I may be asked to pay back my costs in full to the Legal Aid Agency.</li>
+              <li>If my case is in the Crown Court, the Legal Aid Agency may change the amount of contribution which I must pay.</li>
+            </ul>
+
+            <p class="govuk-body">I agree to tell the Legal Aid Agency or HM Courts & Tribunals Service immediately if my income or capital or those of my partner, change. These changes include the sale of property, change of address, change in employment and change in capital.</p>
+
+            <p class="govuk-body"><b>Evidence</b> I agree to provide, when asked, further details and evidence of my finances and those of my partner, to the Legal Aid Agency, its agents or HM Courts & Tribunals Service to help them decide whether an Order should be made and
+              its terms.</p>
+
+            <p class="govuk-body"><b>Ending legal aid</b> I understand that I must tell my solicitor and write to the court if I no longer want public representation. I understand that if I decline representation I may be liable for costs incurred to the date when my solicitor
+              and the court receive my letter.</p>
+
+            <p class="govuk-body"><b>I authorise</b> such enquiries as are considered necessary to enable the Legal Aid agency, its agents, HM Courts & Tribunal Service, or my solicitor to find out my income and capital, and those of my partner.</p>
+
+            <p class="govuk-body"><b>I consent</b> to the following being contacted and providing information about me to verify the information that I have given in this application:</p>
+
+            <ul class="govuk-body">
+              <li>the Department of Work and Pensions</li>
+              <li>Her Majesty's Revenue and Customs</li>
+              <li>my bank or building society</li>
+              <li>any local government body or public body with which I interact</li>
+            </ul>
+
+            <p class="govuk-body"><b>I consent</b> to the Legal Aid Agency or my solicitor contacting my partner for information and evidence about my partner's means. This includes circumstances where my partner is unable to sign or complete the form.</p>
+
+            <p class="govuk-body"><b>I understand</b> that if the information which my partner provides is incorrect, or if my partner refuses to provide information, then: if my case is in the magistrates' court, my legal aid may be refued or, if my case is in the Crown Court,
+              I may be liable to sanctions. I understand that the sanctions may result in me paying my legal aid costs in full.</p>
+
+            <p class="govuk-body"><b>I understand</b> that in Crown Court proceedings the information I have given in this form will be used to determine whether I am elgible for legal aid and, if so, whether I am liable to contribute to the costs of my defence:</p>
+
+            <ul class="govuk-body">
+              <li>under an Income Contribution Order during my case</li>
+              <li>or if I am convicted, under a Final Contribution Order at the end of my case</li>
+              <li>or both</li>
+            </ul>
+
+            <p class="govuk-body"><b>I understand</b> that:</p>
+
+            <ul class="govuk-body">
+              <li>if I am ordered to pay towards my legal aid under an Income COntribution Order</li>
+              <li>or if I am convicted and ordered to pay under a Final Contribution Order</li>
+            </ul>
+
+            <p class="govuk-body">but fail to pay as an Order instructs me, interest maybe charged or enforcement proceedings may be brought against me, or both.</p>
+
+            <p class="govuk-body"><b>I understand</b> that I may have to pay the costs of the enforcement proceedings in addition to the payments required under Contribution Order, and that the enforcement proceedings could result in a charge being placed on my home.</p>
+
+            <div class="govuk-c-checkboxes__item">
+
+              <input class="govuk-c-checkboxes__input" id="ob" name="consent" value="ob" type="checkbox" required="yes">
+              <label class="govuk-c-label govuk-c-checkboxes__label" for="ob">
+                <b>I have read the Declaration and Fraud Notices</b>
+              </label>
+            </div>
+
+            </br>
+            <input class="govuk-c-button" type="submit" value="Continue">
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

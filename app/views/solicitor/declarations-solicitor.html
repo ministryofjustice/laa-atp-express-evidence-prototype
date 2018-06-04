@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="declarations-client">Back</a>
+
+      <p class="govuk-body"></p>
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            Declaration by the Legal Representative
+          </h2>
+
+          <form class="form" action="application-task-list-with-means-merit-legal-rep-declarations" method="post">
+
+            <p class="govuk-body"><b>I confirm that</b> I have gone through the questions on the interests of Justice and financial assessment aspects of the application with the applicant.</p>
+
+            <p class="govuk-body">I confirm that the applicant has not provided me with any information which contradicts the information provided in this declaration of financial circumstances and has given me no indication that information declared is incomplete or untrue.</p>
+
+            <div class="govuk-c-checkboxes__item">
+              <input class="govuk-c-checkboxes__input" id="ob" name="consent" value="ob" type="checkbox" required="yes">
+              <label class="govuk-c-label govuk-c-checkboxes__label" for="ob">
+                <b>I have read the Declaration</b>
+              </label>
+            </div>
+
+            </br>
+
+            <input class="govuk-c-button" type="submit" value="Continue">
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}
