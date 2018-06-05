@@ -1,0 +1,486 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+<style>
+  .grid-row:after,
+  #content:after,
+  .notice:after,
+  .panel:after,
+  fieldset:after,
+  .form-section:after,
+  .form-group:after,
+  .breadcrumbs ol:after,
+  .task-list-item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .grid-row:after,
+  #content:after,
+  .notice:after,
+  .panel:after,
+  fieldset:after,
+  .form-section:after,
+  .form-group:after,
+  .breadcrumbs ol:after,
+  .task-list-item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .grid-row:after,
+  #content:after,
+  .notice:after,
+  .panel:after,
+  fieldset:after,
+  .form-section:after,
+  .form-group:after,
+  .breadcrumbs ol:after,
+  .task-list-item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .grid-row:after,
+  #content:after,
+  .notice:after,
+  .panel:after,
+  fieldset:after,
+  .form-section:after,
+  .form-group:after,
+  .breadcrumbs ol:after,
+  .task-list-item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .grid-row:after,
+  #content:after,
+  .notice:after,
+  .panel:after,
+  fieldset:after,
+  .form-section:after,
+  .form-group:after,
+  .breadcrumbs ol:after,
+  .task-list-item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .grid-row:after,
+  #content:after,
+  .notice:after,
+  .panel:after,
+  fieldset:after,
+  .form-section:after,
+  .form-group:after,
+  .breadcrumbs ol:after,
+  .task-list-item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  div,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  li {
+    padding: 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  u,
+  i,
+  center,
+  input,
+  textarea,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    font-weight: normal;
+  }
+
+  ol {
+    list-style-type: none;
+  }
+
+  .list {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+
+  .list li {
+    margin-bottom: 5px;
+  }
+
+  .list-bullet {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  details summary {
+    display: inline-block;
+    color: #005ea5;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0.26316em;
+  }
+
+  details summary:hover {
+    color: #2b8cc4;
+  }
+
+  details summary:focus {
+    outline: 3px solid #ffbf47;
+  }
+
+  details .summary {
+    text-decoration: underline;
+  }
+
+  details .arrow {
+    margin-right: .35em;
+    font-style: normal;
+  }
+
+  .panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #bfc1c3;
+    padding: 0.78947em;
+    margin-bottom: 0.78947em;
+  }
+
+  .panel :first-child {
+    margin-top: 0;
+  }
+
+  .panel :only-child,
+  .panel :last-child {
+    margin-bottom: 0;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  .panel-border-narrow {
+    border-left-width: 5px;
+  }
+
+  .form-group .panel-border-narrow {
+    float: left;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .form-group .panel-border-narrow:first-child {
+    margin-top: 10px;
+  }
+
+  .form-group .panel-border-narrow:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .inline .panel-border-narrow,
+  .inline .panel-border-narrow:last-child {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .task-list {
+    margin-top: 30px;
+  }
+
+  @media (min-width: 641px) {
+    .task-list {
+      margin-top: 60px;
+    }
+  }
+
+  .task-list-section {
+    display: table;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    padding-bottom: 5px;
+  }
+
+  @media (min-width: 641px) {
+    .task-list-section {
+      font-size: 24px;
+      line-height: 1.25;
+    }
+  }
+
+  .task-list-section-number {
+    display: table-cell;
+    padding-right: 5px;
+  }
+
+  @media (min-width: 641px) {
+    .task-list-section-number {
+      min-width: 35px;
+      padding-right: 0;
+    }
+  }
+
+  .task-list-items {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 641px) {
+    .task-list-items {
+      margin-bottom: 60px;
+    }
+  }
+
+  @media (min-width: 641px) {
+    .task-list-items {
+      padding-left: 35px;
+    }
+  }
+
+  .task-list-item {
+    border-bottom: 1px solid #bfc1c3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .task-list-item:first-child {
+    border-top: 1px solid #bfc1c3;
+  }
+
+  .task-name {
+    width: 66.66667%;
+    float: left;
+  }
+
+  .task-completed {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #005ea5;
+    float: right;
+    margin-right: 0;
+    padding-top: 3px;
+  }
+
+  @media (min-width: 641px) {
+    .task-completed {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+</style>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="obmultiple">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2 class="govuk-heading-xl">
+          Income
+        </h2>
+
+        <h3 class="govuk-heading-m">
+          Tell us about your income over the last 30 days
+        </h3>
+
+        <p class="govuk-body">We will now list all payments into your account. Please mark which of these payments fall into the following categories.</p>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+                    <span class="task-list-section-number">1. </span>Salary and pensions</h2>
+            <p class="govuk-body"><span class="govuk-c-label__hint">
+              Add any salary or wages, and income from state and private pensions
+            </span></p>
+
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="select-salary">
+                        Add a transaction
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="task-list-section">
+                    <span class="task-list-section-number">2. </span>Benefits, property and financial support</h2>
+            <p class="govuk-body"><span class="govuk-c-label__hint">
+              Add any state benefits, rental income from a property or lodger, student loans and maintenance payments
+            </span></p>
+            <details>
+              <summary><span class="summary">What should you tell us about?</span></summary>
+
+              <div class="panel panel-border-narrow">
+
+                <p style="govuk-body">
+                  <ul style="govuk">
+                    <li>- benefits such as Child Benefit Working Tax Credits, Child Tax Credits, Universal Credit, Incapacity Benefit, Industrial Injuries Disablement Benefit, Contribution-based Job Seekers' Allowance</li>
+                    <li>- extra payments from your employer such as relocation costs</li>
+                    <li>- board from a family member, lodger or tenant</li>
+                    <li>- rent from another property</li>
+                    <li>- maintenance payments</li>
+                    <li>- student grant or loan</li>
+                    <li>- financial support from a friend or family member</li>
+                  </ul>
+                </p>
+              </div>
+            </details>
+            <br>
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="#">
+                        Add a transaction
+                      </a>
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <a class="govuk-c-button govuk-c-button" href="" role="button">Continue</a>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
