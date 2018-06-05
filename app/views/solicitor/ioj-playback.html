@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="interests-of-justice-3">Back</a>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h2>Interest of Justice result:</h2>
+        </br>
+
+        <div class="govuk-c-panel govuk-c-panel--confirmation govuk-!-mb-r6" style="background-color:#ffbf00">
+          <br>
+          <h2 class="govuk-c-panel__title">
+             Your client has passed the interest of justice test
+           </h2>
+        </div>
+
+          </br>
+
+          <a class="govuk-c-button govuk-c-button" href="application-task-list-with-means-merit" role="button">Continue</a>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
