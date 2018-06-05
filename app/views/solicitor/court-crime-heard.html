@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="court-crime-commenced">Back</a>
+
+      <p class="govuk-body"></p>
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            In which court is the case being heard?
+          </h2>
+
+          <form action="remanded" method="post">
+
+            <div class="govuk-form-group">
+
+              <select class="govuk-c-select" id="court-heard" name="court-heard">
+                <option value="Court 1">Court 1</option>
+                <option value="Court 2">Court 2</option>
+                <option value="Court 3">Court 3</option>
+              </select>
+            </div>
+
+            <br><br>
+
+            <input class="govuk-c-button" type="submit" value="Continue">
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}

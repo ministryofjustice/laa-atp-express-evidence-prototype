@@ -1,8 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
 
 <body>
   <div class="govuk-o-width-container">
@@ -19,7 +15,7 @@
 
     <main role="main" class="govuk-o-main-wrapper">
 
-      {% if data['applicationType'] == 'Civil' %} <a class="govuk-c-back-link" href="category-law-civil">Back</a> {% else %} <a class="govuk-c-back-link" href="application-type">Back</a> {% endif %}
+      {% if data['applicationType'] == 'Civil' %} <a class="govuk-c-back-link" href="category-law-civil">Back</a> {% else %} <a class="govuk-c-back-link" href="employed">Back</a> {% endif %}
 
       <p class="govuk-body"></p>
       <div class="govuk-o-grid">

@@ -1,8 +1,5 @@
-{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
 <style>
   .grid-row:after,
   #content:after,
@@ -439,7 +436,7 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="bank-success">Back</a>
+    {% if data['applicationType'] == 'Civil' %}<a class="govuk-c-back-link" href="merits-final-declaration">Back</a>{% else %}<a class="govuk-c-back-link" href="interests-of-justice-1">Back</a>{% endif %}
 
     <p class="govuk-body"></p>
 
@@ -450,7 +447,7 @@
           Apply for legal aid
         </h2>
 
-        
+
         <div class="govuk-c-error-summary" aria-labelledby="error-summary-title" role="alert">
           <ul class="govuk-body" style="color: #b10e1e; font-weight:800;">
             <li>You must complete each section before you can submit the application.</li>
@@ -485,14 +482,45 @@
                   <strong class="task-completed" id="other-1-completed">Completed</strong>
                 </a>
               </li>
+
+              {% if data['applicationType'] == 'Civil' %}
               <li class="task-list-item">
                 <a class="task-name" href="">
-                        Merit assessment
-                </a>
+                    Merit assessment
+                  </a>
                 <a class="govuk-link" href="">
                   <strong class="task-completed" id="other-1-completed">Completed</strong>
                 </a>
               </li>
+              {% else %}
+
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                    Interests of justice
+                  </a>
+                <a class="govuk-link" href="">
+                  <strong class="task-completed" id="other-1-completed">Completed</strong>
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="legal-representation-1">
+                    Legal representation
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="">
+                    Declarations
+                  </a>
+                <a class="govuk-link" href="">
+                  <!-- <strong class="task-incomplete" id="other-1-completed">Start</strong> -->
+                </a>
+              </li>
+
+              {% endif %}
+
               <li class="task-list-item">
                 <a class="task-name" href="declared-evidence">
                         Submit evidence

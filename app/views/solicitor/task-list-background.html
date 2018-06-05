@@ -1,8 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Legal Aid Application prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
 
 <body>
   <div class="govuk-o-width-container">
@@ -50,6 +46,16 @@
                   </a>
                 </dd>
               </div>
+              {% else %}
+              <div>
+                <dt class="cya-question" style="width:275px">Case type</dt>
+                <dd class="cya-answer">{{ data['case-type'] }}</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="case-type-crime">
+                    Change<span class="visually-hidden">type</span>
+                  </a>
+                </dd>
+              </div>
               {% endif %}
 
               <div>
@@ -91,6 +97,56 @@
                   </a>
                 </dd>
               </div>
+
+              {% if data['applicationType'] == 'Crime' %}
+
+              <div>
+                <dt class="cya-question">Court commenced</dt>
+                <dd class="cya-answer">{{ data['court-commenced']}}</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="email-address">
+                    Change<span class="visually-hidden">court-crime-commenced</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">Court heard</dt>
+                <dd class="cya-answer">{{ data['court-heard']}}</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="email-address">
+                    Change<span class="visually-hidden">court-crime-heard</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">Remanded in custody?</dt>
+                <dd class="cya-answer">{{ data['in-custody']}}</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="email-address">
+                    Change<span class="visually-hidden">remanded</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">Employed?</dt>
+                <dd class="cya-answer">{{ data['employed']}}</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="email-address">
+                    Change<span class="visually-hidden">employed</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">Left job in last three months?</dt>
+                <dd class="cya-answer">{{ data['unemployed-three-months']}}</dd>
+                <dd class="cya-change">
+                  <a class="govuk-link" href="email-address">
+                    Change<span class="visually-hidden">unemployed-three-months</span>
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
+
             </dl>
 
             </br>
@@ -154,6 +210,7 @@
                 </dd>
               </div>
             </dl>
+
           </form>
         </div>
       </div>

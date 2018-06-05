@@ -1,8 +1,5 @@
-{% extends "layout.html" %} {% block page_title %} Evidence submission prototype {% endblock %} {% block proposition_header %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block header_class %}
-<!-- blank to remove the proposition header -->
-{% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
 <style>
   .grid-row:after,
   #content:after,
@@ -439,7 +436,8 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="application-task-list-with-means-merit">Back</a>
+    {% if data['applicationType'] == 'Civil' %}<a class="govuk-c-back-link" href="application-task-list-with-means-merit">Back</a>{% else %}<a class="govuk-c-back-link" href="application-task-list-with-means-merit-legal-rep-declarations">Back</a>{% endif
+    %}
 
     <p class="govuk-body"></p>
 

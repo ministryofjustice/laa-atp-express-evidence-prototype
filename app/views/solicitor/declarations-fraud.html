@@ -1,0 +1,44 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="application-task-list-with-means-merit-legal-rep">Back</a>
+
+      <p class="govuk-body"></p>
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            Fraud notice
+          </h2>
+
+          <form class="form" action="declarations-client" method="post">
+
+            <p class="govuk-body">If false or inaccurate information is provided and fraud is identified, details will be passed to fraud prevention agencies to prevent fraud and money laundering.</p>
+
+            <p class="govuk-body">Further details explaining how the information held by fraud prevention agencies may be used can be found in the 'Fair Processing Notice', available on the <a href="http://www.justice.gov.uk/legal-aid">Legal Aid Agency website</a>.</p>
+
+
+            <input class="govuk-c-button" type="submit" value="Continue">
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+{% endblock %}
