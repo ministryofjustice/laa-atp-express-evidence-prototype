@@ -289,7 +289,7 @@ router.get('/citizen-truelayer/benefitsinkind', function (req, res) {
   if (benefitsinkind === 'yes') {
     res.redirect('/citizen-truelayer/benefits-kind-amount')
   } else {
-    res.render('citizen-truelayer/identify-outgoings')
+    res.render('citizen-truelayer/property')
   }
 })
 
@@ -599,5 +599,256 @@ res.redirect('/solicitor/select-address');
 */
 
 /*********************************************************************/
+
+router.get('/citizen-truelayer-no-means/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/obmultiple-yes')
+  } else {
+    res.render('citizen-truelayer-no-means/identify-income')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/suitable-for-ob', function (req, res) {
+
+  var suitable = req.query.suitable
+
+  if (suitable === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/obbank')
+  } else {
+    res.render('citizen-truelayer-no-means/identify-income')
+  }
+})
+
+
+router.get('/citizen-truelayer-no-means/cash', function (req, res) {
+
+  var cash = req.query.cash
+
+  if (cash === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/cash-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/benefits-kind')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/benefitsinkind', function (req, res) {
+
+  var benefitsinkind = req.query.benefitsinkind
+
+  if (benefitsinkind === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/benefits-kind-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/property')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/ownsproperty', function (req, res) {
+
+  var ownsproperty = req.query.ownsproperty
+
+  if (ownsproperty === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/property-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/capital-assets')
+  }
+})
+
+
+router.get('/citizen-truelayer-no-means/ownsproperty', function (req, res) {
+
+  var ownsproperty = req.query.ownsproperty
+
+  if (ownsproperty === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/property-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/capital-assets')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/has-other-capital', function (req, res) {
+
+  var hasOtherCapital = req.query.hasOtherCapital
+
+  if (hasOtherCapital === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/national-savings')
+  } else {
+    res.render('citizen-truelayer-no-means/means-result')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/has-national-savings', function (req, res) {
+
+  var hasNationalSavings = req.query.hasNationalSavings
+
+  if (hasNationalSavings === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/national-savings-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/premium-bonds')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/has-premium-bonds', function (req, res) {
+
+  var hasPremiumBonds = req.query.hasPremiumBonds
+
+  if (hasPremiumBonds === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/premium-bonds-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/capital-bonds')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/has-capital-bonds', function (req, res) {
+
+  var hasCapitalBonds = req.query.hasCapitalBonds
+
+  if (hasCapitalBonds === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/capital-bonds-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/stocks-shares')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/has-stocks-shares', function (req, res) {
+
+  var hasStocksShares = req.query.hasStocksShares
+
+  if (hasStocksShares === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/stocks-shares-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/other-savings')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/has-other-savings', function (req, res) {
+
+  var hasOtherSavings = req.query.hasOtherSavings
+
+  if (hasOtherSavings === 'yes') {
+    res.redirect('/citizen-truelayer-no-means/other-savings-amount')
+  } else {
+    res.render('citizen-truelayer-no-means/means-result')
+  }
+})
+
+router.get('/citizen-truelayer-no-means/assets', function (req, res) {
+
+  var checkboxes = req.query.assets
+
+  if (checkboxes === '_unchecked'){
+    res.redirect('/citizen-truelayer-no-means/means-result')
+  }
+  else{
+    res.render('citizen-truelayer-no-means/capitalshares', {assets:checkboxes})
+  }
+})
+
+
+router.get('/citizen-truelayer-no-means/bank-success', function (req, res, next) {
+
+  var domain = req.hostname;
+
+  if (domain=='localhost'){
+    var redirect_uri = 'http://' + domain + ':3000/citizen-truelayer-no-means/bank-success'
+  }
+  else{
+    var redirect_uri = 'https://laa-atp-express-evidence-proto.herokuapp.com/citizen-truelayer-no-means/bank-success'
+  }
+
+  console.log('>>>>>>>>>>>'+redirect_uri);
+
+  var authRequestUrl = 'https://auth.truelayer.com/connect/token';
+  var grant_type = "authorization_code";
+  var client_id = process.env.CLIENT_ID;
+  var client_secret = process.env.CLIENT_SECRET;
+  var code = req.query.code;
+
+  var authJsonOut = {grant_type: grant_type,
+              client_id: client_id,
+              client_secret: client_secret,
+              redirect_uri: redirect_uri,
+              code: code
+            }
+
+  console.log(authJsonOut);
+
+  request.post({
+      url: authRequestUrl,
+      headers: {'content-type':'application/json'},
+      form: authJsonOut
+    }, function (error, response, body) {
+
+          if (!error && response.statusCode == 200) {
+
+              authJsonIn = JSON.parse(body);
+              console.log(authJsonIn);
+
+              var token = authJsonIn.access_token;
+              var accountId;
+              var getAccountsUrl = 'https://api.truelayer.com/data/v1/accounts';
+              var getBalanceUrl;
+              var getTransactionsUrl;
+
+              var bearerToken = "Bearer " + token;
+
+              request.get({
+                  url: getAccountsUrl,
+                  headers: {Authorization: bearerToken}
+                }, function (error, response, body) {
+                      if (!error && response.statusCode == 200) {
+                          accountsJsonIn = JSON.parse(body);
+                          console.log(accountsJsonIn);
+
+                          accountId = accountsJsonIn['results'][0].account_id;
+
+                          getBalanceUrl = getAccountsUrl + '/' + accountId + '/balance';
+
+                          request.get({
+                              url: getBalanceUrl,
+                              headers: {Authorization: bearerToken}
+                          }, function (error, response, body) {
+                                if (!error && response.statusCode == 200) {
+                                    balanceJsonIn = JSON.parse(body);
+                                    console.log(balanceJsonIn);
+
+                                    getTransactionsUrl = getAccountsUrl + '/' + accountId + '/transactions';
+
+                                    request.get({
+                                      url: getTransactionsUrl,
+                                      headers: {Authorization: bearerToken}
+                                    }, function (error, response, body) {
+                                          if (!error && response.statusCode == 200) {
+                                              transactionsJsonIn = JSON.parse(body);
+                                              console.log(transactionsJsonIn);
+
+                                              res.render('citizen-truelayer-no-means/bank-success', {accounts: accountsJsonIn, balance: balanceJsonIn, transactions: transactionsJsonIn});
+
+                                          } else {
+                                              console.log("There was an error: ") + response.statusCode;
+                                              console.log(body);
+                                          }
+                                    });
+
+                                } else {
+                                    console.log("There was an error: ") + response.statusCode;
+                                    console.log(body);
+                                }
+                          });
+
+                      } else {
+                          console.log("There was an error: ") + response.statusCode;
+                          console.log(body);
+                      }
+                  });
+
+          } else {
+              console.log("There was an error: ") + response.statusCode;
+              console.log(body);
+          }
+      });
+})
 
 module.exports = router

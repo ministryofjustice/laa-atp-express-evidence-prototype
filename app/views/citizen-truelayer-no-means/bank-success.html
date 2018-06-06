@@ -1,0 +1,141 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<body>
+  <div class="govuk-o-width-container">
+
+    <div class="govuk-c-phase-banner">
+      <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+        <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+
+    <main role="main" class="govuk-o-main-wrapper">
+
+      <a class="govuk-c-back-link" href="obbank">Back</a>
+      <p class="govuk-body"></p>
+      <div class="govuk-o-grid">
+        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+          <h2 class="govuk-heading-xl">
+            You have successfully shared your account information
+          </h2>
+
+          <p class="govuk-body">We have downloaded 3 months of your transaction history. You can use this to tell us more about your financial situation.</p>
+
+          </br>
+          <h2 class="govuk-heading-m">
+            Your account(s)
+          </h2>
+          </br>
+          <dl class="govuk-check-your-answers cya-questions">
+            <div>
+              <dt class="cya-question">Account holder's name</dt>
+              <dd class="cya-answer">Mr John Doe</dd>
+            </div>
+            <div>
+              <dt class="cya-question">Account holder's date of birth</dt>
+              <dd class="cya-answer">{{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}</dd>
+            </div>
+            <div>
+              <dt class="cya-question">Account holder's address</dt>
+              <dd class="cya-answer">10 Main Road, London, SW1H 9AJ</dd>
+            </div>
+          </dl>
+          </br>
+          <div>
+            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Account number</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Sort code</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Balance</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Mock Bank Current account</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">123456789</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£470.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Mock Bank Savings account</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">987654321</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1400.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Mock Bank Cash ISA</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">248163264</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <!--table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Account number</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Sort code</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Balance</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">{{ accounts.results[0].display_name }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">{{ accounts.results[0].account_number.number }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">{{ accounts.results[0].account_number.sort_code }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£{{ balance.results[0].current }}</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">{{ accounts.results[1].display_name }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">{{ accounts.results[1].account_number.number }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">{{ accounts.results[1].account_number.sort_code }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£{{ balance.results[0].current }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <h2 class="govuk-heading-m">
+            Your transactions
+          </h2>
+            <table>
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Date</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Description</th>
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                {% for result in transactions.results %}
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">{{ result.timestamp }} </td>
+                  <td class="govuk-c-table__cell">{{ result.description }}</td>
+                  <td class="govuk-c-table__cell">{{ result.transaction_category }}</td>
+                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£{{ result.amount }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table-->
+            <br>
+
+            <a class="govuk-c-button govuk-c-button" href="identify-evidence" role="button">Continue</a>
+
+          </div>
+
+    </main>
+    </div>
+</body>
+{% endblock %}

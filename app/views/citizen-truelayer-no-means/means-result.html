@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="other-savings">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Check your answers
+        </h1></br>
+
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dt class="cya-question">
+              Other savings
+            </dt>
+            <dd class="cya-answer">
+              £1400.00
+            </dd>
+            <dd class="cya-change">
+              <a class="govuk-link" href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div>
+            <dt class="cya-question">
+              Shares
+            </dt>
+            <dd class="cya-answer">
+              £1000.00
+            </dd>
+            <dd class="cya-change">
+              <a class="govuk-link" href="#">
+                Change<span class="visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <a class="govuk-c-button govuk-c-button" href="final-submit" role="button">Continue</a>
+
+          </br>
+
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

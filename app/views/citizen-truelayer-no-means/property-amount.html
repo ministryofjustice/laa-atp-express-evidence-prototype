@@ -1,0 +1,44 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="property">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          How much is your property worth?
+        </h1>
+        <form class="form" action="mortgage-amount" method="post">
+
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="property-amount">
+            <label class="govuk-c-label">Enter the estimated value of your property</label>
+
+            </label> <br>£
+            <input class="govuk-c-input govuk-!-width-two-thirds" id="property-amount" name="property-amount" placeholder="0.00" type="number">
+          </div>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
