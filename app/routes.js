@@ -3,6 +3,10 @@ const express = require('express')
 const request = require('request')
 const router = express.Router()
 
+var usersJSON = '';
+var accountsJSON = '';
+var transactionsJSON = '';
+
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
@@ -878,6 +882,245 @@ router.get('/solicitor/find-address', function (req, res, next) {
 //res.redirect('/solicitor/select-address');
 
 });
+
+
+
+
+/************************  Citizen Openworks  ************************/
+
+router.get('/citizen-openwrks/obbank', function (req, res) {
+
+  console.log("users: " + usersJSON)
+  console.log("accounts: " + accountsJSON)
+  console.log("transactions: " + transactionsJSON)
+
+  res.render('citizen-openwrks/obbank', {users: usersJSON, accounts: accountsJSON, transactions: transactionsJSON});
+
+})
+
+router.get('/citizen-openwrks/multibank', function (req, res) {
+
+  var multiBank = req.query.multibank
+
+  if (multiBank === 'yes') {
+    res.redirect('/citizen-openwrks/obmultiple-yes')
+  } else {
+    res.render('citizen-openwrks/identify-income')
+  }
+})
+
+router.get('/citizen-openwrks/suitable-for-ob', function (req, res) {
+
+  var suitable = req.query.suitable
+
+  if (suitable === 'yes') {
+    res.redirect('/citizen-openwrks/obbank-start')
+  } else {
+    res.render('citizen-openwrks/identify-income')
+  }
+})
+
+
+router.get('/citizen-openwrks/cash', function (req, res) {
+
+  var cash = req.query.cash
+
+  if (cash === 'yes') {
+    res.redirect('/citizen-openwrks/cash-amount')
+  } else {
+    res.render('citizen-openwrks/benefits-kind')
+  }
+})
+
+router.get('/citizen-openwrks/benefitsinkind', function (req, res) {
+
+  var benefitsinkind = req.query.benefitsinkind
+
+  if (benefitsinkind === 'yes') {
+    res.redirect('/citizen-openwrks/benefits-kind-amount')
+  } else {
+    res.render('citizen-openwrks/identify-outgoings')
+  }
+})
+
+router.get('/citizen-openwrks/ownsproperty', function (req, res) {
+
+  var ownsproperty = req.query.ownsproperty
+
+  if (ownsproperty === 'yes') {
+    res.redirect('/citizen-openwrks/property-amount')
+  } else {
+    res.render('citizen-openwrks/capital-assets')
+  }
+})
+
+
+router.get('/citizen-openwrks/ownsproperty', function (req, res) {
+
+  var ownsproperty = req.query.ownsproperty
+
+  if (ownsproperty === 'yes') {
+    res.redirect('/citizen-openwrks/property-amount')
+  } else {
+    res.render('citizen-openwrks/capital-assets')
+  }
+})
+
+router.get('/citizen-openwrks/has-other-capital', function (req, res) {
+
+  var hasOtherCapital = req.query.hasOtherCapital
+
+  if (hasOtherCapital === 'yes') {
+    res.redirect('/citizen-openwrks/national-savings')
+  } else {
+    res.render('citizen-openwrks/means-result')
+  }
+})
+
+router.get('/citizen-openwrks/has-national-savings', function (req, res) {
+
+  var hasNationalSavings = req.query.hasNationalSavings
+
+  if (hasNationalSavings === 'yes') {
+    res.redirect('/citizen-openwrks/national-savings-amount')
+  } else {
+    res.render('citizen-openwrks/premium-bonds')
+  }
+})
+
+router.get('/citizen-openwrks/has-premium-bonds', function (req, res) {
+
+  var hasPremiumBonds = req.query.hasPremiumBonds
+
+  if (hasPremiumBonds === 'yes') {
+    res.redirect('/citizen-openwrks/premium-bonds-amount')
+  } else {
+    res.render('citizen-openwrks/capital-bonds')
+  }
+})
+
+router.get('/citizen-openwrks/has-capital-bonds', function (req, res) {
+
+  var hasCapitalBonds = req.query.hasCapitalBonds
+
+  if (hasCapitalBonds === 'yes') {
+    res.redirect('/citizen-openwrks/capital-bonds-amount')
+  } else {
+    res.render('citizen-openwrks/stocks-shares')
+  }
+})
+
+router.get('/citizen-openwrks/has-stocks-shares', function (req, res) {
+
+  var hasStocksShares = req.query.hasStocksShares
+
+  if (hasStocksShares === 'yes') {
+    res.redirect('/citizen-openwrks/stocks-shares-amount')
+  } else {
+    res.render('citizen-openwrks/other-savings')
+  }
+})
+
+router.get('/citizen-openwrks/has-other-savings', function (req, res) {
+
+  var hasOtherSavings = req.query.hasOtherSavings
+
+  if (hasOtherSavings === 'yes') {
+    res.redirect('/citizen-openwrks/other-savings-amount')
+  } else {
+    res.render('citizen-openwrks/means-result')
+  }
+})
+
+router.get('/citizen-openwrks/assets', function (req, res) {
+
+  var checkboxes = req.query.assets
+
+  if (checkboxes === '_unchecked'){
+    res.redirect('/citizen-openwrks/means-result')
+  }
+  else{
+    res.render('citizen-openwrks/capitalshares', {assets:checkboxes})
+  }
+})
+
+
+router.get('/citizen-openwrks/bank-redirect', function (req, res) {
+
+  var options = { method: 'POST',
+    url: 'https://api.openwrks.com/surface/v1/invite',
+    headers:
+     { Authorization: 'Bearer 59fc47463c4f660001196541b50f6b539894422785e562e5e6b2de9e',
+       'Content-Type': 'application/json' },
+    body:
+     { customerReference: 'LAA',
+       redirectUrl: 'http://localhost:3000/citizen-openwrks/obbank' },
+    json: true };
+
+
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+
+    console.log(body);
+
+    var flowURL = body.flowUrl;
+
+    console.log(flowURL);
+
+       var users = { method: 'GET',
+        url: 'https://api.openwrks.com/surface/v1/Users',
+        headers:
+         { Authorization: 'Bearer 59fc47463c4f660001196541b50f6b539894422785e562e5e6b2de9e',
+           'Content-Type': 'application/json' }};
+
+        request(users, function (error, response, body) {
+          if (error) throw new Error(error);
+
+          console.log(body);
+
+          usersJSON = JSON.parse(body);
+
+          var userId = usersJSON.data[0].userId   //'d96a33ef-c4ca-43c2-ad30-2e7678378900';
+
+          var accounts = { method: 'GET',
+            url: 'https://api.openwrks.com/surface/v1/users/'+userId+'/Accounts',
+            headers:
+             { Authorization: 'Bearer 59fc47463c4f660001196541b50f6b539894422785e562e5e6b2de9e',
+               'Content-Type': 'application/json' }};
+
+              request(accounts, function (error, response, body) {
+                  if (error) throw new Error(error);
+
+                  accountsJSON = JSON.parse(body);
+
+                  var accountId = accountsJSON.data[0].accountId//'a8c3f1c7-47db-42ee-96c1-bbb39f14fd25';
+
+                  console.log(body);
+
+                  var transactions = { method: 'GET',
+                    url: 'https://api.openwrks.com/surface/v1/users/' + userId + '/accounts/'+ accountId +'/Transactions',
+                    headers:
+                     { Authorization: 'Bearer 59fc47463c4f660001196541b50f6b539894422785e562e5e6b2de9e',
+                       'Content-Type': 'application/json' }};
+
+                       request(transactions, function (error, response, body) {
+                         if (error) throw new Error(error);
+
+                         transactionsJSON = JSON.parse(body);
+
+                         console.log(body);
+
+                  });
+
+              });
+
+        });
+
+    res.redirect(flowURL)
+
+  });
+
+})
 
 
 /*********************************************************************/

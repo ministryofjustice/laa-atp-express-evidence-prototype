@@ -1,0 +1,125 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="identify-outgoings-housing-tax-childcare">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Check your income and outgoings
+        </h1>
+
+        <form class="form" action="property" method="post">
+
+          <div>
+            <table class="govuk-c-table">
+              <caption class="govuk-c-table__caption">Your income</caption>
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" width="500" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Salary and pensions</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1800.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- TYREWORLD BACS - £1800.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'><u>Remove</u></a>
+                  </td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Benefits, property and financial support</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£250.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- CHILD MAINTENANCE - £250.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'><u>Remove</u></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href='#'>Add more income</a>
+          </div>
+          </br>
+          </br>
+          <div>
+            <table class="govuk-c-table">
+              <caption class="govuk-c-table__caption">Your outgoings</caption>
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" scope="col" width="500" style="border-width:thick;">Type</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Mortgage, rent and council tax</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1420.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- RENT - £1200.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'><u>Remove</u>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- COUNCIL TAX - £220.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'><u>Remove</u>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">Childcare, maintenance and legal aid</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell" scope="row">- WIGGLY-TOTS NURSERY - £600.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">
+                    <a style="color:red">
+                      <href='#'><u>Remove</u>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href='#'>Add more outgoings</a>
+          </div>
+          <br>
+          <br>
+
+          <input class="govuk-c-button" type="submit" value="Continue">
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

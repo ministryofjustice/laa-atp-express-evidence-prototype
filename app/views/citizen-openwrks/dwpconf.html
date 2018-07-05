@@ -1,0 +1,85 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag ">
+      alpha
+    </strong>
+      <span class="govuk-c-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="dwpdetails">Back</a>
+
+    <p class="govuk-body"></p>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Are your details correct?
+        </h1>
+
+        <p class="govuk-body">Check the information you have given is correct or make changes.</p>
+
+        <h2 class="govuk-heading-m">
+          Your details
+        </h2>
+
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dt class="cya-question">
+              Name
+            </dt>
+            <dd class="cya-answer">
+              John Doe
+            </dd>
+            <dd class="cya-change">
+              <a class="govuk-link" href="#">
+                <span class="visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+
+          <div>
+            <dt class="cya-question">
+              National Insurance number
+            </dt>
+            <dd class="cya-answer">
+              HJ000000D
+            </dd>
+            <dd class="cya-change">
+              <a class="govuk-link" href="#">
+                Change<span class="visually-hidden"> home address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div>
+            <dt class="cya-question">
+              Date of birth
+            </dt>
+            <dd class="cya-answer">
+              5 January 1978
+            </dd>
+            <dd class="cya-change">
+              <a class="govuk-link" href="#">
+                Change<span class="visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        </br>
+        <a href="obbank" class="govuk-c-button">Continue</a>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
