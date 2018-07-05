@@ -1,0 +1,178 @@
+{% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content"><strong class="govuk-c-tag govuk-c-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-c-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <main role="main" class="govuk-o-main-wrapper">
+
+    <a class="govuk-c-back-link" href="explain-other">Back</a>
+
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item">
+
+        <h1 class="govuk-heading-xl">
+          Your transaction history
+        </h1>
+
+        <p class="govuk-body">We look at your regular incoming payments (such as wages, benefits or pension) and major outgoings (such as childcare, rent or mortgage).</p>
+
+        <p class="govuk-body">You do not need to tell us about smaller, everday purchases.</p>
+
+        <form class="form" action="check-evidence" method="post">
+
+          <div>
+            <table class="govuk-c-table" style="table-layout:fixed;">
+              <h2 class="govuk-heading-m">Your account</h2>
+              <caption class="govuk-c-table__caption">Account Number: 123456789</caption>
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" width="150">Date</th>
+                  <th class="govuk-c-table__header" scope="col" width="200">Description</th>
+                  <th class="govuk-c-table__header" scope="col">Incoming</th>
+                  <th class="govuk-c-table__header" scope="col">Outgoing</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Nando’s Chicken</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£12.40</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
+                  <td class="govuk-c-table__cell">YourLandlord Letting Agents</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£1200.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">02 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Cash machine withdrawal</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£50.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">03 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Wiggly-tots Nursery</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£600.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">04 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Tesco Express</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£12.40</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">06 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Child Maintenance</td>
+                  <td class="govuk-c-table__cell">£250.00</td>
+                  <td class="govuk-c-table__cell"></td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">06 Jan 2018</th>
+                  <td class="govuk-c-table__cell">McDonalds</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£5.50</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">07 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Odeon Cinema</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£20.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">09 Jan 2018</th>
+                  <td class="govuk-c-table__cell">KFC Chicken</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£34.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">12 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Payment to Dave</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£200.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">12 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Cash machine Withdrawal</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£120.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">14 Jan 2018</th>
+                  <td class="govuk-c-table__cell">British Gas</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£1200.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">01 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Virgin Media</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£50.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">16 Jan 2018</th>
+                  <td class="govuk-c-table__cell">BACS transfer Tyreworld</td>
+                  <td class="govuk-c-table__cell">£1800.00</td>
+                  <td class="govuk-c-table__cell"></td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">18 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Tesco Express</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£8.76</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">19 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Thames Water</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£50.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">21 Jan 2018</th>
+                  <td class="govuk-c-table__cell">MBNA Credit payment</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£123.54</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">23 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Netflix</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£15.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">25 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Spotify</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£10.40</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="row">30 Jan 2018</th>
+                  <td class="govuk-c-table__cell">Amazon purchase</td>
+                  <td class="govuk-c-table__cell"></td>
+                  <td class="govuk-c-table__cell">£56.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
