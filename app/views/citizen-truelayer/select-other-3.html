@@ -1,4 +1,5 @@
 {% extends "layout.html" %} {% block page_title %} Apply for legal aid {% endblock %} {% block content %}
+
 <style>
   input[type='radio'] {
     -webkit-appearance: none;
@@ -26,6 +27,60 @@
   input[type='radio']:checked:before {
     background: black;
   }
+
+
+  details summary {
+    display: inline-block;
+    color: #005ea5;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0.26316em;
+  }
+
+  details summary:hover {
+    color: #2b8cc4;
+  }
+
+  details summary:focus {
+    outline: 3px solid #ffbf47;
+  }
+
+  details .summary {
+    text-decoration: underline;
+  }
+
+  details .arrow {
+    margin-right: .35em;
+    font-style: normal;
+  }
+
+  .panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #bfc1c3;
+    padding: 0.78947em;
+    margin-bottom: 0.78947em;
+  }
+
+  .panel :first-child {
+    margin-top: 0;
+  }
+
+  .panel :only-child,
+  .panel :last-child {
+    margin-bottom: 0;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  .panel-border-narrow {
+    border-left-width: 5px;
+  }
 </style>
 
 <div class="govuk-o-width-container">
@@ -42,7 +97,7 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="identify-income">Back</a>
+    <a class="govuk-c-back-link" href="identify-income-with-salary-2">Back</a>
 
     <p class="govuk-body"></p>
 
@@ -50,11 +105,12 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h2 class="govuk-heading-xl">
-              Select salary or wages
+              Select state benefits
         </h2>
 
         <p class="govuk-body">We have listed items from your bank statement by the highest incoming payment to help you.</p>
 
+        <br>
         <table class="govuk-c-table--two-thirds" style="border-spacing:0">
 
           <thead class="govuk-c-table__head">
@@ -69,7 +125,7 @@
            <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell">Cash in HSBC 17Oct</td>
               <td class="govuk-c-table__cell">17 OCT 2017</td>
-              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£250.00</td>
+              <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£250</td>
               <td class="govuk-c-table__cell">
                 <div class="govuk-c-radios__item">
                   <label><input type="radio" id='regular' name="salary"></label>
@@ -81,9 +137,6 @@
               <td class="govuk-c-table__cell">23 OCT 2017</td>
               <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£174.77</td>
               <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary"></label>
-                </div>
               </td>
             </tr>
             <tr class="govuk-c-table__row">
@@ -91,9 +144,6 @@
               <td class="govuk-c-table__cell">29 SEP 2017</td>
               <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£165.55</td>
               <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary"></label>
-                </div>
               </td>
             </tr>
             <tr class="govuk-c-table__row">
@@ -101,9 +151,6 @@
               <td class="govuk-c-table__cell">06 OCT 2017</td>
               <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£165.55</td>
               <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary"></label>
-                </div>
               </td>
             </tr>
             <tr class="govuk-c-table__row">
@@ -126,14 +173,12 @@
                 </div>
               </td>
             </tr>
+
                         <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell">Care Home Ltd Salary</td>
               <td class="govuk-c-table__cell">14 OCT 2017</td>
               <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£136.31</td>
               <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary"></label>
-                </div>
               </td>
             </tr>
             <tr class="govuk-c-table__row">
@@ -151,9 +196,6 @@
               <td class="govuk-c-table__cell">09 OCT 2017</td>
               <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£116.40</td>
               <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary"></label>
-                </div>
               </td>
             </tr>
             <tr class="govuk-c-table__row">
@@ -161,9 +203,6 @@
               <td class="govuk-c-table__cell">02 OCT 2017</td>
               <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£108.24</td>
               <td class="govuk-c-table__cell">
-                <div class="govuk-c-radios__item">
-                  <label><input type="radio" id='regular' name="salary"></label>
-                </div>
               </td>
             </tr>
             <tr class="govuk-c-table__row">
@@ -211,7 +250,7 @@
         </table>
         <br>
 
-        <a class="govuk-c-button govuk-c-button" href="identify-income-with-salary" role="button">Add</a>
+        <a class="govuk-c-button govuk-c-button" href="identify-income-salary-other-3" role="button">Add</a>
 
       </div>
 

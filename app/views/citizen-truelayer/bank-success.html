@@ -38,7 +38,7 @@
             </div>
             <div>
               <dt class="cya-question">Account holder's date of birth</dt>
-              <dd class="cya-answer">{{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}</dd>
+              <dd class="cya-answer">20/12/1984</dd>
             </div>
             <div>
               <dt class="cya-question">Account holder's address</dt>
@@ -50,6 +50,7 @@
             <table class="govuk-c-table--two-thirds" style="border-spacing:0">
               <thead class="govuk-c-table__head">
                 <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Bank</th>
                   <th class="govuk-c-table__header" scope="col" style="border-width:thick;">Type</th>
                   <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Account number</th>
                   <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" style="border-width:thick;">Sort code</th>
@@ -58,22 +59,11 @@
               </thead>
               <tbody class="govuk-c-table__body">
                 <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Mock Bank Current account</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric"><div><img src="/mock-bank.jpg" alt="Mock Bank logo" align="left" width="24" height="39"></div></td>
+                  <td class="govuk-c-table__cell">Current account</td>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">123456789</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
                   <td class="govuk-c-table__cell govuk-c-table__header--numeric">£470.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Mock Bank Savings account</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">987654321</td>
-                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
-                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£1400.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Mock Bank Cash ISA</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">248163264</td>
-                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">43-54-22</td>
-                  <td class="govuk-c-table__cell govuk-c-table__header--numeric">£0.00</td>
                 </tr>
               </tbody>
             </table>

@@ -52,23 +52,30 @@
           <div class="govuk-c-checkboxes">
             <fieldset class="govuk-c-fieldset">
               <legend class="govuk-c-fieldset__legend">
-                <h1 class="govuk-heading-xl">Do you agree to share your bank transactions with us?</h1>
+                <h1 class="govuk-heading-xl">Do you agree to give one-time access to your bank accounts?</h1>
               </legend>
 
-              <p class="govuk-body">We only use your bank transactions to support your legal aid application. We do not use the information for anything else.</p>
+              <p class="govuk-body">You will be redirected to a secure service to sign in to your online banking.</p>
+
+             <p class="govuk-body">You wil be asked to allow the Legal Aid Agency to download 3 months of bank transactions.</p>
+
+
+             <p class="govuk-body">You will need to share all of your bank accounts, including any in joint names or with no money.</p>
+
 
               <!--p class="govuk-body"><a href="#">Find out how we use and store your personal data</a></p-->
 
+
               <details>
-                <summary><span class="summary">Find out how we use and store your personal data</span></summary>
+                <summary><span class="summary">Find out how we store your personal data</span></summary>
 
                 <div class="panel panel-border-narrow">
 
                   <p style="govuk-body">
                     <ul style="govuk">
                       <li>We will not have access to your online banking username and password</li>
-                      <li>We will not have any ongoing access to your bank accounts</li>
-                      <li>We will use details of your income and outgoings to assess your eligibility for legal aid</li>
+                      <li>We will not have ongoing access to your bank accounts</li>
+                      <li>We will only use bank transactions for your legal aid application, not anything else</li>
                   </p>
                 </div>
               </details>
@@ -97,7 +104,7 @@
             </fieldset>
           </div>
 
-          <input class="govuk-c-button" type="submit" value="Continue">
+          <a role="button" class="govuk-c-button" href="#" id="truelayerRedirect">Continue</a>
 
         </form>
 
