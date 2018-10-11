@@ -23,15 +23,16 @@
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
-        <h1>If your case qualifies for legal aid, you will have to pay:</h1>
+        <h1>If your case qualifies for legal aid:</h1>
         <br>
         <div class="govuk-c-panel govuk-c-panel--confirmation govuk-!-mb-r6" style="background-color:#005ea5">
           <br>
+          <div class="govuk-c-panel__body">you will have to pay</div><br>
           <h2 class="govuk-c-panel__title">
-            £177.15 a month
+            8% of the legal costs
           </h2>
           <div class="govuk-c-panel__body">
-            for the lifetime of the case
+            this is<br> <strong>£87.15 a month</strong><br> until the final court hearing
           </div>
         </div>
 
@@ -44,6 +45,68 @@
         </h2></br>
 
         <form class="form" action="submit-means" method="post">
+
+
+          <div>
+            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" width="300" style="border-width:thick;">Your income</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" width="150" style="border-width:thick;">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Total gross wage</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£535.72</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Total state benefits</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£745.00</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" style="border-width:thick;">Gross income</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£1,280.72</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" style="border-width:thick;">Gross income limit</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£2,657.00</td>
+                </tr>
+            </table>
+          </div>
+          </br>
+
+          <div>
+            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
+
+              <thead class="govuk-c-table__head">
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" scope="col" width="300" style="border-width:thick;">Your outoings</th>
+                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" width="150" style="border-width:thick;">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-c-table__body">
+                <tr class="govuk-c-table__row">
+                  <td class="govuk-c-table__cell">Mortgage, rent or board</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1048.50</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" style="border-width:thick;">Total deductions</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£1048.50</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" style="border-width:thick;">Total disposable income</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£232.22</td>
+                </tr>
+                <tr class="govuk-c-table__row">
+                  <th class="govuk-c-table__header" style="border-width:thick;">Disposable income limit</th>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£733.00</td>
+                </tr>
+            </table>
+          </div>
+          </br>
+
 
           <div>
             <table class="govuk-c-table--two-thirds" style="border-spacing:0">
@@ -60,84 +123,12 @@
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£470.00</td>
                 </tr>
                 <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Other savings</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1,400.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Shares</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1,000.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" style="border-width:thick;">Total capital</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£2,870.00</td>
+                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£470.00</td>
                 </tr>
                 <tr class="govuk-c-table__row">
                   <th class="govuk-c-table__header" style="border-width:thick;">Total capital limit</th>
                   <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£8,000.00</td>
-                </tr>
-            </table>
-          </div>
-          </br>
-
-          <div>
-            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
-
-              <thead class="govuk-c-table__head">
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="col" width="300" style="border-width:thick;">Gross income</th>
-                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" width="150" style="border-width:thick;">&nbsp;</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-c-table__body">
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Total gross wage</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£2,245.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Maintenance</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£250.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" style="border-width:thick;">Gross income</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£2,495.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" style="border-width:thick;">Gross income limit</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£2,657.00</td>
-                </tr>
-            </table>
-          </div>
-          </br>
-
-          <div>
-            <table class="govuk-c-table--two-thirds" style="border-spacing:0">
-
-              <thead class="govuk-c-table__head">
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" scope="col" width="300" style="border-width:thick;">Disposable income</th>
-                  <th class="govuk-c-table__header govuk-c-table__header--numeric" scope="col" width="150" style="border-width:thick;">&nbsp;</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-c-table__body">
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Childcare</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£600.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <td class="govuk-c-table__cell">Housing costs</td>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric">£1,420.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" style="border-width:thick;">Total deductions</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£2,020.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" style="border-width:thick;">Total disposable income</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£475.00</td>
-                </tr>
-                <tr class="govuk-c-table__row">
-                  <th class="govuk-c-table__header" style="border-width:thick;">Disposable income limit</th>
-                  <td class="govuk-c-table__cell govuk-c-table__cell--numeric" style="border-width:thick;">£733.00</td>
                 </tr>
             </table>
           </div>
