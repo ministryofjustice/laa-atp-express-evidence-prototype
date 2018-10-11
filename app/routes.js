@@ -328,7 +328,7 @@ router.get('/citizen-truelayer/has-other-capital', function (req, res) {
   if (hasOtherCapital === 'yes') {
     res.redirect('/citizen-truelayer/national-savings')
   } else {
-    res.render('citizen-truelayer/means-result')
+    res.render('citizen-truelayer/capital-assets-other')
   }
 })
 
