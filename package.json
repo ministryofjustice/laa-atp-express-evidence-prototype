@@ -33,6 +33,7 @@
     "marked": "^0.3.6",
     "minimist": "1.2.0",
     "notifications-node-client": "^3.0.0",
+    "npm": "^6.4.1",
     "nunjucks": "^3.0.1",
     "portscanner": "^2.1.1",
     "prompt": "^1.0.0",

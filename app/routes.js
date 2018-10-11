@@ -253,15 +253,25 @@ router.get('/citizen-truelayer/ob-consent', function (req, res) {
 })
 */
 
+router.get('/citizen-truelayer/pre-start-check', function (req, res) {
+  res.redirect('/citizen-truelayer/start')
+})
+
 router.get('/citizen-truelayer/multibank', function (req, res) {
 
   var multiBank = req.query.multibank
 
-  if (multiBank === 'yes') {
-    res.redirect('/citizen-truelayer/obmultiple-yes')
-  } else {
+  var route = req.session.data['route']
+
+  if (route == 'route2')
     res.render('citizen-truelayer/identify-income')
-  }
+  else
+    res.redirect('https://ofe3qu.axshare.com/income_statement_v_.html');
+  // if (multiBank === 'yes') {
+  //   res.redirect('/citizen-truelayer/obmultiple-yes')
+  // } else {
+  //   res.render('citizen-truelayer/identify-income')
+  // }
 })
 
 router.get('/citizen-truelayer/suitable-for-ob', function (req, res) {
