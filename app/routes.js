@@ -265,8 +265,9 @@ router.get('/citizen-truelayer/multibank', function (req, res) {
 
   if (route == 'route2')
     res.render('citizen-truelayer/identify-income')
+
   else
-    res.redirect('https://ofe3qu.axshare.com/income_statement_v_.html');
+    res.redirect('https://q1ovm4.axshare.com/loading__1_.html');
   // if (multiBank === 'yes') {
   //   res.redirect('/citizen-truelayer/obmultiple-yes')
   // } else {
