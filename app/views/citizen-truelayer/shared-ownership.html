@@ -14,7 +14,7 @@
 
   <main role="main" class="govuk-o-main-wrapper">
 
-    <a class="govuk-c-back-link" href="property-amount">Back</a>
+    <a class="govuk-c-back-link" href="property">Back</a>
 
     <p class="govuk-body"></p>
 
@@ -22,19 +22,17 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-xl">
-         What is the outstanding mortgage on your home?
+          What % share of your home do you legally own?
         </h1>
-        <form class="form" action="part-owned" method="post">
+        <form class="form" action="capital-assets" method="post">
 
+          <p class="govuk-body">Your name must be on the property deeds, lease, freehold or mortgage.</p>
 
-          <p class="govuk-body">Check the statement from your mortgage provider or lender.</p>
+          <div class="govuk-o-form-group"><label class="govuk-c-label" for="property-amount">
+            <label class="govuk-c-label">Enter the estimated percentage share you own</label>
 
-
-          <div class="govuk-o-form-group"><label class="govuk-c-label" for="mortgage-amount">
-            <label class="govuk-c-label">Enter outstanding mortgage amount</label>
-
-            </label> <br>£
-            <input class="govuk-c-input govuk-!-width-two-thirds" id="mortgage-amount" name="mortgage-amount" placeholder="0.00" type="number">
+            </label> <br>%
+            <input class="govuk-c-input govuk-!-width-two-thirds" id="property-amount" name="property-amount" placeholder="0.00" type="number">
           </div>
 
           <input class="govuk-c-button" type="submit" value="Continue">
